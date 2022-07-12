@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&display=swap');
+
+@layer base {
+    body {
+        @apply font-roboto leading-tight text-grey-dark text-lg 3xl:text-xl bg-white-dark
+    }
+}
+
+@layer components {
+    .shadow {
+        box-shadow: 11px 11px 6px #00000014 !important;
+    }
+    .shadow-2 {
+        box-shadow: 0px 11px 11px #00000017 !important;
+    }
+}
