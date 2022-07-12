@@ -103,8 +103,8 @@ export default function Home () {
                   Contratación pública en cifras
                 </h2>
               </div>
-              <div className='flex flex-col lg:flex-row lg:justify-between gap-x-[61px] gap-y-8'>
-                <div className='lg:w-1/3'>
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[61px] gap-y-8'>
+                <div>
                   <div className='shadow rounded-[55px] pb-[27px]'>
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
                       <img src="/tenemos.svg" alt="tenemos icon" />
@@ -118,7 +118,7 @@ export default function Home () {
                     </div>
                   </div>
                 </div>
-                <div className='lg:w-1/3'>
+                <div>
                   <div className='shadow rounded-[55px] pb-[27px]'>
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
                       <img src="/money.svg" alt="money icon" />
@@ -131,7 +131,7 @@ export default function Home () {
                     </div>
                   </div>
                 </div>
-                <div className='lg:w-1/3'>
+                <div>
                   <div className='shadow rounded-[55px] pb-[27px]'>
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
                       <img src="/date.svg" alt="date icon" />
@@ -152,8 +152,8 @@ export default function Home () {
                   Riesgos en la contratación
                 </h2>
               </div>
-              <div className='flex flex-col lg:flex-row lg:justify-between gap-x-[61px] gap-y-8'>
-                <div className='lg:w-1/3'>
+              <div className='grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3 gap-x-[61px] gap-y-8'>
+                <div>
                   <div className='shadow rounded-[55px] pb-[27px] pt-[43px] px-10'>
                     <div className='text-center'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
@@ -164,7 +164,7 @@ export default function Home () {
                     </div>
                   </div>
                 </div>
-                <div className='lg:w-1/3'>
+                <div>
                   <div className='shadow rounded-[55px] pb-[27px] pt-[43px] px-10'>
                     <div className='text-center'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
@@ -175,7 +175,7 @@ export default function Home () {
                     </div>
                   </div>
                 </div>
-                <div className='lg:w-1/3'>
+                <div>
                   <div className='shadow rounded-[55px] pb-[27px] pt-[43px] px-10'>
                     <div className='text-center'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>

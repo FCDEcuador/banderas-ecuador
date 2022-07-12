@@ -19,7 +19,8 @@ module.exports = {
         'orange-red': '#EE8023',
         red: '#EA5E31',
         'gemstone-green': '#007A6B',
-        pink: '#FBECCA'
+        pink: '#FBECCA',
+        'pink-2': '#F4BCAA'
       },
       screens: {
         sm: '640px',
