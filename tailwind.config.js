@@ -19,8 +19,15 @@ module.exports = {
         'orange-red': '#EE8023',
         red: '#EA5E31',
         'gemstone-green': '#007A6B',
+        'gemstone-light': '#A8D7E0',
         pink: '#FBECCA',
-        'pink-2': '#F4BCAA'
+        'pink-2': '#F4BCAA',
+        'blue-ocean': '#D9ECF0'
+      },
+      backgroundImage: {
+        'banner-transparencia': "url('/banner-transparencia.svg')",
+        'banner-trazabilidad': "url('/banner-trazabilidad.svg')",
+        'banner-confiabilidad': "url('/banner-confiabilidad.svg')"
       },
       screens: {
         sm: '640px',

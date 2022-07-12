@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Transparencia",
+        "urlImage": "/transparencia.svg"
+    },
+    {
+        "title": "Temporalidad",
+        "urlImage": "/temporalidad.svg"
+    },
+    {
+        "title": "Trazabilidad",
+        "urlImage": "/trazabilidad.svg"
+    },
+    {
+        "title": "Competitividad",
+        "urlImage": "/competitividad.svg"
+    },
+    {
+        "title": "Confiabilidad",
+        "urlImage": "/confiabilidad.svg"
+    },
+    {
+        "title": "Conocer más",
+        "urlImage": "/conocer-mas.svg"
+    }
+]

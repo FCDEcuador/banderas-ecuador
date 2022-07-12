@@ -1,4 +1,8 @@
 import Head from 'next/head'
+import PublicationCard from '../components/PublicationCard'
+import Publications from '../data/publications.json'
+import RedFlagCard from '../components/RedFlagCard'
+import RedFlagsImages from '../data/red-flags-images.json'
 
 export default function Home () {
   return (
@@ -50,44 +54,9 @@ export default function Home () {
             </div>
             <div className='lg:w-6/12 max-w-[655px]'>
               <div className='space-y-[45px]'>
-                <div className='bg-white py-7 pl-10 pr-[30px] rounded-[30px]'>
-                  <div className='flex justify-between items-center'>
-                    <div className='w-10/12'>
-                      <div className='space-y-1'>
-                        <h3 className='font-medium'>
-                          Compra Pública Corporativa de Medicamentos
-                        </h3>
-                        <p className='italic text-base 3xl:text-[19px] text-grey-light'>
-                          Publicado el 7 de junio de 2022
-                        </p>
-                      </div>
-                    </div>
-                    <div className='w-2/12'>
-                      <a href="#">
-                        <img src="/publication-link.svg" alt="publication link" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className='bg-white py-7 pl-10 pr-[30px] rounded-[30px]'>
-                  <div className='flex justify-between items-center'>
-                    <div className='w-10/12'>
-                      <div className='space-y-1'>
-                        <h3 className='font-medium'>
-                          Beneficiarios reales en Ecuador: Transparentando la contratación pública e industrias extractivas
-                        </h3>
-                        <p className='italic text-base 3xl:text-[19px] text-grey-light'>
-                          Publicado el 7 de junio de 2022
-                        </p>
-                      </div>
-                    </div>
-                    <div className='w-2/12'>
-                      <a href="#">
-                        <img src="/publication-link.svg" alt="publication link" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                {
+                  Publications.map(({ title, date, link }, index) => <PublicationCard key={`publication-${index + 1}`} title={title} date={date} link={link} />)
+                }
               </div>
             </div>
           </div>
@@ -212,42 +181,9 @@ export default function Home () {
                   </p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-[55px]'>
-                  <div className='shadow-2 text-white text-center py-[21px] px-[34px] bg-gemstone-green rounded-[30px] space-y-2'>
-                    <img className='mx-auto' src="/transparencia.svg" alt="transparencia icon" />
-                    <p className='font-black text-sm'>
-                      Transparencia
-                    </p>
-                  </div>
-                  <div className='shadow-2 text-white text-center py-[21px] px-[34px] bg-gemstone-green rounded-[30px] space-y-2'>
-                    <img className='mx-auto' src="/temporalidad.svg" alt="temporalidad icon" />
-                    <p className='font-black text-sm'>
-                      Temporalidad
-                    </p>
-                  </div>
-                  <div className='shadow-2 text-white text-center py-[21px] px-[34px] bg-gemstone-green rounded-[30px] space-y-2'>
-                    <img className='mx-auto' src="/trazabilidad.svg" alt="trazabilidad icon" />
-                    <p className='font-black text-sm'>
-                      Trazabilidad
-                    </p>
-                  </div>
-                  <div className='shadow-2 text-white text-center py-[21px] px-[34px] bg-gemstone-green rounded-[30px] space-y-2'>
-                    <img className='mx-auto' src="/competitividad.svg" alt="competitividad icon" />
-                    <p className='font-black text-sm'>
-                      Competitividad
-                    </p>
-                  </div>
-                  <div className='shadow-2 text-white text-center py-[21px] px-[34px] bg-gemstone-green rounded-[30px] space-y-2'>
-                    <img className='mx-auto' src="/confiabilidad.svg" alt="confiabilidad icon" />
-                    <p className='font-black text-sm'>
-                      Confiabilidad
-                    </p>
-                  </div>
-                  <div className='shadow-2 text-white text-center py-[21px] px-[34px] bg-gemstone-green rounded-[30px] space-y-2'>
-                    <img className='mx-auto' src="/conocer-mas.svg" alt="conocer-mas icon" />
-                    <p className='font-black text-sm'>
-                      Conocer más
-                    </p>
-                  </div>
+                  {
+                    RedFlagsImages.map(({ title, urlImage }, index) => <RedFlagCard key={`red-flag-${index + 1}`} title={title} urlImage={urlImage} />)
+                  }
                 </div>
               </div>
             </div>

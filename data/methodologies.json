@@ -1,0 +1,88 @@
+[
+    {
+        "title": "Transparencia",
+        "description": "Análisis de la cantidad de información disponible de los procedimientos de contratación conforme al OCDS y la normativa ecuatoriana.",
+        "srcImage": "/transparencia-orange.svg",
+        "suggestions": [
+            {
+                "title": "Secciones completas",
+                "description": "El procedimiento de contratación contiene datos para cada una de las etapas de la contratación pública establecidas por OCP. Las etapas a tener en cuenta son: planificación, oferta, adjudicación y contrato."
+            },
+            {
+                "title": "Preguntas del oferente sin respuesta",
+                "description": "Existen preguntas hechas por el oferente durante el proceso de oferta que no fueron respondidas por la entidad contratante o cuya respuesta fue insatisfactoria."
+            }
+        ]
+    },
+    {
+        "title": "Temporalidad",
+        "description": "Los procedimientos se llevaron a cabo en los tiempos establecidos por la normativa ecuatoriana.",
+        "srcImage": "/temporabilidad-orange.svg",
+        "suggestions": [
+            {
+                "title": "Campos fundamentales para la temporalidad",
+                "description": "Existe una fecha válida en los campos de publicación de la convocatoria, la adjudicación, el inicio y el fin del contrato."
+            },
+            {
+                "title": "Duración anormal de la etapa de preguntas",
+                "description": "El tiempo de duración de la etapa de preguntas no es el establecido en la legislación ecuatoriana para el tipo de procedimiento y el monto de contratación."
+            },
+            {
+                "title": "Fechas sospechosas",
+                "description": "La fecha de firma o inicio del contrato coincide con un feriado oficial o día no laborable."
+            }
+        ]
+    },
+    {
+        "title": "Trazabilidad",
+        "description": "Hay capacidad de rastrear información de los procedimientos de contratación a partir de los datos publicados.",
+        "srcImage": "/trazabilidad-orange.svg",
+        "suggestions": [
+            {
+                "title": "Campos fundamentales para la trazabilidad",
+                "description": "El procedimiento de contratación cuenta con datos que relacionan al contrato con el presupuesto. Además, se identifican los diferentes actores que intervienen en el contrato."
+            },
+            {
+                "title": "Coincidencia en la información entre los oferentes",
+                "description": "La información de contacto del oferente 1 coincide con la información del oferente 2."
+            },
+            {
+                "title": "Información de contacto coincidente",
+                "description": "La dirección del oferente o del proveedor es la misma que la de la entidad o las entidades contratantes responsables del procedimiento de contratación."
+            }
+        ]
+    },
+    {
+        "title": "Competitividad",
+        "description": "La evaluación de las condiciones que permiten una competencia abierta y la participación de varios oferentes en los procedimientos.",
+        "srcImage": "/competitividad-orange.svg",
+        "suggestions": [
+            {
+                "title": "Procedimiento con un solo oferente",
+                "description": "El procedimiento cuenta con un solo oferente. Esta bandera no aplica para los procesos de contratación directa."
+            },
+            {
+                "title": "Último oferente es el ganador",
+                "description": "El último oferente, que presentó su oferta económica inicial, es quien se adjudica el contrato."
+            },
+            {
+                "title": "Empresas domiciliadas en paraísos fiscales",
+                "description": "El proveedor tiene su sede principal en uno de los países con un puntaje de secreto financiero superior al de Ecuador. Este índice se determina utilizando el Secrecy Score incluido en el Financial Secrecy Index, un reporte publicado por la organización Tax Justice Network."
+            }
+        ]
+    },
+    {
+        "title": "Confiabilidad",
+        "description": "Las partes que participan en los procedimientos son confiables, de acuerdo con su desempeño.",
+        "srcImage": "/confiabilidad-orange.svg",
+        "suggestions": [
+            {
+                "title": "Redes por encima de un umbral",
+                "description": "La puntuación del análisis de redes del oferente está por encima de un valor umbral."
+            }
+        ]
+    },
+    {
+        "srcImage": "/OCDS_logo_CMYK_grey_powered.png"
+    }
+]
