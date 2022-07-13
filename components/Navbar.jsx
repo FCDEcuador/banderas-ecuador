@@ -32,8 +32,8 @@ export default function Navbar () {
                 </Link>
               </li>
               <li>
-                <Link href="/">
-                  <a>Informes</a>
+                <Link href="/informes">
+                  <a className={classNames({ 'text-red underline font-black': router.pathname === '/informes' })}>Informes</a>
                 </Link>
               </li>
               <li>
