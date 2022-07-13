@@ -8,23 +8,31 @@ import Select from '@mui/material/Select'
 import TextField from '@mui/material/TextField'
 import ReportCard from '../components/ReportCard'
 import reportsData from '../data/reports.json'
+import Pagination from '@mui/material/Pagination'
 
 export default function Reports () {
-  const [contratacion, setcontratacion] = useState('Seleccionar todo')
+  const [filter, setFilter] = useState('Seleccionar todo')
   const [query, setQuery] = useState('')
+  const [page, setPage] = useState(1)
   const types = [...new Set(reportsData.map(item => item.type))]
-
-  console.log(query)
+  const itemsPerPage = 3
 
   const handleChange = (event) => {
-    setcontratacion(event.target.value)
+    setFilter(event.target.value)
+    setPage(1)
   }
 
   const handleQueryChange = (event) => {
     setQuery(event.target.value)
+    setPage(1)
   }
 
-  const filteredData = contratacion !== 'Seleccionar todo' ? reportsData.filter(item => item.type === contratacion).filter(item => item.title.toLowerCase().includes(query.toLowerCase())) : reportsData.filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
+  const handlePageChange = (event, value) => {
+    setPage(value)
+  }
+
+  const filteredData = filter !== 'Seleccionar todo' ? reportsData.filter(item => item.type === filter).filter(item => item.title.toLowerCase().includes(query.toLowerCase())) : reportsData.filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage)
 
   return (
     <>
@@ -58,7 +66,7 @@ export default function Reports () {
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={contratacion}
+                        value={filter}
                         label="Contratación"
                         onChange={handleChange}
                         className="bg-white"
@@ -93,10 +101,18 @@ export default function Reports () {
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[83px] gap-y-[45px]'>
               {
                 filteredData.length > 0
-                  ? filteredData.map(({ id, srcImage, title, date, link }) => <ReportCard key={`report-${id + 1}`} id={id} srcImage={srcImage} title={title} date={date} link={link} />)
+                  ? filteredData.slice(((page - 1) * itemsPerPage), itemsPerPage * page).map(({ id, srcImage, title, date, link }) => <ReportCard key={`report-${id + 1}`} id={id} srcImage={srcImage} title={title} date={date} link={link} />)
                   : <div>No hay resultados</div>
               }
             </div>
+            {
+              filteredData.length > 0 &&
+              (
+                <div className='flex justify-center'>
+                  <Pagination count={totalPages} variant="outlined" page={page} onChange={handlePageChange} />
+                </div>
+              )
+            }
           </div>
         </div>
       </div>
