@@ -6,6 +6,8 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import TextField from '@mui/material/TextField'
+import ReportCard from '../components/ReportCard'
+import reportsData from '../data/reports.json'
 
 export default function reports () {
   const [contratacion, setcontratacion] = React.useState('')
@@ -74,23 +76,10 @@ export default function reports () {
                 </div>
               </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
-              <div className='bg-white rounded-[30px] pt-[42px] pb-[25px] px-[50px] flex flex-col justify-between space-y-6 hover:shadow-3 duration-300'>
-                <div>
-                  <img src="/informe-1.jpg" alt="informe 1" />
-                  <h3 className='font-medium 3xl:text-[21px] mt-[27.93px]'>
-                    Compra Pública Corporativa de Medicamentos
-                  </h3>
-                  <p className='text-grey-light italic 3xl:text-[19px] mt-[10.32px]'>
-                    Publicado el 7 de junio de 2022
-                  </p>
-                </div>
-                <div>
-                  <a className='inline-block bg-red text-white py-[10px] px-[40px] font-bold rounded-[15px]' href="#">
-                    <span>Descargar</span>
-                  </a>
-                </div>
-              </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[83px] gap-y-[45px]'>
+              {
+                reportsData.map(({ id, srcImage, title, date, link }) => <ReportCard key={`report-${id + 1}`} id={id} srcImage={srcImage} title={title} date={date} link={link} />)
+              }
             </div>
           </div>
         </div>

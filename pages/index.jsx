@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import PublicationCard from '../components/PublicationCard'
-import Publications from '../data/publications.json'
+import publications from '../data/publications.json'
 import RedFlagCard from '../components/RedFlagCard'
-import RedFlagsImages from '../data/red-flags-images.json'
+import redFlagsImages from '../data/red-flags-images.json'
 
 export default function Home () {
   return (
@@ -55,7 +55,7 @@ export default function Home () {
             <div className='lg:w-6/12 max-w-[655px]'>
               <div className='space-y-[45px]'>
                 {
-                  Publications.map(({ title, date, link }, index) => <PublicationCard key={`publication-${index + 1}`} title={title} date={date} link={link} />)
+                  publications.map(({ title, date, link }, index) => <PublicationCard key={`publication-${index + 1}`} title={title} date={date} link={link} />)
                 }
               </div>
             </div>
@@ -182,7 +182,7 @@ export default function Home () {
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-[55px]'>
                   {
-                    RedFlagsImages.map(({ title, urlImage }, index) => <RedFlagCard key={`red-flag-${index + 1}`} title={title} urlImage={urlImage} />)
+                    redFlagsImages.map(({ title, urlImage }, index) => <RedFlagCard key={`red-flag-${index + 1}`} title={title} urlImage={urlImage} />)
                   }
                 </div>
               </div>

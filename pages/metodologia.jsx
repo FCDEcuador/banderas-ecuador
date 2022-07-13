@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import LawsCard from '../components/LawsCard'
-import Laws from '../data/laws.json'
+import laws from '../data/laws.json'
 import MethodologyInformation from '../components/MethodologyInformation'
-import Methodologies from '../data/methodologies.json'
+import methodologies from '../data/methodologies.json'
 import MethodologyCard from '../components/MethodologyCard'
 
 function getCategoryMethodologyData (category) {
-  return Methodologies.filter(methodology => methodology.title === category)[0]
+  return methodologies.filter(methodology => methodology.title === category)[0]
 }
 
 export default function Metodology () {
@@ -60,7 +60,7 @@ export default function Metodology () {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[46px] gap-y-8'>
               {
-                Laws.map(({ title, description, link }, index) => <LawsCard key={`law-${index + 1}`} title={title} description={description} link={link} />)
+                laws.map(({ title, description, link }, index) => <LawsCard key={`law-${index + 1}`} title={title} description={description} link={link} />)
               }
             </div>
             <div className='flex flex-col lg:flex-row lg:justify-between gap-y-8 gap-x-[62px]'>
@@ -72,7 +72,7 @@ export default function Metodology () {
               <div className='lg:w-7/12'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-[60px] gap-y-10'>
                   {
-                    Methodologies.map(({ title, description, srcImage }, index) => <MethodologyInformation key={`methodology-${index + 1}`} title={title} description={description} srcImage={srcImage} />)
+                    methodologies.map(({ title, description, srcImage }, index) => <MethodologyInformation key={`methodology-${index + 1}`} title={title} description={description} srcImage={srcImage} />)
                   }
                 </div>
               </div>
