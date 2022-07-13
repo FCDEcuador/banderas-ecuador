@@ -2,7 +2,7 @@ export default function Footer () {
   return (
     <footer className="bg-white-huge pt-[67.32px]">
       <div className="mx-auto w-10/12 max-w-screen-2xl">
-        <div className="flex flex-col lg:flex-row lg:justify-between text-grey gap-y-8 lg:items-center">
+        <div className="flex flex-col lg:flex-row lg:justify-between text-grey gap-y-8">
           <div className="lg:w-2/12">
             <div className="space-y-2">
               <p className="text-grey-light 3xl:text-[19px] italic">
