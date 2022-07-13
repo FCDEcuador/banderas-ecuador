@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import Box from '@mui/material/Box'
 import InputLabel from '@mui/material/InputLabel'
@@ -9,12 +9,23 @@ import TextField from '@mui/material/TextField'
 import ReportCard from '../components/ReportCard'
 import reportsData from '../data/reports.json'
 
-export default function reports () {
-  const [contratacion, setcontratacion] = React.useState('')
+export default function Reports () {
+  const [contratacion, setcontratacion] = useState('Seleccionar todo')
+  const [query, setQuery] = useState('')
+  const types = [...new Set(reportsData.map(item => item.type))]
+
+  console.log(query)
 
   const handleChange = (event) => {
     setcontratacion(event.target.value)
   }
+
+  const handleQueryChange = (event) => {
+    setQuery(event.target.value)
+  }
+
+  const filteredData = contratacion !== 'Seleccionar todo' ? reportsData.filter(item => item.type === contratacion).filter(item => item.title.toLowerCase().includes(query.toLowerCase())) : reportsData.filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
+
   return (
     <>
       <Head>
@@ -52,7 +63,10 @@ export default function reports () {
                         onChange={handleChange}
                         className="bg-white"
                       >
-                        <MenuItem value="Contratación por emergencia">Contratación por emergencia</MenuItem>
+                        <MenuItem value="Seleccionar todo">Seleccionar todo</MenuItem>
+                        {
+                          types.map((item, idx) => <MenuItem key={`report-filter-${idx + 1}`} value={item}>{item}</MenuItem>)
+                        }
                       </Select>
                     </FormControl>
                   </Box>
@@ -61,7 +75,7 @@ export default function reports () {
               <div className='max-w-[400px] w-full'>
                 <div className='space-y-[11px]'>
                   <p className='block font-black 3xl:text-[19px]'>
-                    Busqueda
+                    Búsqueda
                   </p>
                   <Box
                     component="form"
@@ -71,14 +85,16 @@ export default function reports () {
                     noValidate
                     autoComplete="off"
                   >
-                    <TextField fullWidth id="outlined-basic" label="Buscar" variant="outlined" />
+                    <TextField onChange={handleQueryChange} fullWidth id="outlined-basic" label="Buscar" variant="outlined" />
                   </Box>
                 </div>
               </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[83px] gap-y-[45px]'>
               {
-                reportsData.map(({ id, srcImage, title, date, link }) => <ReportCard key={`report-${id + 1}`} id={id} srcImage={srcImage} title={title} date={date} link={link} />)
+                filteredData.length > 0
+                  ? filteredData.map(({ id, srcImage, title, date, link }) => <ReportCard key={`report-${id + 1}`} id={id} srcImage={srcImage} title={title} date={date} link={link} />)
+                  : <div>No hay resultados</div>
               }
             </div>
           </div>
