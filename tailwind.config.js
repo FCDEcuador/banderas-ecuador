@@ -4,6 +4,12 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}'
   ],
+  safelist: [
+    'opacity-40',
+    'hidden',
+    'lg:block',
+    'lg:px-10'
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -26,9 +32,9 @@ module.exports = {
         'blue-ocean': '#D9ECF0'
       },
       backgroundImage: {
-        'banner-transparencia': "url('/banner-transparencia.svg')",
-        'banner-trazabilidad': "url('/banner-trazabilidad.svg')",
-        'banner-confiabilidad': "url('/banner-confiabilidad.svg')"
+        'banner-transparencia': "url('/images/banner-transparencia.svg')",
+        'banner-trazabilidad': "url('/images/banner-trazabilidad.svg')",
+        'banner-confiabilidad': "url('/images/banner-confiabilidad.svg')"
       },
       screens: {
         sm: '640px',

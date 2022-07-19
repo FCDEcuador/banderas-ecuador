@@ -3,7 +3,7 @@ import LawsCard from '../components/LawsCard'
 import laws from '../data/laws.json'
 import MethodologyInformation from '../components/MethodologyInformation'
 import methodologies from '../data/methodologies.json'
-import MethodologyCard from '../components/MethodologyCard'
+import { SwiperDefault } from '../lib/Swiper'
 
 function getCategoryMethodologyData (category) {
   return methodologies.filter(methodology => methodology.title === category)[0]
@@ -42,20 +42,20 @@ export default function Metodology () {
                     </span>
                   </h1>
                   <div className='space-y-[43px]'>
-                    <p>
+                    <p className='text-justify'>
                       La herramienta de banderas rojas ha sido desarrollado en conjunto por <span className='italic underline text-gemstone-green'>Fundación Ciudadanía y Desarrollo</span> y <span className='italic underline text-gemstone-green'>Datasketch</span>, y utiliza los datos publicados en la <span className='italic underline text-gemstone-green'>Plataforma de Contrataciones Abiertas Ecuador-OCDS</span> del Servicio Nacional de Contratación Pública de Ecuador (SERCOP) que contiene procedimientos de contratación pública realizados a partir de 2014, bajo el <span className='italic underline text-gemstone-green'>Estándar de Datos de Contrataciones Abiertas.</span>
                     </p>
-                    <p>
+                    <p className='text-justify'>
                       Se tomó como base otros sistemas de evaluación internacionales, tales como <span className='italic underline text-gemstone-green'>Red flags for integrity: Giving the green light to open data solutions</span> de Open Contracting Partnership, y el <span className='italic underline text-gemstone-green'>sistema de evaluación Groucho</span> del <span className='italic underline text-gemstone-green'>Proyecto sobre Organización, Desarrollo, Educación e Investigación</span> (PODER). Este último fue utilizado en las iniciativas <span className='italic underline text-gemstone-green'>TodosLosContratos.mx</span>, en México, y <span className='italic underline text-gemstone-green'>TodosLosContratos CR</span>, en Costa Rica.
                     </p>
-                    <p>
+                    <p className='text-justify'>
                       En la adaptación al contexto ecuatoriano se consideraron las siguientes <b>leyes y normas:</b>
                     </p>
                   </div>
                 </div>
               </div>
               <div className='lg:w-5/12 max-w-[498px]'>
-                <img className='mx-auto lg:w-full xl:w-8/12 3xl:w-11/12' src="/metodology.png" alt="metodology" />
+                <img className='mx-auto lg:w-full xl:w-8/12 3xl:w-11/12' src="/images/metodology.png" alt="metodology" />
               </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[46px] gap-y-8'>
@@ -89,17 +89,13 @@ export default function Metodology () {
                 <h2 className='font-black text-3xl 3xl:text-[45px]'>
                   {transparencia.title}
                 </h2>
-                <p className='3xl:text-[22px]'>
-                {transparencia.description}
+                <p className='3xl:text-[22px] text-justify'>
+                  {transparencia.description}
                 </p>
               </div>
             </div>
-            <div className='lg:w-6/12 max-w-[641px]'>
-              <div className='space-y-[32.5px]'>
-                {
-                  transparencia.suggestions.map(({ title, description }, index) => <MethodologyCard key={`methodology-${index + 1}`} title={title} description={description} />)
-                }
-              </div>
+            <div className='lg:w-6/12 max-w-[721px]'>
+              <SwiperDefault data={transparencia.suggestions} />
             </div>
           </div>
         </div>
@@ -113,22 +109,22 @@ export default function Metodology () {
                 <h2 className='font-black text-3xl 3xl:text-[45px]'>
                   {temporalidad.title}
                 </h2>
-                <p className='3xl:text-[22px]'>
-                {temporalidad.description}
+                <p className='3xl:text-[22px] text-justify'>
+                  {temporalidad.description}
                 </p>
               </div>
             </div>
             <div className='lg:w-6/12 max-w-[641px]'>
               <div className='space-y-[32.5px]'>
                 {
-                  temporalidad.suggestions.map(({ title, description }, index) => <MethodologyCard key={`methodology-${index + 1}`} title={title} description={description} />)
+                  <SwiperDefault data={temporalidad.suggestions} buttonColor="dark" />
                 }
               </div>
             </div>
           </div>
         </div>
         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
-          <img src="/temporalidad-big-icon.svg" alt="temporalidad" />
+          <img src="/images/temporalidad-big-icon.svg" alt="temporalidad" />
         </div>
       </div>
 
@@ -140,15 +136,15 @@ export default function Metodology () {
                 <h2 className='font-black text-3xl 3xl:text-[45px]'>
                   {trazabilidad.title}
                 </h2>
-                <p className='3xl:text-[22px]'>
-                {trazabilidad.description}
+                <p className='3xl:text-[22px] text-justify'>
+                  {trazabilidad.description}
                 </p>
               </div>
             </div>
             <div className='lg:w-6/12 max-w-[641px]'>
               <div className='space-y-[32.5px]'>
                 {
-                  trazabilidad.suggestions.map(({ title, description }, index) => <MethodologyCard key={`methodology-${index + 1}`} title={title} description={description} />)
+                  <SwiperDefault data={trazabilidad.suggestions} />
                 }
               </div>
             </div>
@@ -164,22 +160,22 @@ export default function Metodology () {
                 <h2 className='font-black text-3xl 3xl:text-[45px]'>
                   {competitividad.title}
                 </h2>
-                <p className='3xl:text-[22px]'>
-                {competitividad.description}
+                <p className='3xl:text-[22px] text-justify'>
+                  {competitividad.description}
                 </p>
               </div>
             </div>
             <div className='lg:w-6/12 max-w-[641px]'>
               <div className='space-y-[32.5px]'>
                 {
-                  competitividad.suggestions.map(({ title, description }, index) => <MethodologyCard key={`methodology-${index + 1}`} title={title} description={description} />)
+                  <SwiperDefault data={competitividad.suggestions} buttonColor="dark" />
                 }
               </div>
             </div>
           </div>
         </div>
         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
-          <img src="/competitividad-big-icon.svg" alt="competitividad" />
+          <img src="/images/competitividad-big-icon.svg" alt="competitividad" />
         </div>
       </div>
 
@@ -191,15 +187,15 @@ export default function Metodology () {
                 <h2 className='font-black text-3xl 3xl:text-[45px]'>
                   {confiabilidad.title}
                 </h2>
-                <p className='3xl:text-[22px]'>
-                {confiabilidad.description}
+                <p className='3xl:text-[22px] text-justify'>
+                  {confiabilidad.description}
                 </p>
               </div>
             </div>
             <div className='lg:w-6/12 max-w-[641px]'>
               <div className='space-y-[32.5px]'>
                 {
-                  confiabilidad.suggestions.map(({ title, description }, index) => <MethodologyCard key={`methodology-${index + 1}`} title={title} description={description} />)
+                  <SwiperDefault data={confiabilidad.suggestions} />
                 }
               </div>
             </div>

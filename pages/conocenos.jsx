@@ -24,13 +24,13 @@ export default function KnowUs () {
                   <h2 className='font-black text-grey-light text-2xl 3xl:text-[35px]'>
                     Sobre nosotros
                   </h2>
-                  <p className='text-xl 3xl:text-[22px]'>
+                  <p className='text-xl 3xl:text-[22px] text-justify'>
                     Es una iniciativa de Fundación Ciudadanía y Desarrollo que, a través del análisis y difusión de datos de la contratación pública, busca promover la contratación abierta en Ecuador.
                   </p>
                 </div>
               </div>
               <div className='lg:w-6/12 max-w-[721px]'>
-                <img src="/conocenos.png" alt="conocenos" />
+                <img src="/images/conocenos.png" alt="conocenos" />
               </div>
             </div>
             <div className='flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-y-8'>
@@ -40,27 +40,27 @@ export default function KnowUs () {
                     <h2 className='font-black text-grey-light text-2xl 3xl:text-[35px]'>
                       Contacto
                     </h2>
-                    <p className='text-xl 3xl:text-[22px]'>
+                    <p className='text-xl 3xl:text-[22px] text-justify'>
                       ¿Quieres obtener información adicional sobre el trabajo del Observatorio, compartir una idea con nosotros o hacer un comentario? Envíanos un correo electrónico a info@ciudadaniaydesarrollo.org o llena el formulario a continuación.
                     </p>
                   </div>
                   <div className='space-y-[30px]'>
                     <div className='flex gap-x-[12.79px]'>
                       <div className='mt-1 flex-shrink-0'>
-                        <img src="/direction-icon.svg" alt="direction" />
+                        <img src="/images/direction-icon.svg" alt="direction" />
                       </div>
                       <div className='max-w-[404px]'>
                         <h4 className='font-black text-xl 3xl:text-[28px] text-red'>
                           Dirección
                         </h4>
-                        <p className='text-xl 3xl:text-[22px]'>
+                        <p className='text-xl 3xl:text-[22px] text-justify'>
                           Av. Gral. Eloy Alfaro y 6 de Diciembre Edificio Monasterio Plaza Piso 10 – Quito
                         </p>
                       </div>
                     </div>
                     <div className='flex gap-x-[12.79px]'>
                       <div className='mt-1 flex-shrink-0'>
-                        <img src="/email-icon.svg" alt="email" />
+                        <img src="/images/email-icon.svg" alt="email" />
                       </div>
                       <div className='max-w-[404px]'>
                         <h4 className='font-black text-xl 3xl:text-[28px] text-red'>
@@ -73,7 +73,7 @@ export default function KnowUs () {
                     </div>
                     <div className='flex gap-x-[12.79px]'>
                       <div className='mt-1 flex-shrink-0'>
-                        <img src="/phone-icon.svg" alt="phone" />
+                        <img src="/images/phone-icon.svg" alt="phone" />
                       </div>
                       <div className='max-w-[404px]'>
                         <h4 className='font-black text-xl 3xl:text-[28px] text-red'>
@@ -88,7 +88,7 @@ export default function KnowUs () {
                 </div>
               </div>
               <div className='lg:w-6/12 max-w-[721px]'>
-                <img src="/location-map.jpg" alt="location map" />
+                <img src="/images/location-map.jpg" alt="location map" />
               </div>
             </div>
             <div className='mx-auto w-10/12 max-w-[1035px]'>

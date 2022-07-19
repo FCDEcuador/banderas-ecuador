@@ -13,7 +13,7 @@ export default function Navbar () {
         <div className='flex justify-between items-center lg:items-end'>
           <Link href="/">
             <a className='cursor-pointer flex-shrink-0'>
-              <img src="/logo-header.svg" alt="logo header  " />
+              <img src="/images/logo-header.svg" alt="logo header  " />
             </a>
           </Link>
           <nav>

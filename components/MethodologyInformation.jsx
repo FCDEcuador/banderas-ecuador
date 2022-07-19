@@ -11,7 +11,7 @@ export default function MethodologyInformation ({ title, description, srcImage }
                             <h3 className='text-orange-red font-bold text-xl 3xl:text-[22px]'>
                                 {title}
                             </h3>
-                            <p>
+                            <p className="text-justify">
                                 {description}
                             </p>
                         </div>

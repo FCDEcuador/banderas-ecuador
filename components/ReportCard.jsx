@@ -13,7 +13,7 @@ export default function ReportCard ({ id, srcImage, title, date, link }) {
             <div>
                 <a href={link} download target="_blank" className='bg-red text-white py-[10px] px-[40px] font-bold rounded-[15px] inline-flex space-x-[10px] items-center' rel="noreferrer">
                     <div className="flex-shrink-0">
-                        <img src="/doc-download.svg" alt="download icon" />
+                        <img src="/images/doc-download.svg" alt="download icon" />
                     </div>
                     <span>Descargar</span>
                 </a>

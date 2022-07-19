@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "srcImage": "/informe-1.jpg",
+        "srcImage": "/images/informe-1.jpg",
         "title": "Compra Pública Corporativa de Medicamentos",
         "date": "2022-06-07",
         "link": "#",
@@ -9,7 +9,7 @@
     },
     {
         "id": 1,
-        "srcImage": "/informe-2.jpg",
+        "srcImage": "/images/informe-2.jpg",
         "title": "Beneficiarios reales en Ecuador: Transparentando la contratación pública e industrias extractivas",
         "date": "2022-06-07",
         "link": "#",
@@ -17,7 +17,7 @@
     },
     {
         "id": 2,
-        "srcImage": "/informe-3.jpg",
+        "srcImage": "/images/informe-3.jpg",
         "title": "Las compras públicas realizadas por catálogo electrónico en Ecuador",
         "date": "2022-06-07",
         "link": "#",
@@ -25,7 +25,7 @@
     },
     {
         "id": 3,
-        "srcImage": "/informe-4.jpg",
+        "srcImage": "/images/informe-4.jpg",
         "title": "¿Existió un plan de vacunación contra el Covid-19 durante el gobierno de Moreno?",
         "date": "2022-06-07",
         "link": "#",
@@ -33,7 +33,7 @@
     },
     {
         "id": 4,
-        "srcImage": "/informe-5.jpg",
+        "srcImage": "/images/informe-5.jpg",
         "title": "¿Cuánto contrató el municipio de Guayaquil en obras artísticas, científicas y literarias?",
         "date": "2022-06-07",
         "link": "#",
@@ -41,7 +41,7 @@
     },
     {
         "id": 5,
-        "srcImage": "/informe-6.jpg",
+        "srcImage": "/images/informe-6.jpg",
         "title": "La plataforma de datos abiertos sobre contrataciones públicas en Ecuador: ínfimas cuantías",
         "date": "2022-06-07",
         "link": "#",
@@ -49,7 +49,7 @@
     },
     {
         "id": 6,
-        "srcImage": "/informe-7.jpg",
+        "srcImage": "/images/informe-7.jpg",
         "title": "Las contrataciones realizadas por el Municipio del Distrito Metropolitano de Quito ¿Qué adquirió la ciudad para enfrentar la crisis sanitaria?",
         "date": "2022-06-07",
         "link": "#",
@@ -57,7 +57,7 @@
     },
     {
         "id": 7,
-        "srcImage": "/informe-8.jpg",
+        "srcImage": "/images/informe-8.jpg",
         "title": "Contrataciones públicas por emergencia en Ecuador: octubre del 2020",
         "date": "2022-06-07",
         "link": "#",
@@ -65,7 +65,7 @@
     },
     {
         "id": 8,
-        "srcImage": "/informe-9.jpg",
+        "srcImage": "/images/informe-9.jpg",
         "title": "Contrataciones públicas por emergencia en Ecuador informe especial: Las contrataciones realizadas por los Gobiernos Autónomos Descentralizados Municipales",
         "date": "2022-06-07",
         "link": "#",

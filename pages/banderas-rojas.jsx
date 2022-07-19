@@ -19,10 +19,10 @@ export default function RedFlags () {
                                         <div className='absolute -bottom-[10px] left-0 w-full bg-pink-2 h-[23px]'>&nbsp;</div>
                                     </h1>
                                     <div className='space-y-[35px]'>
-                                        <p>
+                                        <p className='text-justify'>
                                             Esta herramienta es un explorador de datos sobre contratación pública en Ecuador. Mensualmente, verifica los procedimientos registrados en la Plataforma de Contrataciones Abiertas Ecuador-OCDS y marca comportamientos que podrían clasificarse - o no - como banderas rojas. Cada procedimiento marcado con una bandera roja necesita verificación adicional.
                                         </p>
-                                        <p>
+                                        <p className='text-justify'>
                                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpa euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim.
                                         </p>
                                     </div>
@@ -33,12 +33,12 @@ export default function RedFlags () {
                                     <h3 className='text-grey-light text-xl 3xl:text-[23px] font-bold'>
                                         ¿Cómo funciona esta herramienta?
                                     </h3>
-                                    <img src="/como-funciona-herramienta.jpg" alt="como funciona esta herramienta" />
+                                    <img src="/images/como-funciona-herramienta.jpg" alt="como funciona esta herramienta" />
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <img className='mx-auto' src="/datasketch-app.png" alt="datasketch app" />
+                            <img className='mx-auto' src="/images/datasketch-app.png" alt="datasketch app" />
                         </div>
                     </div>
                 </div>

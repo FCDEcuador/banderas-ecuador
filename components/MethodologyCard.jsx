@@ -5,7 +5,7 @@ export default function MethodologyCard ({ title, description }) {
                 <h3 className='font-bold text-grey-light 3xl:text-[21px]'>
                     {title}
                 </h3>
-                <p className='3xl:text-[19px]'>
+                <p className='3xl:text-[19px] text-justify'>
                     {description}
                 </p>
             </div>

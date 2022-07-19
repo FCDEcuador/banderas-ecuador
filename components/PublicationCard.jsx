@@ -14,7 +14,7 @@ export default function PublicationCard ({ title, date, link }) {
                 </div>
                 <div className='w-2/12'>
                     <a href={link} target="_blank" rel="noreferrer">
-                        <img src="/publication-link.svg" alt="publication link" />
+                        <img src="/images/publication-link.svg" alt="publication link" />
                     </a>
                 </div>
             </div>

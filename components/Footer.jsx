@@ -9,23 +9,23 @@ export default function Footer () {
                 Una iniciativa de:
               </p>
               <div>
-                <img src="/fcd-logo.svg" alt="fcd logo" />
+                <img src="/images/fcd-logo.svg" alt="fcd logo" />
               </div>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-[11.23px]">
-                  <img src="/facebook-icon.svg" alt="facebook icon" />
+                  <img src="/images/facebook-icon.svg" alt="facebook icon" />
                   <p>
                     @CompraAbiertaEc
                   </p>
                 </li>
                 <li className="flex items-center space-x-[11.23px]">
-                  <img src="/twitter-icon.svg" alt="twitter icon" />
+                  <img src="/images/twitter-icon.svg" alt="twitter icon" />
                   <p>
                     @CompraAbiertaEc
                   </p>
                 </li>
                 <li className="flex items-center space-x-[11.23px]">
-                  <img src="/instagram-icon.svg" alt="instagram icon" />
+                  <img src="/images/instagram-icon.svg" alt="instagram icon" />
                   <p>
                     @fcd_ecuador
                   </p>
@@ -39,17 +39,17 @@ export default function Footer () {
                 Con el apoyo de:
               </p>
               <div>
-                <img src="/open-contracting-partnership-logo.svg" alt="open contracting partnership logo" />
+                <img src="/images/open-contracting-partnership-logo.svg" alt="open contracting partnership logo" />
               </div>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-[11.23px]">
-                  <img src="/facebook-icon.svg" alt="facebook icon" />
+                  <img src="/images/facebook-icon.svg" alt="facebook icon" />
                   <p>
                     @OpenContracting
                   </p>
                 </li>
                 <li className="flex items-center space-x-[11.23px]">
-                  <img src="/twitter-icon.svg" alt="twitter icon" />
+                  <img src="/images/twitter-icon.svg" alt="twitter icon" />
                   <p>
                     @opencontracting
                   </p>
@@ -60,23 +60,23 @@ export default function Footer () {
           <div className="lg:w-3/12">
             <div className="space-y-4">
               <div>
-                <img src="/banco-de-desarrollo-de-america-latina.png" alt="banco de desarrollo de america latina" />
+                <img src="/images/banco-de-desarrollo-de-america-latina.png" alt="banco de desarrollo de america latina" />
               </div>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-[11.23px]">
-                  <img src="/facebook-icon.svg" alt="facebook icon" />
+                  <img src="/images/facebook-icon.svg" alt="facebook icon" />
                   <p>
                     @CompraAbiertaEc
                   </p>
                 </li>
                 <li className="flex items-center space-x-[11.23px]">
-                  <img src="/twitter-icon.svg" alt="twitter icon" />
+                  <img src="/images/twitter-icon.svg" alt="twitter icon" />
                   <p>
                     @CompraAbiertaEc
                   </p>
                 </li>
                 <li className="flex items-center space-x-[11.23px]">
-                  <img src="/instagram-icon.svg" alt="instagram icon" />
+                  <img src="/images/instagram-icon.svg" alt="instagram icon" />
                   <p>
                     @fcd_ecuador
                   </p>
@@ -93,7 +93,7 @@ export default function Footer () {
                 <form className="flex items-center" action="#">
                   <input className="bg-transparent border-gemstone-green border rounded-[11px] py-2 px-4 focus:outline-none" type="email" name="email" id="email" placeholder="Correo electrónico" required />
                   <button className="-ml-10">
-                    <img src="/newsletter-button.svg" alt="newsletter button" />
+                    <img src="/images/newsletter-button.svg" alt="newsletter button" />
                   </button>
                 </form>
               </div>
@@ -119,7 +119,7 @@ export default function Footer () {
         </div>
         <div className="border-t-grey-light border-t py-[31.13px] mt-[74.09px]">
           <a href="https://www.datasketch.co/" target="_blank" rel="noreferrer">
-            <img className="mx-auto w-2/12" src="/logo-datasketch.svg" alt="logo datasketch" />
+            <img className="mx-auto w-2/12" src="/images/logo-datasketch.svg" alt="logo datasketch" />
           </a>
         </div>
       </div>

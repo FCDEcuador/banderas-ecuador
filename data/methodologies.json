@@ -2,7 +2,7 @@
     {
         "title": "Transparencia",
         "description": "Análisis de la cantidad de información disponible de los procedimientos de contratación conforme al OCDS y la normativa ecuatoriana.",
-        "srcImage": "/transparencia-orange.svg",
+        "srcImage": "/images/transparencia-orange.svg",
         "suggestions": [
             {
                 "title": "🚩 Secciones completas",
@@ -17,7 +17,7 @@
     {
         "title": "Temporalidad",
         "description": "Los procedimientos se llevaron a cabo en los tiempos establecidos por la normativa ecuatoriana.",
-        "srcImage": "/temporabilidad-orange.svg",
+        "srcImage": "/images/temporabilidad-orange.svg",
         "suggestions": [
             {
                 "title": "🚩 Campos fundamentales para la temporalidad",
@@ -30,13 +30,17 @@
             {
                 "title": "🚩 Fechas sospechosas",
                 "description": "La fecha de firma o inicio del contrato coincide con un feriado oficial o día no laborable."
+            },
+            {
+                "title": "🚩 Tiempo de adjudicación es corto",
+                "description": "Hay procedimientos con plazos para la adjudicación más cortos que los establecidos en la legislación ecuatoriana."
             }
         ]
     },
     {
         "title": "Trazabilidad",
         "description": "Existe la capacidad de rastrear información de los procedimientos de contratación a partir de los datos publicados.",
-        "srcImage": "/trazabilidad-orange.svg",
+        "srcImage": "/images/trazabilidad-orange.svg",
         "suggestions": [
             {
                 "title": "🚩 Campos fundamentales para la trazabilidad",
@@ -49,13 +53,45 @@
             {
                 "title": "🚩 Información de contacto coincidente",
                 "description": "La dirección del oferente o del proveedor es la misma que la de la entidad o las entidades contratantes responsables del procedimiento de contratación."
+            },
+            {
+                "title": "🚩 Oferta ganadora es un número redondo",
+                "description": "El precio de la oferta ganadora tiene números exactos. Esta bandera se levanta a partir de que el precio de la oferta tenga cuatro ceros (0000)."
+            },
+            {
+                "title": "🚩 Ofertas con un porcentaje exacto de diferencia",
+                "description": "Los valores de las ofertas están separados por un porcentaje exacto."
+            },
+            {
+                "title": "🚩 Diferencia entre el valor adjudicado y el valor del contrato",
+                "description": "Hay una gran diferencia entre el valor de la adjudicación y el importe final del contrato."
+            },
+            {
+                "title": "🚩 El objeto contractual es comprensible",
+                "description": "La descripción del objeto contractual es descriptiva y clara, no consiste solamente de códigos o abreviaciones."
+            },
+            {
+                "title": "🚩 Información del proveedor está incompleta",
+                "description": "La dirección del proveedor no se especifica de manera completa."
+            },
+            {
+                "title": "🚩 El objeto contractual es reiterativo",
+                "description": "La descripción del objeto contractual se repite en al menos 10% del total de procedimientos de una entidad contratante. Esta bandera no aplica si hay diez o menos contratos al año."
+            },
+            {
+                "title": "🚩 Monto del contrato es reiterativo",
+                "description": "El monto del contrato se repite en un 10% del total de procedimientos de una entidad contratante. Esta bandera no aplica si hay diez o menos contratos al año."
+            },
+            {
+                "title": "🚩 Número de identificación duplicado",
+                "description": "Un oferente tiene más de un número de identificación asignado a su razón social."
             }
         ]
     },
     {
         "title": "Competitividad",
         "description": "La evaluación de las condiciones que permiten una competencia abierta y la participación de varios oferentes en los procedimientos.",
-        "srcImage": "/competitividad-orange.svg",
+        "srcImage": "/images/competitividad-orange.svg",
         "suggestions": [
             {
                 "title": "🚩 Procedimiento con un solo oferente",
@@ -68,13 +104,33 @@
             {
                 "title": "🚩 Empresas domiciliadas en paraísos fiscales",
                 "description": "El proveedor tiene su sede principal en uno de los países con un puntaje de secreto financiero superior al de Ecuador. Este índice se determina utilizando el Secrecy Score incluido en el Financial Secrecy Index, un reporte publicado por la organización Tax Justice Network."
+            },
+            {
+                "title": "🚩 Oferentes perdedores perennes",
+                "description": "Uno de los oferentes de un procedimiento se encuentra en el listado de oferentes que presentan recurrentes ofertas perdedoras. Esta bandera se levanta cuando el oferente se encuentra en el listado que contiene a los 100 oferentes que presentan más ofertas perdedoras durante un año."
+            },
+            {
+                "title": "🚩 Disparidad en los valores de las ofertas",
+                "description": "Los valores de las ofertas son muy distintos entre sí. Esta bandera se levanta cuando el valor promedio de las ofertas está por encima de un umbral de 1,5."
+            },
+            {
+                "title": "🚩 El valor adjudicado está por debajo del presupuesto",
+                "description": "El valor de adjudicación es un 50% menor al presupuesto de referencia."
+            },
+            {
+                "title": "🚩 Número de contratos por encima del promedio",
+                "description": "La entidad contratante realiza el 30% de sus contratos del año en un mismo día. Esta bandera no aplica si hay diez o menos contratos al año."
+            },
+            {
+                "title": "🚩 Varios contratos con un mismo oferente",
+                "description": "Uno o pocos oferentes obtienen un número desproporcionado de contratos del mismo tipo."
             }
         ]
     },
     {
         "title": "Confiabilidad",
         "description": "Las partes que participan en los procedimientos son confiables, de acuerdo con su desempeño.",
-        "srcImage": "/confiabilidad-orange.svg",
+        "srcImage": "/images/confiabilidad-orange.svg",
         "suggestions": [
             {
                 "title": "🚩 Redes por encima de un umbral",
@@ -83,6 +139,6 @@
         ]
     },
     {
-        "srcImage": "/OCDS_logo_CMYK_grey_powered.png"
+        "srcImage": "/images/OCDS_logo_CMYK_grey_powered.png"
     }
 ]
