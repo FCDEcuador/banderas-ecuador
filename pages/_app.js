@@ -17,6 +17,7 @@ function MyApp ({ Component, pageProps }) {
         <meta name="description" content="Es una iniciativa de Fundación Ciudadanía y Desarrollo que, a través del análisis y difusión de datos de la contratación pública, busca promover la contratación abierta en Ecuador." />
         <meta itemProp="name" content="Observatorio de Contratación Pública de Ecuador" />
         <meta itemProp="description" content="Es una iniciativa de Fundación Ciudadanía y Desarrollo que, a través del análisis y difusión de datos de la contratación pública, busca promover la contratación abierta en Ecuador." />
+        <meta itemProp="image" content={`${origin}/facebook.png`} />
 
         {/* Facebook */}
         <meta property="og:url" content={origin} />
