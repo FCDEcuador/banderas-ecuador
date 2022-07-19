@@ -3,6 +3,7 @@ import PublicationCard from '../components/PublicationCard'
 import publications from '../data/publications.json'
 import RedFlagCard from '../components/RedFlagCard'
 import redFlagsImages from '../data/red-flags-images.json'
+import Link from 'next/link'
 
 export default function Home () {
   return (
@@ -22,10 +23,10 @@ export default function Home () {
             <div className='lg:w-6/12 max-w-[614px]'>
               <div className='space-y-[30px]'>
                 <h1 className='font-black text-5xl 3xl:text-6xl'>
-                  Observatorio de <span className='relative'><span className='relative z-10'>Contratación Pública</span><div className='absolute bg-pink h-4 w-full left-0 bottom-1'>&nbsp;</div></span> de Ecuador
+                  Observatorio de <span className='relative'><span className='relative z-10'>Contratación Pública</span><div className='absolute bg-pink h-4 w-full left-0 bottom-1'>&nbsp;</div></span>
                 </h1>
                 <p>
-                  Es una iniciativa de <span className='italic text-gemstone-green underline'>Fundación Ciudadanía y Desarrollo</span> que, a través del análisis de datos de la contratación pública, busca promover la transparencia y la eficiencia de los fondos públicos en Ecuador.
+                  Es una iniciativa de <span className='italic text-gemstone-green underline'>Fundación Ciudadanía y Desarrollo</span> que, a través del análisis y difusión de datos de la contratación pública, busca promover la contratación abierta en Ecuador.
                 </p>
                 <a className='inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]' href="#">
                   Explorar los datos
@@ -73,13 +74,12 @@ export default function Home () {
                 </h2>
               </div>
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[61px] gap-y-8'>
-                <div>
-                  <div className='shadow rounded-[55px] pb-[27px]'>
+                <div className='shadow rounded-[55px]'>
+                  <div className='pb-[27px]'>
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
                       <img src="/tenemos.svg" alt="tenemos icon" />
                     </div>
                     <div className='text-center'>
-                      <p>Tenemos</p>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         12,3456,789
                       </p>
@@ -87,29 +87,29 @@ export default function Home () {
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div className='shadow rounded-[55px] pb-[27px]'>
+                <div className='shadow rounded-[55px]'>
+                  <div className='pb-[27px]'>
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
                       <img src="/money.svg" alt="money icon" />
                     </div>
                     <div className='text-center'>
-                      <p>Con un valor adjudicado de</p>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         USD 1,234,567.89
                       </p>
+                      <p className='text-sm 3xl:text-base mt-1'>valor adjudicado.</p>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div className='shadow rounded-[55px] pb-[27px]'>
+                <div className='shadow rounded-[55px]'>
+                  <div className='pb-[27px]'>
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
                       <img src="/date.svg" alt="date icon" />
                     </div>
                     <div className='text-center'>
-                      <p>Realizados en el periodo</p>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
-                        2000-2022
+                        123,456,789
                       </p>
+                      <p className='text-sm 3xl:text-base mt-1'>proveedores adjudicados</p>
                     </div>
                   </div>
                 </div>
@@ -122,36 +122,33 @@ export default function Home () {
                 </h2>
               </div>
               <div className='grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3 gap-x-[61px] gap-y-8'>
-                <div>
-                  <div className='shadow rounded-[55px] pb-[27px] pt-[43px] px-10'>
+                <div className='shadow rounded-[55px]'>
+                  <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
                         12,3456,789
                       </p>
-                      <p className='text-2xl 3xl:text-[35px]'>procedimientos</p>
-                      <p className='text-sm 3xl:text-base mt-1'>de contratación con un solo oferente.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación con un solo oferente.</p>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div className='shadow rounded-[55px] pb-[27px] pt-[43px] px-10'>
+                <div className='shadow rounded-[55px]'>
+                  <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
                         12,3456,789
                       </p>
-                      <p className='text-2xl 3xl:text-[35px]'>procedimientos</p>
-                      <p className='text-sm 3xl:text-base mt-1'>de contratación tuvieron un periodo corto para su adjudicación.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación tuvieron un periodo corto para su adjudicación.</p>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div className='shadow rounded-[55px] pb-[27px] pt-[43px] px-10'>
+                <div className='shadow rounded-[55px]'>
+                  <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
                         12,3456,789
                       </p>
-                      <p className='text-2xl 3xl:text-[35px]'>proveedores</p>
-                      <p className='text-sm 3xl:text-base mt-1'>han obtenido un número desproporcionado de contratos del mismo tipo.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>proveedores han obtenido un número desproporcionado de contratos del mismo tipo.</p>
                     </div>
                   </div>
                 </div>
@@ -174,10 +171,10 @@ export default function Home () {
                     Las “banderas rojas” en la contratación pública son indicadores de comportamientos sospechosos que pueden ocurrir en todas las etapas de un procedimiento de contratación, desde la publicación de la convocatoria pasando por la adjudicación, hasta la ejecución del contrato.
                   </p>
                   <p>
-                    Herramientas como éstas permiten detectar y prevenir la corrupción y el fraude, identificando adquisiciones riesgosas. Además, les permite a los diferentes actores verificar la integridad del sistema de contratación pública, lo que promueve análisis más fuertes y evita potenciales áreas donde se puede cometer malas prácticas.
+                    Herramientas como éstas permiten detectar y prevenir la corrupción. Asimismo, permite verificar la integridad del sistema de contratación pública mediante la identificación de adquisiciones riesgosas.
                   </p>
                   <p>
-                    Las pruebas que realizamos para identificar banderas rojas en procedimientos de contratación pública en Ecuador, se hicieron teniendo en cuenta cinco categorías definidas:
+                    La <Link href="/metodologia"><a className='underline'>metodología</a></Link> para identificar banderas rojas en procedimientos de contratación pública en Ecuador tomó en cuenta cinco categorías:
                   </p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-[55px]'>
@@ -201,7 +198,7 @@ export default function Home () {
               Explorador de datos
             </h2>
             <p className='mt-6'>
-              Esta herramienta de visualización de datos permite observar cómo se comportan las banderas rojas identificadas en los procedimientos de contratación pública en Ecuador.
+              Esta herramienta es un explorador de datos sobre contratación pública en Ecuador.
             </p>
             <button className='mt-10 inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]' href="#">
               Cómo utilizar esta herramienta

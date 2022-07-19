@@ -66,7 +66,7 @@ export default function Metodology () {
             <div className='flex flex-col lg:flex-row lg:justify-between gap-y-8 gap-x-[62px]'>
               <div className='lg:w-5/12 max-w-[477px]'>
                 <p>
-                  Las pruebas realizadas para identificar banderas rojas en procedimientos de contratación pública, se hicieron teniendo en cuenta cinco categorías definidas que permiten calcular el desempeño de dichos procedimientos:
+                  Se establecieron 27 banderas rojas contenidas en cinco categorías:
                 </p>
               </div>
               <div className='lg:w-7/12'>
