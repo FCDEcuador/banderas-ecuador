@@ -65,7 +65,7 @@ export default function Footer () {
                 &nbsp;
               </p>
               <div>
-                <img className="h-[82.7px]" src="/images/banco-de-desarrollo-de-america-latina.png" alt="banco de desarrollo de america latina" />
+                <img className="h-[82.7px] object-contain" src="/images/banco-de-desarrollo-de-america-latina.png" alt="banco de desarrollo de america latina" />
               </div>
               <ul className="space-y-2">
                 <li>
