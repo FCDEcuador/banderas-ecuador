@@ -1,7 +1,12 @@
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
+import dynamic from 'next/dynamic'
+
+const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
 export default function KnowUs () {
+  // center: { lat: -0.180653, lng: -78.467834 },
+
   return (
     <>
       <div className='py-12 lg:py-16 xl:py-20'>
@@ -81,7 +86,7 @@ export default function KnowUs () {
                 </div>
               </div>
               <div className='lg:w-6/12 max-w-[721px]'>
-                <img src="/images/location-map.jpg" alt="location map" />
+                <Map />
               </div>
             </div>
             <div className='mx-auto w-10/12 max-w-[1035px]'>

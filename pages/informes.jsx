@@ -14,7 +14,7 @@ export default function Reports () {
   const [query, setQuery] = useState('')
   const [page, setPage] = useState(1)
   const types = [...new Set(reportsData.map(item => item.type))]
-  const itemsPerPage = 3
+  const itemsPerPage = 9
 
   const handleChange = (event) => {
     setFilter(event.target.value)

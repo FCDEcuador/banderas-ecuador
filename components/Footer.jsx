@@ -13,18 +13,6 @@ export default function Footer () {
               </div>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-[11.23px]">
-                  <img src="/images/facebook-icon.svg" alt="facebook icon" />
-                  <p>
-                    @CompraAbiertaEc
-                  </p>
-                </li>
-                <li className="flex items-center space-x-[11.23px]">
-                  <img src="/images/twitter-icon.svg" alt="twitter icon" />
-                  <p>
-                    @CompraAbiertaEc
-                  </p>
-                </li>
-                <li className="flex items-center space-x-[11.23px]">
                   <img src="/images/instagram-icon.svg" alt="instagram icon" />
                   <p>
                     @fcd_ecuador
@@ -73,12 +61,6 @@ export default function Footer () {
                   <img src="/images/twitter-icon.svg" alt="twitter icon" />
                   <p>
                     @CompraAbiertaEc
-                  </p>
-                </li>
-                <li className="flex items-center space-x-[11.23px]">
-                  <img src="/images/instagram-icon.svg" alt="instagram icon" />
-                  <p>
-                    @fcd_ecuador
                   </p>
                 </li>
               </ul>
