@@ -2,71 +2,86 @@ export default function Footer () {
   return (
     <footer className="bg-white-huge pt-[67.32px]">
       <div className="mx-auto w-10/12 max-w-screen-2xl">
-        <div className="flex flex-col lg:flex-row lg:justify-between text-grey gap-y-8">
-          <div className="lg:w-2/12">
-            <div className="space-y-2">
+        <div className="flex flex-wrap lg:justify-between text-grey gap-y-4">
+          <div className="w-6/12 xl:w-2/12">
+            <div className="space-y-4">
               <p className="text-grey-light 3xl:text-[19px] italic">
                 Una iniciativa de:
               </p>
               <div>
-                <img src="/images/fcd-logo.svg" alt="fcd logo" />
+                <img className="h-[82.7px]" src="/images/fcd-logo.svg" alt="fcd logo" />
               </div>
               <ul className="space-y-2">
-                <li className="flex items-center space-x-[11.23px]">
-                  <img src="/images/instagram-icon.svg" alt="instagram icon" />
-                  <p>
-                    @fcd_ecuador
-                  </p>
+                <li>
+                  <a className="flex items-center space-x-[11.23px]" href="https://www.facebook.com/CompraAbiertaEc/" target="_blank" rel="noreferrer">
+                    <img src="/images/facebook-icon.svg" alt="facebook icon" />
+                    <span>@CompraAbiertaEc</span>
+                  </a>
+                </li>
+                <li>
+                  <a className="flex items-center space-x-[11.23px]" href="https://twitter.com/compraabiertaec" target="_blank" rel="noreferrer">
+                    <img src="/images/twitter-icon.svg" alt="twitter icon" />
+                    <span>@CompraAbiertaEc</span>
+                  </a>
+                </li>
+                <li>
+                  <a className="flex items-center space-x-[11.23px]" href="https://www.instagram.com/fcd_ecuador/?hl=es" target="_blank" rel="noreferrer">
+                    <img src="/images/instagram-icon.svg" alt="instagram icon" />
+                    <span>@fcd_ecuador</span>
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="lg:w-2/12">
+          <div className="w-6/12 xl:w-2/12">
             <div className="space-y-4">
               <p className="text-grey-light 3xl:text-[19px] italic">
                 Con el apoyo de:
               </p>
               <div>
-                <img src="/images/open-contracting-partnership-logo.svg" alt="open contracting partnership logo" />
+                <img className="h-[82.7px]" src="/images/open-contracting-partnership-logo.svg" alt="open contracting partnership logo" />
               </div>
               <ul className="space-y-2">
-                <li className="flex items-center space-x-[11.23px]">
-                  <img src="/images/facebook-icon.svg" alt="facebook icon" />
-                  <p>
-                    @OpenContracting
-                  </p>
+                <li>
+                  <a className="flex items-center space-x-[11.23px]" href="https://twitter.com/opencontracting" target="_blank" rel="noreferrer">
+                    <img src="/images/twitter-icon.svg" alt="twitter icon" />
+                    <span>@opencontracting</span>
+                  </a>
                 </li>
-                <li className="flex items-center space-x-[11.23px]">
-                  <img src="/images/twitter-icon.svg" alt="twitter icon" />
-                  <p>
-                    @opencontracting
-                  </p>
+                <li>
+                  <a className="flex items-center space-x-[11.23px]" href="https://www.facebook.com/OpenContracting" target="_blank" rel="noreferrer">
+                    <img src="/images/facebook-icon.svg" alt="facebook icon" />
+                    <span>@OpenContracting</span>
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="lg:w-3/12">
+          <div className="w-full lg:w-6/12 xl:w-3/12">
             <div className="space-y-4">
+              <p className="hidden xl:block text-grey-light 3xl:text-[19px] italic">
+                &nbsp;
+              </p>
               <div>
-                <img src="/images/banco-de-desarrollo-de-america-latina.png" alt="banco de desarrollo de america latina" />
+                <img className="h-[82.7px]" src="/images/banco-de-desarrollo-de-america-latina.png" alt="banco de desarrollo de america latina" />
               </div>
               <ul className="space-y-2">
-                <li className="flex items-center space-x-[11.23px]">
-                  <img src="/images/facebook-icon.svg" alt="facebook icon" />
-                  <p>
-                    @CompraAbiertaEc
-                  </p>
+                <li>
+                  <a className="flex items-center space-x-[11.23px]" href="https://twitter.com/AgendaCAF" target="_blank" rel="noreferrer">
+                    <img src="/images/twitter-icon.svg" alt="twitter icon" />
+                    <span>@AgendaCAF</span>
+                  </a>
                 </li>
-                <li className="flex items-center space-x-[11.23px]">
-                  <img src="/images/twitter-icon.svg" alt="twitter icon" />
-                  <p>
-                    @CompraAbiertaEc
-                  </p>
+                <li>
+                  <a className="flex items-center space-x-[11.23px]" href="https://www.facebook.com/CAF.America.Latina" target="_blank" rel="noreferrer">
+                    <img src="/images/facebook-icon.svg" alt="facebook icon" />
+                    <span>@CAF.America.Latina</span>
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="lg:w-3/12">
+          <div className="w-full lg:w-6/12 xl:w-3/12">
             <div className="space-y-4 lg:space-y-9">
               <div className="space-y-2">
                 <p className="text-gemstone-green italic 3xl:text-[19px] font-bold">
@@ -81,7 +96,7 @@ export default function Footer () {
               </div>
               <ul className="space-y-2 lg:space-y-[15px] font-bold">
                 <li>
-                  <a href="#">
+                  <a href="/banderas-rojas">
                     Banderas Rojas
                   </a>
                 </li>
@@ -91,7 +106,7 @@ export default function Footer () {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/informes">
                     Informes
                   </a>
                 </li>
