@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer () {
   return (
     <footer className="bg-white-huge pt-[67.32px]">
@@ -96,9 +98,11 @@ export default function Footer () {
               </div>
               <ul className="space-y-2 lg:space-y-[15px] font-bold">
                 <li>
-                  <a href="/banderas-rojas">
-                    Banderas Rojas
-                  </a>
+                  <Link href="/banderas-rojas">
+                    <a>
+                      Banderas Rojas
+                    </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#">
@@ -106,9 +110,11 @@ export default function Footer () {
                   </a>
                 </li>
                 <li>
-                  <a href="/informes">
-                    Informes
-                  </a>
+                  <Link href="/informes">
+                    <a>
+                      Informes
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
