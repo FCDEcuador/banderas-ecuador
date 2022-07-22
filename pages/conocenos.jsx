@@ -105,6 +105,7 @@ export default function KnowUs () {
                   data-netlify="true"
                   name="Contacto"
                   method='POST'
+                  action="/success"
                 >
                   <div className='grid grid-cols-1 lg:grid-cols-2 gap-[35px]'>
                     <div>
