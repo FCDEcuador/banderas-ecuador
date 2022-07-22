@@ -102,29 +102,32 @@ export default function KnowUs () {
                     '& > :not(style)': { m: 1, width: '100%' }
                   }}
                   autoComplete="off"
+                  data-netlify="true"
+                  name="Contacto"
+                  method='POST'
                 >
                   <div className='grid grid-cols-1 lg:grid-cols-2 gap-[35px]'>
                     <div>
-                      <TextField className='bg-white' type="text" fullWidth id="nombre" label="Nombre" variant="outlined" required />
+                      <TextField className='bg-white' type="text" fullWidth id="nombre" name="Nombre" label="Nombre" variant="outlined" required />
                     </div>
                     <div>
-                      <TextField className='bg-white' type="text" fullWidth id="apellido" label="Apellido" variant="outlined" required />
+                      <TextField className='bg-white' type="text" fullWidth id="apellido" name="Apellido" label="Apellido" variant="outlined" required />
                     </div>
                     <div>
-                      <TextField className='bg-white' type="tel" fullWidth id="telefono" label="Télefono" variant="outlined" required />
+                      <TextField className='bg-white' type="tel" fullWidth id="telefono" name="Telefono" label="Teléfono" variant="outlined" required />
                     </div>
                     <div>
-                      <TextField className='bg-white' type="email" fullWidth id="email" label="Email" variant="outlined" required />
+                      <TextField className='bg-white' type="email" fullWidth id="email" name="Email" label="Email" variant="outlined" required />
                     </div>
                     <div className='lg:col-start-1 lg:col-end-3'>
-                      <TextField className='bg-white' type="text" fullWidth id="asunto" label="Asunto" variant="outlined" required />
+                      <TextField className='bg-white' type="text" fullWidth id="asunto" name="Asunto" label="Asunto" variant="outlined" required />
                     </div>
                     <div className='lg:col-start-1 lg:col-end-3'>
-                      <TextField className='bg-white' type="text" multiline rows={8} fullWidth id="mensaje" label="Mensaje" variant="outlined" required />
+                      <TextField name="Mensaje" className='bg-white' type="text" multiline rows={8} fullWidth id="mensaje" label="Mensaje" variant="outlined" required />
                     </div>
                   </div>
                   <div className='mx-auto text-center'>
-                    <button className='mt-8 inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]'>
+                    <button className='mt-8 inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]' type='submit'>
                       Enviar formulario
                     </button>
                   </div>
