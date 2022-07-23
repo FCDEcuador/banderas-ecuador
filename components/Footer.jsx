@@ -84,17 +84,17 @@ export default function Footer () {
             </div>
           </div>
           <div className="w-full lg:w-6/12 xl:w-3/12">
-            <div className="space-y-4 lg:space-y-9">
+            <div className="space-y-4 lg:space-y-8">
+              <a href='http://eepurl.com/h7fikL' target="_blank" className="text-gemstone-green italic 3xl:text-[19px] font-bold" rel="noreferrer">
+                <u>Suscríbete a nuestro newsletter para recibir informes de contratación</u>
+              </a>
               <div className="space-y-2">
-                <p className="text-gemstone-green italic 3xl:text-[19px] font-bold">
-                  Suscríbete a nuestro newsletter para recibir informes de contratación
-                </p>
-                <form className="flex items-center" action="#">
+                {/* <form className="flex items-center" action="#">
                   <input className="bg-transparent border-gemstone-green border rounded-[11px] py-2 px-4 focus:outline-none" type="email" name="email" id="email" placeholder="Correo electrónico" required />
                   <button className="-ml-10">
                     <img src="/images/newsletter-button.svg" alt="newsletter button" />
                   </button>
-                </form>
+                </form> */}
               </div>
               <ul className="space-y-2 lg:space-y-[15px] font-bold">
                 <li>
