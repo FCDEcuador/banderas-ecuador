@@ -103,10 +103,11 @@ export default function KnowUs () {
                   }}
                   autoComplete="off"
                   data-netlify="true"
-                  name="Contacto"
+                  name="contact"
                   method='POST'
-                  action="/success"
+                  action="/conocenos?success=true"
                 >
+                  <input type="hidden" name="form-name" value="contact" />
                   <div className='grid grid-cols-1 lg:grid-cols-2 gap-[35px]'>
                     <div>
                       <TextField className='bg-white' type="text" fullWidth id="nombre" name="Nombre" label="Nombre" variant="outlined" required />
