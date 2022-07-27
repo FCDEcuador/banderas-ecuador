@@ -14,6 +14,7 @@
     "@googlemaps/react-wrapper": "^1.1.35",
     "@mui/material": "^5.9.0",
     "classnames": "^2.3.1",
+    "d3-format": "^3.1.0",
     "leaflet": "^1.8.0",
     "lodash": "^4.17.21",
     "lodash.orderby": "^4.6.0",

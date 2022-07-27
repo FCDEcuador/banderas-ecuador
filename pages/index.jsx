@@ -3,8 +3,30 @@ import RedFlagCard from '../components/RedFlagCard'
 import redFlagsImages from '../data/red-flags-images.json'
 import Link from 'next/link'
 import reports from '../data/reports.json'
+import { useEffect, useState } from 'react'
+import { format } from 'd3-format'
 
 export default function Home () {
+  // TODO: update endpoint
+  const endpoint = 'https://jsonplaceholder.typicode.com/todos/1'
+  const [stats, setStats] = useState({})
+
+  useEffect(() => {
+    let ignore = false
+    fetch(endpoint).then(response => response.json())
+      .then(json => {
+        if (!ignore) {
+          // TODO: update with json response
+          setStats(
+            { countract_amount: 37922400981.412186, count_suppliers: 1908464, 'count_short-awards-procedures': 156854, 'count_tender-single-bidder-only': 156854, contract_count: 1926311, 'count_one-few-bidders-win-disproportionate-number-contracts-same-type': 2673 }
+          )
+        }
+      })
+    return () => {
+      ignore = true
+    }
+  }, [])
+
   return (
     <>
       <div className='py-10 lg:py-12'>
@@ -78,7 +100,7 @@ export default function Home () {
                     </div>
                     <div className='text-center space-y-4'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
-                        12,3456,789
+                        {format(',')(stats.contract_count)}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación.</p>
                     </div>
@@ -91,7 +113,7 @@ export default function Home () {
                     </div>
                     <div className='text-center space-y-4'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
-                        USD 1,234,567.89
+                        USD {format(',')(stats.countract_amount)}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>valor adjudicado.</p>
                     </div>
@@ -104,7 +126,7 @@ export default function Home () {
                     </div>
                     <div className='text-center space-y-4'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
-                        123,456,789
+                        {format(',')(stats.count_suppliers)}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>proveedores adjudicados</p>
                     </div>
@@ -123,7 +145,7 @@ export default function Home () {
                   <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center space-y-4'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
-                        12,3456,789
+                        {format(',')(stats['count_tender-single-bidder-only'])}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación con un solo oferente.</p>
                     </div>
@@ -133,9 +155,9 @@ export default function Home () {
                   <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center space-y-4'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
-                        12,3456,789
+                      {format(',')(stats['count_short-awards-procedures'])}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación tuvieron un periodo corto para su adjudicación.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación tuvieron un período corto para su adjudicación.</p>
                     </div>
                   </div>
                 </div>
@@ -143,7 +165,7 @@ export default function Home () {
                   <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center space-y-4'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
-                        12,3456,789
+                        {format(',')(stats['count_one-few-bidders-win-disproportionate-number-contracts-same-type'])}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>proveedores han obtenido un número desproporcionado de contratos del mismo tipo.</p>
                     </div>
