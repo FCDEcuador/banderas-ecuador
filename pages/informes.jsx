@@ -30,7 +30,7 @@ export default function Reports () {
     setPage(value)
   }
 
-  const filteredData = filter !== 'Seleccionar todo' ? reportsData.filter(item => item.type === filter).filter(item => item.title.toLowerCase().includes(query.toLowerCase())) : reportsData.filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
+  const filteredData = filter !== 'Seleccionar todo' ? reportsData.filter(item => item.type === filter).filter(item => item.title.toLowerCase().includes(query.toLowerCase())).sort((a, b) => new Date(b.date) - new Date(a.date)) : reportsData.filter(item => item.title.toLowerCase().includes(query.toLowerCase())).sort((a, b) => new Date(b.date) - new Date(a.date))
   const totalPages = Math.ceil(filteredData.length / itemsPerPage)
 
   return (

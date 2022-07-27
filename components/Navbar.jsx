@@ -11,9 +11,9 @@ export default function Navbar () {
     <header className='py-[19px] border-b-2 border-gemstone-green mx-auto w-11/12 max-w-screen-2xl'>
       <div className='mx-auto lg:w-10/12'>
         <div className='flex justify-between items-center lg:items-end'>
-          <Link href="/">
+          <Link href='/'>
             <a className='cursor-pointer flex-shrink-0'>
-              <img src="/images/logo-header.svg" alt="logo header  " />
+              <img src="/images/logo-header.svg" alt="logo header" />
             </a>
           </Link>
           <nav>
@@ -76,7 +76,7 @@ export default function Navbar () {
             </ul>
           </nav>
           <button onClick={() => setIsOpenMenu(!isOpenMenu)} className='lg:hidden z-50'>
-            <FaBars className='text-2xl'/>
+            <FaBars className='text-2xl' />
           </button>
         </div>
       </div>

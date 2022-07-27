@@ -1,8 +1,9 @@
 import PublicationCard from '../components/PublicationCard'
-import publications from '../data/publications.json'
 import RedFlagCard from '../components/RedFlagCard'
 import redFlagsImages from '../data/red-flags-images.json'
 import Link from 'next/link'
+import reports from '../data/reports.json'
+import figure from '../data/figure.json'
 
 export default function Home () {
   return (
@@ -21,9 +22,11 @@ export default function Home () {
                 <p className='text-justify'>
                   Es una iniciativa de <span className='italic text-gemstone-green underline'>Fundación Ciudadanía y Desarrollo</span> que, a través del análisis y difusión de datos de la contratación pública, busca promover la contratación abierta en Ecuador.
                 </p>
-                <a className='inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]' href="#">
-                  Explorar los datos
-                </a>
+                <Link href="/banderas-rojas#app">
+                  <a className='inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]'>
+                    Explorar los datos
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -41,15 +44,17 @@ export default function Home () {
                 <p className='text-justify'>
                   Entérate cómo se están utilizando los recursos públicos a través de la contratación pública en nuestros informes e investigaciones.
                 </p>
-                <a className='inline-block px-[30px] py-[10px] border border-white-dark text-white-dark font-bold rounded-[15px]' href="#">
-                  Todas las publicaciones
-                </a>
+                <Link href="/informes">
+                  <a className='inline-block px-[30px] py-[10px] border border-white-dark text-white-dark font-bold rounded-[15px]'>
+                    Todas las publicaciones
+                  </a>
+                </Link>
               </div>
             </div>
             <div className='lg:w-6/12 max-w-[655px]'>
               <div className='space-y-[45px]'>
                 {
-                  publications.map(({ title, date, link }, index) => <PublicationCard key={`publication-${index + 1}`} title={title} date={date} link={link} />)
+                  reports.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 2).map(({ id, title, date, link }) => <PublicationCard key={`publication-${id}`} title={title} date={date} link={link} />)
                 }
               </div>
             </div>

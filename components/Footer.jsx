@@ -105,9 +105,11 @@ export default function Footer () {
                   </Link>
                 </li>
                 <li>
-                  <a href="#">
-                    Estadísticas
-                  </a>
+                  <Link href="/metodologia">
+                    <a>
+                      Metodología
+                    </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/informes">

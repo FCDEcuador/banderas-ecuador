@@ -30,7 +30,7 @@ export default function RedFlags () {
                 </div>
               </div>
             </div>
-            <div>
+            <div id="app">
               <img className='mx-auto' src="/images/datasketch-app.png" alt="datasketch app" />
             </div>
           </div>

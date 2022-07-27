@@ -7,7 +7,7 @@ export default function ReportCard ({ id, srcImage, title, date, link }) {
                     {title}
                 </h3>
                 <p className='text-grey-light italic 3xl:text-[19px] mt-[10.32px]'>
-                    Publicado el {date}
+                    Publicado el {new Intl.DateTimeFormat('es-CO', { dateStyle: 'long' }).format(new Date(date))}
                 </p>
             </div>
             <div>
