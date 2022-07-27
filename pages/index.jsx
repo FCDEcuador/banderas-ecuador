@@ -3,7 +3,6 @@ import RedFlagCard from '../components/RedFlagCard'
 import redFlagsImages from '../data/red-flags-images.json'
 import Link from 'next/link'
 import reports from '../data/reports.json'
-import figure from '../data/figure.json'
 
 export default function Home () {
   return (
