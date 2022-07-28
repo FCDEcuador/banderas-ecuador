@@ -8,18 +8,17 @@ import { format } from 'd3-format'
 
 export default function Home () {
   // TODO: update endpoint
-  const endpoint = 'https://jsonplaceholder.typicode.com/todos/1'
+  const endpoint = 'https://ds-ec.mooo.com/partySummaries.json'
   const [stats, setStats] = useState({})
 
   useEffect(() => {
     let ignore = false
     fetch(endpoint).then(response => response.json())
       .then(json => {
+        console.log(json)
         if (!ignore) {
           // TODO: update with json response
-          setStats(
-            { countract_amount: 37922400981.412186, count_suppliers: 1908464, 'count_short-awards-procedures': 156854, 'count_tender-single-bidder-only': 156854, contract_count: 1926311, 'count_one-few-bidders-win-disproportionate-number-contracts-same-type': 2673 }
-          )
+          setStats(json)
         }
       })
     return () => {
@@ -98,7 +97,7 @@ export default function Home () {
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
                       <img src="/images/tenemos.svg" alt="tenemos icon" />
                     </div>
-                    <div className='text-center space-y-4'>
+                    <div className='text-center space-y-4 px-2'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         {format(',')(stats.contract_count)}
                       </p>
@@ -111,7 +110,7 @@ export default function Home () {
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
                       <img src="/images/money.svg" alt="money icon" />
                     </div>
-                    <div className='text-center space-y-4'>
+                    <div className='text-center space-y-4 px-2'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         USD {format(',')(stats.countract_amount)}
                       </p>
@@ -124,7 +123,7 @@ export default function Home () {
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
                       <img src="/images/date.svg" alt="date icon" />
                     </div>
-                    <div className='text-center space-y-4'>
+                    <div className='text-center space-y-4 px-2'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         {format(',')(stats.count_suppliers)}
                       </p>
@@ -143,7 +142,7 @@ export default function Home () {
               <div className='grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3 gap-x-[61px] gap-y-8'>
                 <div className='shadow rounded-[55px]'>
                   <div className='pb-[27px] pt-[43px] px-10'>
-                    <div className='text-center space-y-4'>
+                    <div className='text-center space-y-4 px-2'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
                         {format(',')(stats['count_tender-single-bidder-only'])}
                       </p>
@@ -153,7 +152,7 @@ export default function Home () {
                 </div>
                 <div className='shadow rounded-[55px]'>
                   <div className='pb-[27px] pt-[43px] px-10'>
-                    <div className='text-center space-y-4'>
+                    <div className='text-center space-y-4 px-2'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
                       {format(',')(stats['count_short-awards-procedures'])}
                       </p>
@@ -163,7 +162,7 @@ export default function Home () {
                 </div>
                 <div className='shadow rounded-[55px]'>
                   <div className='pb-[27px] pt-[43px] px-10'>
-                    <div className='text-center space-y-4'>
+                    <div className='text-center space-y-4 px-2'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
                         {format(',')(stats['count_one-few-bidders-win-disproportionate-number-contracts-same-type'])}
                       </p>
