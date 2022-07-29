@@ -13,7 +13,7 @@ export default function Reports () {
   const [filter, setFilter] = useState('Seleccionar todo')
   const [query, setQuery] = useState('')
   const [page, setPage] = useState(1)
-  const types = [...new Set(reportsData.map(item => item.type))]
+  const types = [...new Set(reportsData.map(item => item.type).flat())]
   const itemsPerPage = 9
 
   const handleChange = (event) => {
@@ -30,7 +30,19 @@ export default function Reports () {
     setPage(value)
   }
 
-  const filteredData = filter !== 'Seleccionar todo' ? reportsData.filter(item => item.type === filter).filter(item => item.title.toLowerCase().includes(query.toLowerCase())).sort((a, b) => new Date(b.date) - new Date(a.date)) : reportsData.filter(item => item.title.toLowerCase().includes(query.toLowerCase())).sort((a, b) => new Date(b.date) - new Date(a.date))
+  const filteredData = filter !== 'Seleccionar todo'
+    ? reportsData.filter(item => {
+      if (Array.isArray(item.type)) {
+        return item.type.includes(filter)
+      }
+      return item.type === filter
+    })
+      .filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+    : reportsData.filter(item => item.title.toLowerCase()
+      .includes(query.toLowerCase()))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+
   const totalPages = Math.ceil(filteredData.length / itemsPerPage)
 
   return (

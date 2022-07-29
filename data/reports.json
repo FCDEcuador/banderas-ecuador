@@ -3,57 +3,81 @@
         "id": 0,
         "srcImage": "/images/informe-1.jpg",
         "title": "Compra Pública Corporativa de Medicamentos",
-        "date": "2022-06-07",
-        "link": "#",
-        "type": "Contratación"
+        "date": "2022-05-09",
+        "link": "https://www.ciudadaniaydesarrollo.org/projects/compra-publica-corporativa-de-medicamentos/",
+        "type": [
+            "régimen especial",
+            "datos abiertos",
+            "informe"
+        ]
     },
     {
         "id": 1,
         "srcImage": "/images/informe-2.jpg",
         "title": "Beneficiarios reales en Ecuador: Transparentando la contratación pública e industrias extractivas",
-        "date": "2022-05-07",
-        "link": "#",
-        "type": "Contratación"
+        "date": "2021-10-19",
+        "link": "https://www.ciudadaniaydesarrollo.org/projects/beneficiarios-reales-en-ecuador-transparentando-la-contratacion-publica-e-industrias-extractivas/",
+        "type": [
+            "otros",
+            "informe"
+        ]
     },
     {
         "id": 2,
         "srcImage": "/images/informe-3.jpg",
         "title": "Las compras públicas realizadas por catálogo electrónico en Ecuador",
-        "date": "2022-04-07",
+        "date": "2021-09-08",
         "link": "#",
-        "type": "Contratación por emergencia"
+        "type": [
+            "régimen común, datos abiertos",
+            "informe"
+        ]
     },
     {
         "id": 3,
         "srcImage": "/images/informe-4.jpg",
         "title": "¿Existió un plan de vacunación contra el Covid-19 durante el gobierno de Moreno?",
-        "date": "2022-03-07",
-        "link": "#",
-        "type": "Contratación por emergencia"
+        "date": "2021-08-12",
+        "link": "https://www.ciudadaniaydesarrollo.org/projects/existio-un-plan-de-vacunacion-contra-el-covid-19-durante-el-gobierno-de-moreno/",
+        "type": [
+            "contratación por emergencia",
+            "veeduria"
+        ]
     },
     {
         "id": 4,
         "srcImage": "/images/informe-5.jpg",
         "title": "¿Cuánto contrató el municipio de Guayaquil en obras artísticas, científicas y literarias?",
-        "date": "2022-02-07",
-        "link": "#",
-        "type": "Contratación por emergencia"
+        "date": "2021-06-09",
+        "link": "https://www.ciudadaniaydesarrollo.org/projects/cuanto-contrato-el-municipio-de-guayaquil-en-obras-artisticas-cientificas-y-literarias",
+        "type": [
+            "régimen especial",
+            "datos abiertos",
+            "informe"
+        ]
     },
     {
         "id": 5,
         "srcImage": "/images/informe-6.jpg",
         "title": "La plataforma de datos abiertos sobre contrataciones públicas en Ecuador: ínfimas cuantías",
-        "date": "2022-01-07",
-        "link": "#",
-        "type": "Contratación por emergencia"
+        "date": "2021-03-12",
+        "link": "https://www.ciudadaniaydesarrollo.org/projects/la-plataforma-de-datos-abiertos-sobre-contrataciones-publicas-en-ecuador-infimas-cuantias/ ",
+        "type": [
+            "régimen común, datos abiertos",
+            "informe"
+        ]
     },
     {
         "id": 6,
         "srcImage": "/images/informe-7.jpg",
         "title": "Las contrataciones realizadas por el Municipio del Distrito Metropolitano de Quito ¿Qué adquirió la ciudad para enfrentar la crisis sanitaria?",
-        "date": "2022-07-07",
+        "date": "2021-01-06",
         "link": "#",
-        "type": "Contratación por emergencia"
+        "type": [
+            "contratación por emergencia",
+            "datos abiertos",
+            "informe"
+        ]
     },
     {
         "id": 7,
