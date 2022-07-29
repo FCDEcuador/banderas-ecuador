@@ -223,7 +223,7 @@ export default function Home () {
             </button>
           </div>
           <div className='mt-16'>
-            <img className='mx-auto w-full' src="/images/datasketch-app.png" alt="datasketch app" />
+            <iframe className="aspect-video" src="https://datasketch.shinyapps.io/RedFlagsEcApp/" width="100%"></iframe>
           </div>
         </div>
       </div>

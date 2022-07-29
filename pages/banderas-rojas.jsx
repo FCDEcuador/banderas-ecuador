@@ -31,7 +31,7 @@ export default function RedFlags () {
               </div>
             </div>
             <div id="app">
-              <img className='mx-auto' src="/images/datasketch-app.png" alt="datasketch app" />
+              <iframe className="aspect-video" src="https://datasketch.shinyapps.io/RedFlagsEcApp/" width="100%"></iframe>
             </div>
           </div>
         </div>
