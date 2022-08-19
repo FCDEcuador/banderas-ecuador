@@ -10,7 +10,7 @@ export default function KnowUs () {
   return (
     <>
       <div className='py-12 lg:py-16 xl:py-20'>
-        <div className='mx-auto w-10/12 max-w-screen-2xl'>
+        <div className='mx-auto w-10/12 max-w-screen-xl'>
           <div className='space-y-[75px]'>
             <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center gap-y-8'>
               <div className='lg:w-5/12 max-w-[537px]'>
@@ -18,18 +18,51 @@ export default function KnowUs () {
                   <span>Conócenos</span>
                   <div className='-mt-3 bg-orange bg-opacity-[0.4] h-[23px] w-full'>&nbsp;</div>
                 </h1>
-                <div className='mt-[45px] space-y-[17px]'>
+                <div className=' space-y-[17px]'>
                   <h2 className='font-black text-grey-light text-2xl 3xl:text-[35px]'>
                     Sobre nosotros
                   </h2>
                   <p className='text-xl 3xl:text-[22px] text-justify'>
-                    Es una iniciativa de Fundación Ciudadanía y Desarrollo que, a través del análisis y difusión de datos de la contratación pública, busca promover la contratación abierta en Ecuador.
+                    Somos una iniciativa de Fundación Ciudadanía y Desarrollo que, a través del análisis de datos de la contratación estatal, busca promover la transparencia y la eficiencia de los fondos públicos en Ecuador.
                   </p>
                 </div>
               </div>
               <div className='lg:w-6/12 max-w-[721px]'>
-                <img src="/images/conocenos.png" alt="conocenos" />
+                <div className='space-y-8'>
+                  <h2 className='font-black text-grey-light text-2xl 3xl:text-[35px]'>
+                    Nuestros objetivos
+                  </h2>
+                  <ul className='space-y-2 max-w-[516px]'>
+                    <li className='text-xl 3xl:text-[22px] text-justify flex items-center space-x-2'>
+                      <img src="/images/arrow-right-orange.svg" alt="arrow right orange" />
+                      <span>
+                        Fomentar mayor valor por el dinero público.
+                      </span>
+                    </li>
+                    <li className='text-xl 3xl:text-[22px] text-justify flex items-center space-x-2'>
+                      <img src="/images/arrow-right-orange.svg" alt="arrow right orange" />
+                      <span>
+                        Promover la competencia de mercado.
+                      </span>
+                    </li>
+                    <li className='text-xl 3xl:text-[22px] text-justify flex items-center space-x-2'>
+                      <img src="/images/arrow-right-orange.svg" alt="arrow right orange" />
+                      <span>
+                        Brindar herramientas para la detección de riesgos de corrupción.
+                      </span>
+                    </li>
+                    <li className='text-xl 3xl:text-[22px] text-justify flex items-center space-x-2'>
+                      <img src="/images/arrow-right-orange.svg" alt="arrow right orange" />
+                      <span>
+                        Identificar y proponer oportunidades de mejora al Sistema Nacional de Contratación Pública.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
               </div>
+            </div>
+            <div className='my-12 bg-orange-red h-[1px]'>
+              &nbsp;
             </div>
             <div className='flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center gap-y-8'>
               <div className='lg:w-5/12 max-w-[537px]'>
@@ -130,7 +163,7 @@ export default function KnowUs () {
                   </div>
                   <div className='mx-auto text-center'>
                     <button className='mt-8 inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]' type='submit'>
-                      Enviar formulario
+                      Enviar Mensaje
                     </button>
                   </div>
                 </Box>

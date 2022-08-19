@@ -4,8 +4,8 @@ export default function Footer () {
   return (
     <footer className="bg-white-huge pt-[67.32px]">
       <div className="mx-auto w-10/12 max-w-screen-2xl">
-        <div className="flex flex-wrap lg:justify-between text-grey gap-y-4">
-          <div className="w-6/12 xl:w-2/12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 text-grey gap-y-4 gap-x-12">
+          <div>
             <div className="space-y-4">
               <p className="text-grey-light 3xl:text-[19px] italic">
                 Una iniciativa de:
@@ -35,7 +35,7 @@ export default function Footer () {
               </ul>
             </div>
           </div>
-          <div className="w-6/12 xl:w-2/12">
+          <div>
             <div className="space-y-4">
               <p className="text-grey-light 3xl:text-[19px] italic">
                 Con el apoyo de:
@@ -59,7 +59,7 @@ export default function Footer () {
               </ul>
             </div>
           </div>
-          <div className="w-full lg:w-6/12 xl:w-3/12">
+          <div>
             <div className="space-y-4">
               <p className="hidden xl:block text-grey-light 3xl:text-[19px] italic">
                 &nbsp;
@@ -83,18 +83,12 @@ export default function Footer () {
               </ul>
             </div>
           </div>
-          <div className="w-full lg:w-6/12 xl:w-3/12">
+          <div>
             <div className="space-y-4 lg:space-y-8">
               <a href='http://eepurl.com/h7fikL' target="_blank" className="text-gemstone-green italic 3xl:text-[19px] font-bold" rel="noreferrer">
                 <u>Suscríbete a nuestro newsletter para recibir informes de contratación</u>
               </a>
               <div className="space-y-2">
-                {/* <form className="flex items-center" action="#">
-                  <input className="bg-transparent border-gemstone-green border rounded-[11px] py-2 px-4 focus:outline-none" type="email" name="email" id="email" placeholder="Correo electrónico" required />
-                  <button className="-ml-10">
-                    <img src="/images/newsletter-button.svg" alt="newsletter button" />
-                  </button>
-                </form> */}
               </div>
               <ul className="space-y-2 lg:space-y-[15px] font-bold">
                 <li>

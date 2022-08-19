@@ -44,9 +44,9 @@ export const SwiperDefault = ({ data, buttonColor = 'light' }) => {
           ? (
             <SwiperSlide className='space-y-8 lg:px-10'>
               {
-                newData[0].map(({ title, description }, idx) => {
+                newData[0].map(({ title, level, description }, idx) => {
                   return (
-                    <MethodologyCard key={`methodology-card-single-${idx + 1}`} title={title} description={description} />
+                    <MethodologyCard key={`methodology-card-single-${idx + 1}`} title={title} level={level} description={description} />
                   )
                 })
               }
@@ -56,9 +56,9 @@ export const SwiperDefault = ({ data, buttonColor = 'light' }) => {
             return (
               <SwiperSlide key={`methodology-card-group-${index + 1}`} className='space-y-8 lg:px-10'>
                 {
-                  parent.map(({ title, description }, idx) => {
+                  parent.map(({ title, level, description }, idx) => {
                     return (
-                      <MethodologyCard key={`methodology-card-single-${idx + 1}`} title={title} description={description} />
+                      <MethodologyCard key={`methodology-card-single-${idx + 1}`} title={title} level={level} description={description} />
                     )
                   })
                 }

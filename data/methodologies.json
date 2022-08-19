@@ -6,10 +6,12 @@
         "suggestions": [
             {
                 "title": "🚩 Secciones completas",
-                "description": "El procedimiento de contratación contiene datos para cada una de las etapas de la contratación pública, establecidas de acuerdo al estándar de Open Contracting Partnership. Las etapas a tener en cuenta son: planificación, oferta, adjudicación y contrato."
+                "level": "Contrato",
+                "description": "El procedimiento de contratación contiene datos para cada una de las etapas de la contratación pública establecidas por Open Contracting Partnership. Las etapas a tener en cuenta son: planificación, oferta, adjudicación y contrato."
             },
             {
                 "title": "🚩 Preguntas del oferente sin respuesta",
+                "level": "Contrato",
                 "description": "Existen preguntas hechas por el oferente durante el proceso de oferta que no fueron respondidas por la entidad contratante o cuya respuesta fue insatisfactoria."
             }
         ]
@@ -21,69 +23,84 @@
         "suggestions": [
             {
                 "title": "🚩 Campos fundamentales para la temporalidad",
+                "level": "Contrato",
                 "description": "Existe una fecha válida en los campos de publicación de la convocatoria, la adjudicación, el inicio y el fin del contrato."
             },
             {
                 "title": "🚩 Duración anormal de la etapa de preguntas",
+                "level": "Contrato",
                 "description": "El tiempo de duración de la etapa de preguntas no es el establecido en la legislación ecuatoriana para el tipo de procedimiento y el monto de contratación."
             },
             {
                 "title": "🚩 Fechas sospechosas",
+                "level": "Contrato",
                 "description": "La fecha de firma o inicio del contrato coincide con un feriado oficial o día no laborable."
             },
             {
                 "title": "🚩 Tiempo de adjudicación es corto",
+                "level": "Contrato",
                 "description": "Hay procedimientos con plazos para la adjudicación más cortos que los establecidos en la legislación ecuatoriana."
             }
         ]
     },
     {
         "title": "Trazabilidad",
-        "description": "Existe la capacidad de rastrear información de los procedimientos de contratación a partir de los datos publicados.",
+        "description": "Hay capacidad de rastrear información de los procedimientos de contratación a partir de los datos publicados.",
         "srcImage": "/images/trazabilidad-orange.svg",
         "suggestions": [
             {
                 "title": "🚩 Campos fundamentales para la trazabilidad",
+                "level": "Contrato",
                 "description": "El procedimiento de contratación cuenta con datos que relacionan al contrato con el presupuesto. Además, se identifican los diferentes actores que intervienen en el contrato."
             },
             {
                 "title": "🚩 Coincidencia en la información entre los oferentes",
+                "level": "Contrato",
                 "description": "La información de contacto del oferente 1 coincide con la información del oferente 2."
             },
             {
                 "title": "🚩 Información de contacto coincidente",
+                "level": "Contrato",
                 "description": "La dirección del oferente o del proveedor es la misma que la de la entidad o las entidades contratantes responsables del procedimiento de contratación."
             },
             {
                 "title": "🚩 Oferta ganadora es un número redondo",
+                "level": "Contrato",
                 "description": "El precio de la oferta ganadora tiene números exactos. Esta bandera se levanta a partir de que el precio de la oferta tenga cuatro ceros (0000)."
             },
             {
                 "title": "🚩 Ofertas con un porcentaje exacto de diferencia",
+                "level": "Contrato",
                 "description": "Los valores de las ofertas están separados por un porcentaje exacto."
             },
             {
                 "title": "🚩 Diferencia entre el valor adjudicado y el valor del contrato",
+                "level": "Contrato",
                 "description": "Hay una gran diferencia entre el valor de la adjudicación y el importe final del contrato."
             },
             {
                 "title": "🚩 El objeto contractual es comprensible",
+                "level": "Contrato",
                 "description": "La descripción del objeto contractual es descriptiva y clara, no consiste solamente de códigos o abreviaciones."
             },
             {
                 "title": "🚩 Información del proveedor está incompleta",
+                "level": "Contrato",
                 "description": "La dirección del proveedor no se especifica de manera completa."
             },
             {
                 "title": "🚩 El objeto contractual es reiterativo",
+                "level": "Entidad/Proveedor",
                 "description": "La descripción del objeto contractual se repite en al menos 10% del total de procedimientos de una entidad contratante. Esta bandera no aplica si hay diez o menos contratos al año."
             },
             {
                 "title": "🚩 Monto del contrato es reiterativo",
+                "level": "Entidad/Proveedor",
                 "description": "El monto del contrato se repite en un 10% del total de procedimientos de una entidad contratante. Esta bandera no aplica si hay diez o menos contratos al año."
             },
             {
                 "title": "🚩 Número de identificación duplicado",
+                "level": "Entidad/Proveedor",
                 "description": "Un oferente tiene más de un número de identificación asignado a su razón social."
             }
         ]
@@ -95,34 +112,42 @@
         "suggestions": [
             {
                 "title": "🚩 Procedimiento con un solo oferente",
+                "level": "Contrato",
                 "description": "El procedimiento cuenta con un solo oferente. Esta bandera no aplica para los procesos de contratación directa."
             },
             {
                 "title": "🚩 Último oferente es el ganador",
+                "level": "Contrato",
                 "description": "El último oferente, que presentó su oferta económica inicial, es quien se adjudica el contrato."
             },
             {
                 "title": "🚩 Empresas domiciliadas en paraísos fiscales",
+                "level": "Contrato",
                 "description": "El proveedor tiene su sede principal en uno de los países con un puntaje de secreto financiero superior al de Ecuador. Este índice se determina utilizando el Secrecy Score incluido en el Financial Secrecy Index, un reporte publicado por la organización Tax Justice Network."
             },
             {
                 "title": "🚩 Oferentes perdedores perennes",
+                "level": "Contrato",
                 "description": "Uno de los oferentes de un procedimiento se encuentra en el listado de oferentes que presentan recurrentes ofertas perdedoras. Esta bandera se levanta cuando el oferente se encuentra en el listado que contiene a los 100 oferentes que presentan más ofertas perdedoras durante un año."
             },
             {
                 "title": "🚩 Disparidad en los valores de las ofertas",
+                "level": "Contrato",
                 "description": "Los valores de las ofertas son muy distintos entre sí. Esta bandera se levanta cuando el valor promedio de las ofertas está por encima de un umbral de 1,5."
             },
             {
                 "title": "🚩 El valor adjudicado está por debajo del presupuesto",
+                "level": "Contrato",
                 "description": "El valor de adjudicación es un 50% menor al presupuesto de referencia."
             },
             {
                 "title": "🚩 Número de contratos por encima del promedio",
+                "level": "Entidad/Proveedor",
                 "description": "La entidad contratante realiza el 30% de sus contratos del año en un mismo día. Esta bandera no aplica si hay diez o menos contratos al año."
             },
             {
                 "title": "🚩 Varios contratos con un mismo oferente",
+                "level": "Entidad/Proveedor",
                 "description": "Uno o pocos oferentes obtienen un número desproporcionado de contratos del mismo tipo."
             }
         ]
@@ -133,8 +158,9 @@
         "srcImage": "/images/confiabilidad-orange.svg",
         "suggestions": [
             {
-                "title": "🚩 Redes por encima de un umbral",
-                "description": "La puntuación del análisis de redes del oferente está por encima de un valor umbral."
+                "title": "🚩 Análisis de red",
+                "level": "Entidad/Proveedor",
+                "description": "La confiabilidad de una entidad o proveedor es el promedio del resultado de las banderas rojas de aquellas entidades o proveedores con los que tiene relación contractual."
             }
         ]
     },

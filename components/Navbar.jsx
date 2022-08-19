@@ -9,7 +9,7 @@ export default function Navbar () {
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   return (
     <header className='py-[19px] border-b-2 border-gemstone-green mx-auto w-11/12 max-w-screen-2xl'>
-      <div className='mx-auto lg:w-10/12'>
+      <div className='mx-auto xl:w-11/12'>
         <div className='flex justify-between items-center lg:items-end'>
           <Link href='/'>
             <a className='cursor-pointer flex-shrink-0'>
@@ -18,7 +18,7 @@ export default function Navbar () {
           </Link>
           <nav>
             {/* DESKTOP MENU */}
-            <ul className='hidden lg:flex lg:items-center lg:gap-x-[95px]'>
+            <ul className='hidden lg:flex lg:items-center lg:gap-x-16 xl:gap-x-20 3xl:gap-x-[95px]'>
               <li>
                 <Link href="/">
                   <a className={classNames({ 'text-red underline font-black': router.pathname === '/' })}>Inicio</a>

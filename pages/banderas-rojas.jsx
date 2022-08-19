@@ -15,9 +15,6 @@ export default function RedFlags () {
                     <p className="text-justify">
                       Esta herramienta es un explorador de datos sobre contratación pública en Ecuador. Mensualmente, verifica los procedimientos registrados en la Plataforma de Contrataciones Abiertas Ecuador-OCDS y marca comportamientos que podrían clasificarse - o no - como banderas rojas. Cada procedimiento marcado con una bandera roja necesita verificación adicional.
                     </p>
-                    <p className="text-justify">
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpa euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -33,6 +30,18 @@ export default function RedFlags () {
             <div id="app">
               <iframe className="aspect-video" src="https://datasketch.shinyapps.io/RedFlagsEcApp/" width="100%"></iframe>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-grey-light py-12 lg:py-16 xl:py-20">
+        <div className="mx-auto w-10/12 max-w-screen-3xl">
+          <div className="text-center text-white-dark space-y-6 3xl:space-y-12">
+            <h2 className="font-black text-3xl 3xl:text-[45px]">
+              Descarga todas las banderas
+            </h2>
+            <a className="inline-flex space-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl" href="https://corporatetrails.com/ec/contractFlags.tar.gz" download target="_blank" rel="noreferrer">
+              Descargar
+            </a>
           </div>
         </div>
       </div>

@@ -40,7 +40,7 @@ export default function Home () {
                   Observatorio de <span className='relative'><span className='relative z-10'>Contratación Pública</span><div className='absolute bg-pink h-4 w-full left-0 bottom-1'>&nbsp;</div></span>
                 </h1>
                 <p className='text-justify'>
-                  Es una iniciativa de <span className='italic text-gemstone-green underline'>Fundación Ciudadanía y Desarrollo</span> que, a través del análisis y difusión de datos de la contratación pública, busca promover la contratación abierta en Ecuador.
+                  Es una iniciativa de <a href='https://www.ciudadaniaydesarrollo.org/' target='_blank' className='italic text-gemstone-green underline' rel="noreferrer">Fundación Ciudadanía y Desarrollo</a> que, a través del análisis y difusión de datos de la contratación pública, busca promover la contratación abierta en Ecuador.
                 </p>
                 <Link href="/banderas-rojas#app">
                   <a className='inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]'>
@@ -91,7 +91,7 @@ export default function Home () {
                   Contratación pública en cifras
                 </h2>
               </div>
-              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[61px] gap-y-8'>
+              <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-[61px] gap-y-8'>
                 <div className='shadow rounded-[55px]'>
                   <div className='pb-[27px]'>
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
@@ -99,7 +99,7 @@ export default function Home () {
                     </div>
                     <div className='text-center space-y-4 px-2'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
-                        {format(',')(stats.contract_count)}
+                        {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats.contract_count)}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación.</p>
                     </div>
@@ -112,9 +112,9 @@ export default function Home () {
                     </div>
                     <div className='text-center space-y-4 px-2'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
-                        USD {format(',')(stats.countract_amount)}
+                        {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats.countract_amount)}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>valor adjudicado.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>valor adjudicado en USD.</p>
                     </div>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export default function Home () {
                     </div>
                     <div className='text-center space-y-4 px-2'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
-                        {format(',')(stats.count_suppliers)}
+                        {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats.count_suppliers)}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>proveedores adjudicados</p>
                     </div>
@@ -144,7 +144,7 @@ export default function Home () {
                   <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center space-y-4 px-2'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
-                        {format(',')(stats['count_tender-single-bidder-only'])}
+                        {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats['count_tender-single-bidder-only'])}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación con un solo oferente.</p>
                     </div>
@@ -154,7 +154,7 @@ export default function Home () {
                   <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center space-y-4 px-2'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
-                      {format(',')(stats['count_short-awards-procedures'])}
+                        {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats['count_short-awards-procedures'])}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación tuvieron un período corto para su adjudicación.</p>
                     </div>
@@ -164,7 +164,7 @@ export default function Home () {
                   <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center space-y-4 px-2'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
-                        {format(',')(stats['count_one-few-bidders-win-disproportionate-number-contracts-same-type'])}
+                      {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats['count_one-few-bidders-win-disproportionate-number-contracts-same-type'])}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>proveedores han obtenido un número desproporcionado de contratos del mismo tipo.</p>
                     </div>
@@ -189,10 +189,10 @@ export default function Home () {
                     Las “banderas rojas” en la contratación pública son indicadores de comportamientos sospechosos que pueden ocurrir en todas las etapas de un procedimiento de contratación, desde la publicación de la convocatoria pasando por la adjudicación, hasta la ejecución del contrato.
                   </p>
                   <p className='text-justify'>
-                    Herramientas como éstas permiten detectar y prevenir la corrupción. Asimismo, permite verificar la integridad del sistema de contratación pública mediante la identificación de adquisiciones riesgosas.
+                    Herramientas como éstas permiten detectar y prevenir la corrupción y el fraude, identificando adquisiciones riesgosas. Además, les permite a los diferentes actores verificar la integridad del sistema de contratación pública, lo que promueve análisis más fuertes y evita potenciales áreas donde se puede cometer malas prácticas.
                   </p>
                   <p className='text-justify'>
-                    La <Link href="/metodologia"><a className='underline'>metodología</a></Link> para identificar banderas rojas en procedimientos de contratación pública en Ecuador tomó en cuenta cinco categorías:
+                    Las pruebas que realizamos para identificar banderas rojas en procedimientos de contratación pública en Ecuador, se hicieron teniendo en cuenta cinco categorías definidas:
                   </p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-[55px]'>
@@ -216,7 +216,7 @@ export default function Home () {
               Explorador de datos
             </h2>
             <p className='mt-6'>
-              Esta herramienta es un explorador de datos sobre contratación pública en Ecuador.
+              Esta herramienta de visualización de datos permite observar cómo se comportan las banderas rojas identificadas en los procedimientos de contratación pública en Ecuador.
             </p>
             <button className='mt-10 inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]' href="#">
               Cómo utilizar esta herramienta
