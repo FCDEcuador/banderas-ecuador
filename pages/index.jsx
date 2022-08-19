@@ -4,7 +4,6 @@ import redFlagsImages from '../data/red-flags-images.json'
 import Link from 'next/link'
 import reports from '../data/reports.json'
 import { useEffect, useState } from 'react'
-import { format } from 'd3-format'
 
 export default function Home () {
   // TODO: update endpoint
