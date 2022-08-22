@@ -25,6 +25,7 @@ export const SwiperDefault = ({ data, buttonColor = 'light' }) => {
   return (
     <Swiper
       modules={[Navigation]}
+      autoHeight={true}
       onInit={(swiper) => {
         swiper.params.navigation.prevEl = prevRef.current
         swiper.params.navigation.nextEl = nextRef.current
@@ -67,7 +68,7 @@ export const SwiperDefault = ({ data, buttonColor = 'light' }) => {
           })
       }
       {/* CUSTOM BUTTON */}
-      <div className={classNames('hidden lg:block', { 'hidden invisible': newData.length === 1 }, { 'block visible': newData.length !== 1 })}>
+      <div className={classNames({ 'hidden invisible': newData.length === 1 }, { 'block visible': newData.length !== 1 })}>
         <button ref={prevRef} className='absolute top-1/2 left-0 transform -translate-y-1/2 z-40'>
           <img src={`/images/arrow-left-swiper-${buttonColor}.svg`} alt="swiper slide left button" />
         </button>

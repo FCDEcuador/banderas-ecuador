@@ -74,7 +74,7 @@ export default function Metodology () {
         </div>
       </div>
 
-      <div className='bg-banner-transparencia bg-cover bg-center py-12 lg:py-16 xl:py-20'>
+      <div className='bg-banner-transparencia bg-cover bg-center py-12 lg:py-16 xl:py-20' id='transparencia'>
         <div className='mx-auto w-10/12 xl:w-9/12 max-w-screen-2xl'>
           <div className='flex flex-col gap-y-8 lg:flex-row lg:justify-between lg:items-center'>
             <div className='lg:w-4/12 max-w-[382px]'>
@@ -94,7 +94,7 @@ export default function Metodology () {
         </div>
       </div>
 
-      <div className='py-12 lg:py-16 xl:py-20 relative'>
+      <div className='py-12 lg:py-16 xl:py-20 relative' id='temporalidad'>
         <div className='mx-auto w-10/12 xl:w-9/12 max-w-screen-2xl'>
           <div className='flex flex-col gap-y-8 lg:flex-row-reverse lg:justify-between lg:items-center relative z-10'>
             <div className='lg:w-4/12 max-w-[382px]'>
@@ -121,7 +121,7 @@ export default function Metodology () {
         </div>
       </div>
 
-      <div className='bg-banner-trazabilidad bg-cover bg-center py-12 lg:py-16 xl:py-20'>
+      <div className='bg-banner-trazabilidad bg-cover bg-center py-12 lg:py-16 xl:py-20' id='trazabilidad'>
         <div className='mx-auto w-10/12 xl:w-9/12 max-w-screen-2xl'>
           <div className='flex flex-col gap-y-8 lg:flex-row lg:justify-between lg:items-center'>
             <div className='lg:w-4/12 max-w-[382px]'>
@@ -145,7 +145,7 @@ export default function Metodology () {
         </div>
       </div>
 
-      <div className='py-12 lg:py-16 xl:py-20 relative'>
+      <div className='py-12 lg:py-16 xl:py-20 relative' id='competitividad'>
         <div className='mx-auto w-10/12 xl:w-9/12 max-w-screen-2xl'>
           <div className='flex flex-col gap-y-8 lg:flex-row-reverse lg:justify-between lg:items-center relative z-10'>
             <div className='lg:w-4/12 max-w-[382px]'>
@@ -172,7 +172,7 @@ export default function Metodology () {
         </div>
       </div>
 
-      <div className='bg-banner-confiabilidad bg-cover bg-center py-24 lg:py-36 xl:py-40'>
+      <div className='bg-banner-confiabilidad bg-cover bg-center py-24 lg:py-36 xl:py-40' id='confiabilidad'>
         <div className='mx-auto w-10/12 xl:w-9/12 max-w-screen-2xl'>
           <div className='flex flex-col gap-y-8 lg:flex-row lg:justify-between lg:items-center'>
             <div className='lg:w-4/12 max-w-[382px]'>

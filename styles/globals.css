@@ -7,6 +7,10 @@
     body {
         @apply font-roboto text-grey-dark text-lg 3xl:text-xl bg-white-dark
     }
+    .swiper {
+        width: 100% !important;
+        height: auto !important;
+    }
 }
 
 @layer components {

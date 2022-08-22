@@ -8,7 +8,8 @@ module.exports = {
     'opacity-40',
     'hidden',
     'lg:block',
-    'lg:px-10'
+    'lg:px-10',
+    'swiper'
   ],
   theme: {
     extend: {
