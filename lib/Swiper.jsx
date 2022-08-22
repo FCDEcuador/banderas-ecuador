@@ -15,12 +15,14 @@ import classNames from 'classnames'
 
 // Components
 import MethodologyCard from '../components/MethodologyCard'
+import useWindowDimensions from '../hooks/useWindowDimensions'
 
 export const SwiperDefault = ({ data, buttonColor = 'light' }) => {
+  const { width } = useWindowDimensions()
   const prevRef = useRef(null)
   const nextRef = useRef(null)
 
-  const newData = chunk(data, 3)
+  const newData = width >= 1024 ? chunk(data, 3) : chunk(data, 1)
 
   return (
     <Swiper
