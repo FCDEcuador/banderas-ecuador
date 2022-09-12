@@ -1,18 +1,17 @@
+import { format, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
+
 export default function ReportCard ({ id, srcImage, title, date, link }) {
-  const dateFormat = new Date(date)
-  const year = dateFormat.getFullYear()
-  const month = dateFormat.toLocaleString('es-CO', { month: 'long' })
-  const day = +dateFormat.toLocaleString('es-CO', { day: '2-digit' }) + 1 + ''
   return (
     <div className='bg-white rounded-[30px] pt-[42px] pb-[25px] px-[50px] flex flex-col justify-between space-y-6 hover:shadow-3 duration-300'>
       <div>
         {
           srcImage
             ? (
-            <img className="h-[237.77px] w-full" src={srcImage} alt={`informe ${id}`} />
+            <img className="aspect-3/2 object-contain object-center" src={srcImage} alt={`informe ${id}`} />
               )
             : (
-            <div className="h-[237.77px] w-full bg-grey bg-opacity-5 rounded-xl">
+            <div className="aspect-3/2 bg-grey bg-opacity-5 rounded-xl">
               &nbsp;
             </div>
               )
@@ -21,7 +20,7 @@ export default function ReportCard ({ id, srcImage, title, date, link }) {
           {title}
         </h3>
         <p className='text-grey-light italic 3xl:text-[19px] mt-[10.32px]'>
-          Publicado el {day} de {month} de {year}
+          Publicado el {format(parseISO(date), "d 'de' MMMM 'de' yyyy", { locale: es })}
         </p>
       </div>
       <div>

@@ -55,6 +55,9 @@ module.exports = {
 
         '3xl': '1920px'
         // => @media (min-width: 1920px) { ... }
+      },
+      aspectRatio: {
+        '3/2': '3 / 2'
       }
     }
   },
