@@ -58,7 +58,7 @@ export default function Metodology () {
             </div>
             <div className='flex flex-col lg:flex-row lg:justify-between gap-y-8 gap-x-[62px]'>
               <div className='lg:w-5/12 max-w-[477px]'>
-                <p>
+                <p className='text-justify'>
                   Las pruebas realizadas para identificar banderas rojas se basan en el cálculo de un promedio simple a través de 5 categorías que contienen indicadores que evalúan los procedimientos de contratación pública tanto a nivel contrato como entidad contratante/proveedor. Cuanto más cercano es el valor al 100% mejor desempeño:
                 </p>
               </div>
