@@ -85,10 +85,11 @@ export default function Home () {
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <div className='space-y-[85px]'>
             <div className='space-y-[19px]'>
-              <div className='text-center'>
-                <h2 className='font-black text-gemstone-green text-xl 3xl:text-[28px]'>
+              <div className='text-center text-gemstone-green'>
+                <h2 className='font-black text-xl 3xl:text-[28px]'>
                   Contratación pública en cifras
                 </h2>
+                <p className='text-lg'>2015-2022</p>
               </div>
               <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-[61px] gap-y-8'>
                 <div className='shadow rounded-[55px]'>
@@ -113,7 +114,7 @@ export default function Home () {
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats.countract_amount)}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>valor adjudicado en USD.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>valor nominal adjudicado en USD.</p>
                     </div>
                   </div>
                 </div>
@@ -188,10 +189,10 @@ export default function Home () {
                     Las “banderas rojas” en la contratación pública son indicadores de comportamientos sospechosos que pueden ocurrir en todas las etapas de un procedimiento de contratación, desde la publicación de la convocatoria pasando por la adjudicación, hasta la ejecución del contrato.
                   </p>
                   <p className='text-justify'>
-                    Herramientas como éstas permiten detectar y prevenir la corrupción y el fraude, identificando adquisiciones riesgosas. Además, les permite a los diferentes actores verificar la integridad del sistema de contratación pública, lo que promueve análisis más fuertes y evita potenciales áreas donde se puede cometer malas prácticas.
+                    Herramientas como éstas permiten detectar y prevenir la corrupción. Asimismo, permite verificar la integridad del sistema de contratación pública mediante la identificación de adquisiciones riesgosas.
                   </p>
                   <p className='text-justify'>
-                    Las pruebas que realizamos para identificar banderas rojas en procedimientos de contratación pública en Ecuador, se hicieron teniendo en cuenta cinco categorías definidas:
+                    La metodología para identificar banderas rojas en procedimientos de contratación pública en Ecuador tomó en cuenta cinco categorías:
                   </p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-[55px]'>
