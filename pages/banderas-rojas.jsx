@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function RedFlags () {
   return (
     <>
@@ -13,7 +15,7 @@ export default function RedFlags () {
                   </h1>
                   <div className='space-y-[35px]'>
                     <p className="text-justify">
-                      Esta herramienta es un explorador de datos sobre contratación pública en Ecuador. Mensualmente, verifica los procedimientos registrados en la Plataforma de Contrataciones Abiertas Ecuador-OCDS y marca comportamientos que podrían clasificarse - o no - como banderas rojas. Cada procedimiento marcado con una bandera roja necesita verificación adicional.
+                      Esta herramienta es un explorador de datos sobre contratación pública en Ecuador. Mensualmente, verifica los procedimientos registrados en la Plataforma de Contrataciones Abiertas Ecuador-OCDS y marca comportamientos que podrían clasificarse - o no - como <Link href="/metodologia"><a className='underline'>banderas rojas</a></Link>.
                     </p>
                   </div>
                 </div>
@@ -39,6 +41,9 @@ export default function RedFlags () {
             <h2 className="font-black text-3xl 3xl:text-[45px]">
               Descarga todas las banderas
             </h2>
+            <div className='max-w-xl mx-auto'>
+              <p>Cada procedimiento marcado con una bandera roja muestra un posible comportamiento sospechoso que requiere verificación adicional.</p>
+            </div>
             <a className="inline-flex space-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl" href="https://corporatetrails.com/ec/contractFlags.tar.gz" download target="_blank" rel="noreferrer">
               Descargar
             </a>
