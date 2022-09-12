@@ -218,9 +218,11 @@ export default function Home () {
             <p className='mt-6'>
               Esta herramienta de visualización de datos permite observar cómo se comportan las banderas rojas identificadas en los procedimientos de contratación pública en Ecuador.
             </p>
-            <button className='mt-10 inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]' href="#">
-              Cómo utilizar esta herramienta
-            </button>
+            <Link href="/banderas-rojas">
+              <a className='mt-10 inline-block px-[30px] py-[10px] border border-gemstone-green text-gemstone-green font-bold rounded-[15px]'>
+                Cómo utilizar esta herramienta
+              </a>
+            </Link>
           </div>
           <div className='mt-16'>
             <iframe className="aspect-video" src="https://datasketch.shinyapps.io/RedFlagsEcApp/" width="100%"></iframe>

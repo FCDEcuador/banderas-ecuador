@@ -1,3 +1,6 @@
+import { format, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
+
 export default function PublicationCard ({ title, date, link }) {
   return (
     <div className='bg-white py-7 pl-10 pr-[30px] rounded-[30px]'>
@@ -8,7 +11,7 @@ export default function PublicationCard ({ title, date, link }) {
               {title}
             </h3>
             <p className='italic text-base 3xl:text-[19px] text-grey-light'>
-              Publicado el {new Intl.DateTimeFormat('es-CO', { dateStyle: 'long' }).format(new Date(date))}
+              Publicado el {format(parseISO(date), "d 'de' MMMM 'de' yyyy", { locale: es })}
             </p>
           </div>
         </div>
