@@ -16,6 +16,8 @@ export default function Reports () {
   const types = [...new Set(reportsData.map(item => item.type).flat())]
   const itemsPerPage = 6
 
+  const scrollTopHandler = (el) => document.querySelector(el).scrollIntoView({ block: 'start', behavior: 'smooth' })
+
   const handleChange = (event) => {
     setFilter(event.target.value)
     setPage(1)
@@ -28,6 +30,7 @@ export default function Reports () {
 
   const handlePageChange = (event, value) => {
     setPage(value)
+    scrollTopHandler('#reports')
   }
 
   const filteredData = filter !== 'Seleccionar todo'
@@ -47,7 +50,7 @@ export default function Reports () {
 
   return (
     <>
-      <div className='py-12 lg:py-16 xl:py-20'>
+      <div id='reports' className='py-12 lg:py-16 xl:py-20'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <div className='space-y-8'>
             <div className='max-w-[440px] mx-auto text-center'>
@@ -103,7 +106,7 @@ export default function Reports () {
                 </div>
               </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[83px] gap-y-[45px]'>
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 2xl:gap-x-[83px] gap-y-[45px]'>
               {
                 filteredData.length > 0
                   ? filteredData.slice(((page - 1) * itemsPerPage), itemsPerPage * page).map(({ id, srcImage, title, date, link }) => <ReportCard key={`report-${id + 1}`} id={id} srcImage={srcImage} title={title} date={date} link={link} />)

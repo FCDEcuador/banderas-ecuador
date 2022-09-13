@@ -121,7 +121,7 @@ export default function Home () {
                 <div className='shadow rounded-[55px]'>
                   <div className='pb-[27px]'>
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
-                      <img src="/images/date.svg" alt="date icon" />
+                      <img src="/images/period.svg" alt="period icon" />
                     </div>
                     <div className='text-center space-y-4 px-2'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
@@ -164,7 +164,7 @@ export default function Home () {
                   <div className='pb-[27px] pt-[43px] px-10'>
                     <div className='text-center space-y-4 px-2'>
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
-                      {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats['count_one-few-bidders-win-disproportionate-number-contracts-same-type'])}
+                        {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats['count_one-few-bidders-win-disproportionate-number-contracts-same-type'])}
                       </p>
                       <p className='text-sm 3xl:text-base mt-1'>proveedores han obtenido un número desproporcionado de contratos del mismo tipo.</p>
                     </div>

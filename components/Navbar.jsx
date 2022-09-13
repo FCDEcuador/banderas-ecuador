@@ -47,30 +47,30 @@ export default function Navbar () {
             </ul>
 
             {/* MOBILE MENU */}
-            <ul className={classNames('fixed top-0 bg-white w-full h-screen flex flex-col items-center justify-evenly lg:hidden z-40 duration-300', { 'left-0': isOpenMenu === true }, { '-left-full': isOpenMenu === false })}>
+            <ul className={classNames('fixed top-0 bg-white w-full h-[50vh] flex flex-col items-center justify-evenly lg:hidden z-40 duration-300 shadow-md', { 'left-0': isOpenMenu === true }, { '-left-full': isOpenMenu === false })}>
               <li>
                 <Link href="/">
-                  <a className={classNames({ 'text-red underline font-black': router.pathname === '/' })}>Inicio</a>
+                  <a onClick={() => setIsOpenMenu(false)} className={classNames({ 'text-red underline font-black': router.pathname === '/' })}>Inicio</a>
                 </Link>
               </li>
               <li>
                 <Link href="/banderas-rojas">
-                  <a className={classNames({ 'text-red underline font-black': router.pathname === '/banderas-rojas' })}>Banderas Rojas</a>
+                  <a onClick={() => setIsOpenMenu(false)} className={classNames({ 'text-red underline font-black': router.pathname === '/banderas-rojas' })}>Banderas Rojas</a>
                 </Link>
               </li>
               <li>
                 <Link href="/metodologia">
-                  <a className={classNames({ 'text-red underline font-black': router.pathname === '/metodologia' })}>Metodología</a>
+                  <a onClick={() => setIsOpenMenu(false)} className={classNames({ 'text-red underline font-black': router.pathname === '/metodologia' })}>Metodología</a>
                 </Link>
               </li>
               <li>
                 <Link href="/informes">
-                  <a className={classNames({ 'text-red underline font-black': router.pathname === '/informes' })}>Informes</a>
+                  <a onClick={() => setIsOpenMenu(false)} className={classNames({ 'text-red underline font-black': router.pathname === '/informes' })}>Informes</a>
                 </Link>
               </li>
               <li>
                 <Link href="/conocenos">
-                  <a className={classNames({ 'text-red underline font-black': router.pathname === '/conocenos' })}>Conócenos</a>
+                  <a onClick={() => setIsOpenMenu(false)} className={classNames({ 'text-red underline font-black': router.pathname === '/conocenos' })}>Conócenos</a>
                 </Link>
               </li>
             </ul>
