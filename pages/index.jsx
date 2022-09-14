@@ -121,7 +121,7 @@ export default function Home () {
                 <div className='shadow rounded-[55px]'>
                   <div className='pb-[27px]'>
                     <div className='bg-gemstone-green grid place-items-center rounded-full w-[84px] h-[84px]'>
-                      <img src="/images/period.svg" alt="period icon" />
+                      <img className='w-14' src="/images/providers.svg" alt="providers icon" />
                     </div>
                     <div className='text-center space-y-4 px-2'>
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
