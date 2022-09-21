@@ -1,8 +1,12 @@
+import dynamic from 'next/dynamic'
 import LawsCard from '../components/LawsCard'
 import laws from '../data/laws.json'
 import MethodologyInformation from '../components/MethodologyInformation'
 import methodologies from '../data/methodologies.json'
-import { SwiperDefault } from '../lib/Swiper'
+
+const SwiperDefault = dynamic(() => import('../lib/Swiper').then(mod => mod.SwiperDefault), {
+  ssr: false
+})
 
 function getCategoryMethodologyData (category) {
   return methodologies.filter(methodology => methodology.title === category)[0]

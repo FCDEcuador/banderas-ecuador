@@ -5,9 +5,9 @@
         "srcImage": "/images/transparencia-orange.svg",
         "suggestions": [
             {
-                "title": "🚩 Secciones completas",
+                "title": "🚩 Sección de planificación",
                 "level": "Contrato",
-                "description": "El procedimiento de contratación contiene datos para cada una de las etapas de la contratación pública establecidas por Open Contracting Partnership. Las etapas a tener en cuenta son: planificación, oferta, adjudicación y contrato."
+                "description": "En el procedimiento de contratación existe información en la etapa de planificación."
             },
             {
                 "title": "🚩 Preguntas del oferente sin respuesta",

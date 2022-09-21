@@ -14,7 +14,6 @@ export default function Home () {
     let ignore = false
     fetch(endpoint).then(response => response.json())
       .then(json => {
-        console.log(json)
         if (!ignore) {
           // TODO: update with json response
           setStats(json)
@@ -127,7 +126,7 @@ export default function Home () {
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats.count_suppliers)}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>proveedores adjudicados</p>
+                      <p className='text-sm 3xl:text-base mt-1'>proveedores adjudicados.</p>
                     </div>
                   </div>
                 </div>
