@@ -8,7 +8,7 @@ export default function ReportCard ({ id, srcImage, title, date, link }) {
         {
           srcImage
             ? (
-            <img className="aspect-3/2 object-contain object-center" src={srcImage} alt={`informe ${id}`} />
+            <img className="aspect-3/2 object-cover object-center overflow-hidden rounded-2xl" src={srcImage} alt={`informe ${id}`} />
               )
             : (
             <div className="aspect-3/2 bg-grey bg-opacity-5 rounded-xl">
