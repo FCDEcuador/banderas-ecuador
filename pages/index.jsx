@@ -100,7 +100,7 @@ export default function Home () {
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats.contract_count)}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación</p>
                     </div>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function Home () {
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats.countract_amount)}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>valor nominal adjudicado en USD.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>valor nominal adjudicado en USD</p>
                     </div>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export default function Home () {
                       <p className='text-gemstone-green text-3xl 3xl:text-[45px] font-black'>
                         {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats.count_suppliers)}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>proveedores adjudicados.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>proveedores adjudicados</p>
                     </div>
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export default function Home () {
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
                         {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats['count_tender-single-bidder-only'])}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación con un solo oferente.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación con un solo oferente</p>
                     </div>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export default function Home () {
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
                         {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats['count_short-awards-procedures'])}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación tuvieron un período corto para su adjudicación.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>procedimientos de contratación tuvieron un período corto para su adjudicación</p>
                     </div>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function Home () {
                       <p className='text-red text-3xl 3xl:text-[45px] font-black'>
                         {new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(stats['count_one-few-bidders-win-disproportionate-number-contracts-same-type'])}
                       </p>
-                      <p className='text-sm 3xl:text-base mt-1'>proveedores han obtenido un número desproporcionado de contratos del mismo tipo.</p>
+                      <p className='text-sm 3xl:text-base mt-1'>proveedores han obtenido un número desproporcionado de contratos del mismo tipo</p>
                     </div>
                   </div>
                 </div>
