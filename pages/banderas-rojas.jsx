@@ -25,7 +25,9 @@ export default function RedFlags () {
                   <h3 className='text-grey-light text-xl 3xl:text-[23px] font-bold'>
                     ¿Cómo funciona esta herramienta?
                   </h3>
-                  <img src="/images/como-funciona-herramienta.jpg" alt="como funciona esta herramienta" />
+                  <div className="rounded-3xl overflow-hidden">
+                    <iframe className='aspect-video w-full' src='https://www.youtube.com/embed/74oVxLzh9L8'></iframe>
+                  </div>
                 </div>
               </div>
             </div>
