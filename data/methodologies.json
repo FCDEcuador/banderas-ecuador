@@ -71,12 +71,12 @@
             {
                 "title": "🚩 Ofertas con un porcentaje exacto de diferencia",
                 "level": "Contrato",
-                "description": "Los valores de las ofertas están separados por un porcentaje exacto."
+                "description": "Los valores de las ofertas están separados por un porcentaje exacto. Por ejemplo, 1%, 2%, 3%, etc."
             },
             {
                 "title": "🚩 Diferencia entre el valor adjudicado y el valor del contrato",
                 "level": "Contrato",
-                "description": "Hay una gran diferencia entre el valor de la adjudicación y el importe final del contrato."
+                "description": "Existe una diferencia del 50% entre el valor de la adjudicación y el importe final del contrato."
             },
             {
                 "title": "🚩 El objeto contractual es comprensible",
