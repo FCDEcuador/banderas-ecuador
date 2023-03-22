@@ -139,5 +139,40 @@
             "datos abiertos",
             "informe"
         ]
+    },
+    {
+        "id": 12,
+        "srcImage": "/images/informe-12.jpg",
+        "title": "Gastos de comunicación social en las prefecturas: ¿se preparan los prefectos para su reelección?",
+        "date": "2022-09-14",
+        "link": "https://www.ciudadaniaydesarrollo.org/projects/gastos-de-comunicacion-social-en-las-prefecturas-se-preparan-los-prefectos-para-su-reeleccion/",
+        "type": [
+            "régimen especial",
+            "datos abiertos",
+            "informe"
+        ]
+    },
+    {
+        "id": 13,
+        "srcImage": "/images/informe-13.jpg",
+        "title": "CONGOPE - AME - CONAGOPARE. Recursos públicos para el pago de consultorías. ¿Fueron necesarias?",
+        "date": "2023-02-09",
+        "link": "https://www.ciudadaniaydesarrollo.org/projects/recursos-publicos-para-el-pago-de-consultorias-fueron-necesarios/",
+        "type": [
+            "régimen especial",
+            "datos abiertos",
+            "informe"
+        ]
+    },
+    {
+        "id": 14,
+        "srcImage": "/images/informe-14.jpg",
+        "title": "Veeduría al proceso precontractual de licitación para la construcción del Mercado 04 de noviembre en la parroquia Ricaurte",
+        "date": "2023-03-17",
+        "link": "https://www.ciudadaniaydesarrollo.org/projects/veeduria-al-proceso-precontractual-de-licitacion-para-la-construccion-del-mercado-04-de-noviembre-en-la-parroquia-ricaurte/",
+        "type": [
+            "informe",
+            "veeduria"
+        ]
     }
 ]
