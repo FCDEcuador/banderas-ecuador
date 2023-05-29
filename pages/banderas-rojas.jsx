@@ -1,6 +1,9 @@
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function RedFlags () {
+  const [year, setYear] = useState('')
+
   return (
     <>
       <div className='py-12 lg:py-16 xl:py-20'>
@@ -43,12 +46,20 @@ export default function RedFlags () {
             <h2 className="font-black text-3xl 3xl:text-[45px]">
               Descarga todas las banderas
             </h2>
-            <div className='max-w-xl mx-auto'>
-              <p>Cada procedimiento marcado con una bandera roja muestra un posible comportamiento sospechoso que requiere verificación adicional.</p>
+            <div className='font-roboto max-w-xl mx-auto'>
+              <p>Cada procedimiento marcado con una bandera roja muestra un posible comportamiento sospechoso que requiere verificación adicional. <a className='text-orange'>Descarga todas las banderas</a></p>
             </div>
-            <a className="inline-flex space-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl" href="https://corporatetrails.com/ec/contractFlags.tar.gz" download target="_blank" rel="noreferrer">
-              Descargar
-            </a>
+            <div className='flex gap-2 justify-center'>
+              <select className='text-grey rounded-lg w-[168px]' name="years" id="">
+                <option value="Año">Año</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+              </select>
+              <a className="inline-flex space-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl" href="https://corporatetrails.com/ec/contractFlags.tar.gz" download target="_blank" rel="noreferrer">
+                Descargar
+              </a>
+            </div>
           </div>
         </div>
       </div>
