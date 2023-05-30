@@ -3,7 +3,11 @@ import RedFlagCard from '../components/RedFlagCard'
 import redFlagsImages from '../data/red-flags-images.json'
 import Link from 'next/link'
 import reports from '../data/reports.json'
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
+import { Tab } from '@headlessui/react'
+import classNames from 'classnames'
+import DataTable from '../components/DataTable'
+import { evaluationOfPublicInstitutionsData } from '../data/evaluation-of-public-institutions'
 
 export default function Home () {
   // TODO: update endpoint
@@ -77,6 +81,58 @@ export default function Home () {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className='bg-grey py-12 lg:py-16 xl:py-20 relative overflow-hidden'>
+        <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-2xl'>
+          <div className='flex flex-col lg:flex-row lg:justify-between gap-y-8'>
+            <div className='lg:w-5/12 max-w-[507px]'>
+              <h2 className='font-black text-3xl 3xl:text-[45px] text-white-dark'>
+                Evaluación de instituciones públicas
+              </h2>
+            </div>
+            <div className='lg:w-6/12 max-w-[655px]'>
+              <p className='text-lg lg:text-xl text-white-dark'>
+                Te presentamos las instituciones públicas mejor evaluadas por nuestro sistema de banderas rojas para que puedas conocer su desempeño en la contratación pública. La clasificación muestra las instituciones públicas que han realizado al menos 10 contratos al mes y 100 contratos al año. Si deseas obtener más detalles acerca de cómo funcionan las banderas rojas, te invitamos a consultar nuestra sección de metodología.
+              </p>
+            </div>
+          </div>
+          <div className='mt-10 relative z-10'>
+            <Tab.Group>
+              <Tab.List className="border-2 border-white-dark rounded-2xl inline-block text-white-dark text-lg xl:text-xl overflow-hidden">
+                <Tab as={Fragment}>
+                  {({ selected }) => (
+                    <button
+                      className={classNames('py-3 px-6 outline-none overflow-hidden rounded-2xl', { 'bg-red': selected })}
+                    >
+                      Anual
+                    </button>
+                  )}
+                </Tab>
+                <Tab as={Fragment}>
+                  {({ selected }) => (
+                    <button
+                      className={classNames('py-3 px-6 outline-none overflow-hidden rounded-2xl', { 'bg-red': selected })}
+                    >
+                      Trimestral
+                    </button>
+                  )}
+                </Tab>
+              </Tab.List>
+              <Tab.Panels className="mt-12">
+                <Tab.Panel>
+                  <DataTable data={evaluationOfPublicInstitutionsData} />
+                </Tab.Panel>
+                <Tab.Panel>
+                  <DataTable data={evaluationOfPublicInstitutionsData} />
+                </Tab.Panel>
+              </Tab.Panels>
+            </Tab.Group>
+          </div>
+        </div>
+        <div className='absolute top-10 left-10'>
+          <img className='w-2/3' src='/images/stars.svg' alt='stars icon' />
         </div>
       </div>
 
