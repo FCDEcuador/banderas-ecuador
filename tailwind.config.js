@@ -30,7 +30,8 @@ module.exports = {
         'gemstone-light': '#A8D7E0',
         pink: '#FBECCA',
         'pink-2': '#F4BCAA',
-        'blue-ocean': '#D9ECF0'
+        'blue-ocean': '#D9ECF0',
+        silver: '#AFAFAF'
       },
       backgroundImage: {
         'banner-transparencia': "url('/images/banner-transparencia.svg')",
