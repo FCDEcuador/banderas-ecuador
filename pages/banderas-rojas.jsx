@@ -1,15 +1,15 @@
 import Link from 'next/link'
-import { useState } from 'react'
-import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
+// import { useState } from 'react'
+// import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 
 export default function RedFlags () {
-  const [year, setYear] = useState('')
+  // const [year, setYear] = useState('')
 
-  const yearsOptions = [
-    { label: '2023', value: '2023' },
-    { label: '2022', value: '2022' },
-    { label: '2021', value: '2021' }
-  ]
+  // const yearsOptions = [
+  //   { label: '2023', value: '2023' },
+  //   { label: '2022', value: '2022' },
+  //   { label: '2021', value: '2021' }
+  // ]
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function RedFlags () {
           </div>
         </div>
       </div>
-      <div className="bg-grey-light py-12 lg:py-16 xl:py-20">
+      {/* <div className="bg-grey-light py-12 lg:py-16 xl:py-20">
         <div className="mx-auto w-10/12 max-w-screen-3xl">
           <div className="text-center text-white-dark space-y-6 3xl:space-y-12">
             <h2 className="font-black text-3xl 3xl:text-[45px]">
@@ -84,7 +84,7 @@ export default function RedFlags () {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

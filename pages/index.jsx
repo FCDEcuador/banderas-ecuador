@@ -3,11 +3,11 @@ import RedFlagCard from '../components/RedFlagCard'
 import redFlagsImages from '../data/red-flags-images.json'
 import Link from 'next/link'
 import reports from '../data/reports.json'
-import { Fragment, useEffect, useState } from 'react'
-import { Tab } from '@headlessui/react'
-import classNames from 'classnames'
-import DataTable from '../components/DataTable'
-import { evaluationOfPublicInstitutionsData } from '../data/evaluation-of-public-institutions'
+import { useEffect, useState } from 'react'
+// import { Tab } from '@headlessui/react'
+// import classNames from 'classnames'
+// import DataTable from '../components/DataTable'
+// import { evaluationOfPublicInstitutionsData } from '../data/evaluation-of-public-institutions'
 
 export default function Home () {
   // TODO: update endpoint
@@ -84,7 +84,7 @@ export default function Home () {
         </div>
       </div>
 
-      <div className='bg-grey py-12 lg:py-16 xl:py-20 relative overflow-hidden'>
+      {/* <div className='bg-grey py-12 lg:py-16 xl:py-20 relative overflow-hidden'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-2xl'>
           <div className='flex flex-col lg:flex-row lg:justify-between gap-y-8'>
             <div className='lg:w-5/12 max-w-[507px]'>
@@ -134,7 +134,7 @@ export default function Home () {
         <div className='absolute top-10 left-10'>
           <img className='w-2/3' src='/images/stars.svg' alt='stars icon' />
         </div>
-      </div>
+      </div> */}
 
       <div className='py-12 lg:py-16 xl:py-20'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
