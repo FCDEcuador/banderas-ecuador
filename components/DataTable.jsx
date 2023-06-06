@@ -67,11 +67,6 @@ export default function DataTable ({ data }) {
         <TableBody>
           {
             rows.map((row, i) => {
-              const score = Object.values(row).reduce((prev, { value }) => {
-                if (typeof value === 'number') return [...prev, value]
-                else return [...prev]
-              }, [])
-
               return (
                 i % 2 === 0
                   ? <StyledTableRow
@@ -83,7 +78,7 @@ export default function DataTable ({ data }) {
                         if (j === 1) {
                           return <StyledTableCell key={j + 1} component="th" scope="row">{value}</StyledTableCell>
                         } else {
-                          return <StyledTableCell key={j + 1} align="center">{typeof value === 'function' ? <span className='!text-red'>{value(score).toFixed(1)}</span> : value}</StyledTableCell>
+                          return <StyledTableCell key={j + 1} align="center">{typeof value === 'number' && Intl.NumberFormat('es-CO', { currency: 'COP', maximumSignificantDigits: 3 }).format(value)}</StyledTableCell>
                         }
                       })
                     }
@@ -97,7 +92,7 @@ export default function DataTable ({ data }) {
                         if (j === 1) {
                           return <StyledTableCell key={j + 1} component="th" scope="row">{value}</StyledTableCell>
                         } else {
-                          return <StyledTableCell key={j + 1} align="center">{typeof value === 'function' ? <span className='!text-red'>{value(score).toFixed(1)}</span> : value}</StyledTableCell>
+                          return <StyledTableCell key={j + 1} align="center">{typeof value === 'number' && Intl.NumberFormat('es-CO', { currency: 'COP', maximumSignificantDigits: 3 }).format(value)}</StyledTableCell>
                         }
                       })
                     }
