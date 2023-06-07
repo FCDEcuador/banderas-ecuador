@@ -48,7 +48,7 @@ export default function RedFlags ({ years }) {
               Descarga todas las banderas
             </h2>
             <div className='font-roboto max-w-xl mx-auto'>
-              <p>Cada procedimiento marcado con una bandera roja muestra un posible comportamiento sospechoso que requiere verificación adicional. <a className='text-orange italic underline' href='https://docs.google.com/spreadsheets/d/17R_5TrYdQRKtcFyiMlH7sch4nBU9RS1isJWNx2ae7yg/edit?usp=sharing' target='_blank' rel="noreferrer">Descarga todas las banderas.</a></p>
+              <p>Cada procedimiento marcado con una bandera roja muestra un posible comportamiento sospechoso que requiere verificación adicional. <a className='text-orange italic underline' href='https://docs.google.com/spreadsheets/d/17R_5TrYdQRKtcFyiMlH7sch4nBU9RS1isJWNx2ae7yg/edit?usp=sharing' target='_blank' rel="noreferrer">Diccionario de datos.</a></p>
             </div>
             <div className='flex gap-2 justify-center'>
               {/* <select className='p-3 text-grey rounded-[15px] w-[168px]' name="years" onChange={(e) => setYear(e.target.value)}>
