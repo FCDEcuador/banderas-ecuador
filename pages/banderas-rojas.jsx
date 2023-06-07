@@ -52,7 +52,7 @@ export default function RedFlags ({ years }) {
             </div>
             <div className='flex gap-2 justify-center'>
               <select className='p-3 text-grey rounded-[15px] w-[168px]' name="years" onChange={(e) => setYear(e.target.value)}>
-                <option value="">Año</option>
+                <option value="">Elige un año</option>
                 {years.map((item, index) => {
                   return (
                     <option

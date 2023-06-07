@@ -9,7 +9,7 @@ import { Tab } from '@headlessui/react'
 import classNames from 'classnames'
 import DataTable from '../components/DataTable'
 
-export default function Home ({ dataRankings }) {
+export default function Home ({ dataRankings = [] }) {
   // TODO: update endpoint
   const endpoint = 'https://ds-ec.mooo.com/partySummaries.json'
   const [stats, setStats] = useState({})
@@ -153,7 +153,12 @@ export default function Home ({ dataRankings }) {
                   )
                 })}
               </Tab.List>
-              <Tab.Panels className="mt-12">
+              <div className='mt-4'>
+                <p className='text-white text-sm'>
+                  Última actualización: 02 de Junio, 2023
+                </p>
+              </div>
+              <Tab.Panels className="mt-4">
                 {dataRankingsFormat.reverse().map((item, i) => {
                   return (
                     <Tab.Panel key={`panel-${i + 1}`}>
@@ -163,6 +168,13 @@ export default function Home ({ dataRankings }) {
                 })}
               </Tab.Panels>
             </Tab.Group>
+            <div className='text-center mt-12'>
+              <Link href="/banderas-rojas#app">
+                <a className='inline-block py-2 px-6 outline-none overflow-hidden rounded-2xl bg-red text-white'>
+                  Ver todas las entidades
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
         <div className='absolute top-10 left-10'>
@@ -178,7 +190,7 @@ export default function Home ({ dataRankings }) {
                 <h2 className='font-black text-xl 3xl:text-[28px]'>
                   Contratación pública en cifras
                 </h2>
-                <p className='text-lg'>2015-2022</p>
+                <p className='text-lg'>2015-{new Date().getFullYear()}</p>
               </div>
               <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-[61px] gap-y-8'>
                 <div className='shadow rounded-[55px]'>

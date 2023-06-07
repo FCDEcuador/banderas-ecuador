@@ -10,6 +10,7 @@ import classNames from 'classnames'
 
 export default function DataTable ({ data }) {
   const rows = [...data]
+  const redColor = ['Posición', 'Entidad contratante', 'Puntaje', 'Total']
 
   const StyledTableCell = styled(TableCell)(() => ({
     [`&.${tableCellClasses.head}`]: {
@@ -57,7 +58,7 @@ export default function DataTable ({ data }) {
                   key={`row-${i + 1}`}
                 >
                   {
-                    Object.values(row).map(({ label }, i, arr) => <StyledTableCell key={label} className={classNames({ '!text-red': i === (arr.length - 1) })}>{label}</StyledTableCell>)
+                    Object.values(row).map(({ label }) => <StyledTableCell key={label} className={classNames({ '!text-red': redColor.includes(label) })}>{label}</StyledTableCell>)
                   }
                 </StyledTableRow>
               )
