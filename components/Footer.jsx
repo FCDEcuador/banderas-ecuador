@@ -112,6 +112,11 @@ export default function Footer () {
                     </a>
                   </Link>
                 </li>
+                <li>
+                  <a href="https://github.com/datasketch/banderas-ecuador-back" target='_blank' rel="noreferrer">
+                    Repositorio banderas
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

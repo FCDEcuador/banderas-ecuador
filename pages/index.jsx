@@ -1,14 +1,56 @@
+/* eslint-disable camelcase */
 import PublicationCard from '../components/PublicationCard'
 import RedFlagCard from '../components/RedFlagCard'
 import redFlagsImages from '../data/red-flags-images.json'
 import Link from 'next/link'
 import reports from '../data/reports.json'
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
+import { Tab } from '@headlessui/react'
+import classNames from 'classnames'
+import DataTable from '../components/DataTable'
 
-export default function Home () {
+export default function Home ({ dataRankings = [] }) {
   // TODO: update endpoint
   const endpoint = 'https://ds-ec.mooo.com/partySummaries.json'
   const [stats, setStats] = useState({})
+
+  const dataRankingsFormat = dataRankings.reduce((prev, curr) => {
+    return [...prev, {
+      name: curr.name,
+      data: curr.data.reduce((prev, curr) => {
+        return [...prev, {
+          position: {
+            label: 'Posición',
+            value: curr.ranking
+          },
+          contacting_entity: {
+            label: 'Entidad contratante',
+            value: curr.description_buyer_names
+          },
+          transparency: {
+            label: 'Transparencia',
+            value: curr.summary_trans * 100
+          },
+          temporality: {
+            label: 'Temporalidad',
+            value: curr.summary_temp * 100
+          },
+          traceability: {
+            label: 'Trazabilidad',
+            value: curr.summary_traz * 100
+          },
+          competitiveness: {
+            label: 'Competitividad',
+            value: curr.summary_comp * 100
+          },
+          score: {
+            label: 'Puntaje',
+            value: curr.summary_total_score * 100
+          }
+        }]
+      }, [])
+    }]
+  }, [])
 
   useEffect(() => {
     let ignore = false
@@ -80,6 +122,66 @@ export default function Home () {
         </div>
       </div>
 
+      <div className='bg-grey py-12 lg:py-16 xl:py-20 relative overflow-hidden'>
+        <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-2xl'>
+          <div className='flex flex-col lg:flex-row lg:justify-between gap-y-8'>
+            <div className='lg:w-5/12 max-w-[507px] relative z-10'>
+              <h2 className='font-black text-3xl 3xl:text-[45px] text-white-dark'>
+                Evaluación de instituciones públicas
+              </h2>
+            </div>
+            <div className='lg:w-6/12 max-w-[655px]'>
+              <p className='text-lg lg:text-xl text-white-dark'>
+                Te presentamos las instituciones públicas mejor evaluadas por nuestro sistema de banderas rojas para que puedas conocer su desempeño en la contratación pública. La clasificación muestra las instituciones públicas que han realizado al menos 10 contratos al mes y 100 contratos al año. Si deseas obtener más detalles acerca de cómo funcionan las banderas rojas, te invitamos a consultar nuestra sección de metodología.
+              </p>
+            </div>
+          </div>
+          <div className='mt-10 relative z-10'>
+            <Tab.Group>
+              <Tab.List className="border-2 border-white-dark rounded-2xl inline-block text-white-dark text-lg xl:text-xl overflow-hidden">
+                {dataRankingsFormat.reverse().map(({ name }, i) => {
+                  return (
+                    <Tab key={`tab-${i}`} as={Fragment}>
+                      {({ selected }) => (
+                        <button
+                          className={classNames('py-3 px-6 outline-none overflow-hidden rounded-2xl', { 'bg-red': selected })}
+                        >
+                          {name}
+                        </button>
+                      )}
+                    </Tab>
+                  )
+                })}
+              </Tab.List>
+              <div className='mt-4'>
+                <p className='text-white text-sm'>
+                  Última actualización: 02 de Junio, 2023
+                </p>
+              </div>
+              <Tab.Panels className="mt-4">
+                {dataRankingsFormat.reverse().map((item, i) => {
+                  return (
+                    <Tab.Panel key={`panel-${i + 1}`}>
+                      <DataTable data={item.data.reverse().slice(0, 10)} />
+                    </Tab.Panel>
+                  )
+                })}
+              </Tab.Panels>
+            </Tab.Group>
+            <div className='text-center mt-12'>
+              <Link href="/banderas-rojas#app">
+                <a className='inline-block py-2 px-6 outline-none overflow-hidden rounded-2xl bg-red text-white'>
+                  Ver todas las entidades
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className='absolute top-10 left-10'>
+          <img className='w-2/3' src='/images/stars.svg' alt='stars icon' />
+        </div>
+      </div>
+
       <div className='py-12 lg:py-16 xl:py-20'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <div className='space-y-[85px]'>
@@ -88,7 +190,7 @@ export default function Home () {
                 <h2 className='font-black text-xl 3xl:text-[28px]'>
                   Contratación pública en cifras
                 </h2>
-                <p className='text-lg'>2015-2022</p>
+                <p className='text-lg'>2015-{new Date().getFullYear()}</p>
               </div>
               <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-[61px] gap-y-8'>
                 <div className='shadow rounded-[55px]'>
@@ -230,4 +332,35 @@ export default function Home () {
       </div>
     </>
   )
+}
+
+export const getServerSideProps = async () => {
+  const res = await fetch('https://s3.amazonaws.com/uploads.dskt.ch/fcd/path_files/path_files.base.json')
+  const data = await res.json()
+
+  // DINAMYC RANKINGS
+  const rankings = data.hdtables_slugs.reduce((prev, curr) => {
+    if (curr.length === 4) return [...prev]
+    return [...prev, curr]
+  }, [])
+
+  // GET ALL RANKINGS DATA
+  const dataRankingsPromise = await (Promise.all(rankings.reduce((prev, curr) => {
+    const data = getData(`https://s3.amazonaws.com/uploads.dskt.ch/fcd/path_files/${curr}.json`)
+    return [...prev, data]
+  }, [])))
+
+  const dataRankings = dataRankingsPromise.map((item, i) => {
+    return {
+      name: rankings[i].replace('ranking', ''),
+      data: item
+    }
+  })
+
+  async function getData (endpoint) {
+    const res = await fetch(endpoint)
+    return res.json()
+  }
+
+  return { props: { dataRankings } }
 }
