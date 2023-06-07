@@ -122,7 +122,7 @@ export default function Home ({ dataRankings = [] }) {
         </div>
       </div>
 
-      <div className='hidden bg-grey py-12 lg:py-16 xl:py-20 relative overflow-hidden'>
+      <div className='bg-grey py-12 lg:py-16 xl:py-20 relative overflow-hidden'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-2xl'>
           <div className='flex flex-col lg:flex-row lg:justify-between gap-y-8'>
             <div className='lg:w-5/12 max-w-[507px] relative z-10'>
