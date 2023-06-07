@@ -41,7 +41,7 @@ export default function RedFlags ({ years }) {
           </div>
         </div>
       </div>
-      <div className="bg-grey-light py-12 lg:py-16 xl:py-20">
+      <div className="hidden bg-grey-light py-12 lg:py-16 xl:py-20">
         <div className="mx-auto w-10/12 max-w-screen-3xl">
           <div className="text-center text-white-dark space-y-6 3xl:space-y-12">
             <h2 className="font-black text-3xl 3xl:text-[45px]">
