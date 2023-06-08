@@ -70,7 +70,7 @@ export default function RedFlags ({ years }) {
                 </button>
               }
               {year &&
-                <a className="gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl flex" download target="_blank" rel="noreferrer" href={`https://s3.amazonaws.com/uploads.dskt.ch/fcd/path_files/${year}.csv`}>
+                <a className="gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl flex" download target="_blank" rel="noreferrer" href={`https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas/${year}.csv`}>
                   <ArrowDownTrayIcon className='h-5 w-5' />
                   <p>Descargar</p>
                 </a>
@@ -84,7 +84,7 @@ export default function RedFlags ({ years }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch('https://s3.amazonaws.com/uploads.dskt.ch/fcd/path_files/path_files.base.json')
+  const res = await fetch('https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas/banderas-rojas.base.json')
   const data = await res.json()
 
   // DINAMYC YEARS
@@ -94,6 +94,4 @@ export const getServerSideProps = async () => {
   }, [])
 
   return { props: { years } }
-
-  // 'https://corporatetrails.com/ec/contractFlags.tar.gz'
 }
