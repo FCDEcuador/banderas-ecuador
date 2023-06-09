@@ -48,7 +48,7 @@ export default function DataTable ({ data }) {
   }))
 
   return (
-    <TableContainer className='shadow-none rounded-none' component={Paper}>
+    <TableContainer className='shadow-none scroll-style rounded-none scroll-style' component={Paper}>
       <Table sx={{ minWidth: 650 }} size='small' aria-label="data table">
         <TableHead>
           {

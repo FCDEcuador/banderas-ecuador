@@ -8,49 +8,95 @@ import { Fragment, useEffect, useState } from 'react'
 import { Tab } from '@headlessui/react'
 import classNames from 'classnames'
 import DataTable from '../components/DataTable'
+import { useWindowSize } from '@uidotdev/usehooks'
 
 export default function Home ({ dataRankings = [] }) {
   // TODO: update endpoint
   const endpoint = 'https://ds-ec.mooo.com/partySummaries.json'
   const [stats, setStats] = useState({})
+  const { width } = useWindowSize()
 
-  const dataRankingsFormat = dataRankings.reduce((prev, curr) => {
-    return [...prev, {
-      name: curr.name,
-      data: curr.data.reduce((prev, curr) => {
-        return [...prev, {
-          position: {
-            label: 'Posición',
-            value: curr.ranking
-          },
-          contacting_entity: {
-            label: 'Entidad contratante',
-            value: curr.description_buyer_names
-          },
-          transparency: {
-            label: 'Transparencia',
-            value: curr.summary_trans * 100
-          },
-          temporality: {
-            label: 'Temporalidad',
-            value: curr.summary_temp * 100
-          },
-          traceability: {
-            label: 'Trazabilidad',
-            value: curr.summary_traz * 100
-          },
-          competitiveness: {
-            label: 'Competitividad',
-            value: curr.summary_comp * 100
-          },
-          score: {
-            label: 'Puntaje',
-            value: curr.summary_total_score * 100
-          }
-        }]
-      }, [])
-    }]
-  }, [])
+  // 1023
+
+  let dataRankingsFormat = []
+
+  if (width > 1023) {
+    dataRankingsFormat = dataRankings.reduce((prev, curr) => {
+      return [...prev, {
+        name: curr.name,
+        data: curr.data.reduce((prev, curr) => {
+          return [...prev, {
+            position: {
+              label: 'Posición',
+              value: curr.ranking
+            },
+            contacting_entity: {
+              label: 'Entidad contratante',
+              value: curr.description_buyer_names
+            },
+            transparency: {
+              label: 'Transparencia',
+              value: curr.summary_trans * 100
+            },
+            temporality: {
+              label: 'Temporalidad',
+              value: curr.summary_temp * 100
+            },
+            traceability: {
+              label: 'Trazabilidad',
+              value: curr.summary_traz * 100
+            },
+            competitiveness: {
+              label: 'Competitividad',
+              value: curr.summary_comp * 100
+            },
+            score: {
+              label: 'Puntaje',
+              value: curr.summary_total_score * 100
+            }
+          }]
+        }, [])
+      }]
+    }, [])
+  } else {
+    dataRankingsFormat = dataRankings.reduce((prev, curr) => {
+      return [...prev, {
+        name: curr.name,
+        data: curr.data.reduce((prev, curr) => {
+          return [...prev, {
+            position: {
+              label: 'Posición',
+              value: curr.ranking
+            },
+            contacting_entity: {
+              label: 'Entidad contratante',
+              value: curr.description_buyer_names
+            },
+            score: {
+              label: 'Puntaje',
+              value: curr.summary_total_score * 100
+            },
+            transparency: {
+              label: 'Transparencia',
+              value: curr.summary_trans * 100
+            },
+            temporality: {
+              label: 'Temporalidad',
+              value: curr.summary_temp * 100
+            },
+            traceability: {
+              label: 'Trazabilidad',
+              value: curr.summary_traz * 100
+            },
+            competitiveness: {
+              label: 'Competitividad',
+              value: curr.summary_comp * 100
+            }
+          }]
+        }, [])
+      }]
+    }, [])
+  }
 
   useEffect(() => {
     let ignore = false
@@ -137,37 +183,45 @@ export default function Home ({ dataRankings = [] }) {
             </div>
           </div>
           <div className='mt-10 relative z-10'>
-            <Tab.Group>
-              <Tab.List className="border-2 border-white-dark rounded-2xl inline-block text-white-dark text-lg xl:text-xl overflow-hidden">
-                {dataRankingsFormat.reverse().map(({ name }, i) => {
-                  return (
-                    <Tab key={`tab-${i}`} as={Fragment}>
-                      {({ selected }) => (
-                        <button
-                          className={classNames('py-3 px-6 outline-none overflow-hidden rounded-2xl', { 'bg-red': selected })}
-                        >
-                          {name}
-                        </button>
-                      )}
-                    </Tab>
-                  )
-                })}
-              </Tab.List>
-              <div className='mt-4'>
-                <p className='text-white text-sm'>
-                  Última actualización: 02 de Junio, 2023
-                </p>
-              </div>
-              <Tab.Panels className="mt-4">
-                {dataRankingsFormat.reverse().map((item, i) => {
-                  return (
-                    <Tab.Panel key={`panel-${i + 1}`}>
-                      <DataTable data={item.data.reverse().slice(0, 10)} />
-                    </Tab.Panel>
-                  )
-                })}
-              </Tab.Panels>
-            </Tab.Group>
+            <div className='relative'>
+              <Tab.Group>
+                <Tab.List className="border-2 border-white-dark rounded-2xl inline-block text-white-dark text-lg xl:text-xl overflow-hidden">
+                  {dataRankingsFormat.reverse().map(({ name }, i) => {
+                    return (
+                      <Tab key={`tab-${i}`} as={Fragment}>
+                        {({ selected }) => (
+                          <button
+                            className={classNames('py-3 px-6 outline-none overflow-hidden rounded-2xl', { 'bg-red': selected })}
+                          >
+                            {name}
+                          </button>
+                        )}
+                      </Tab>
+                    )
+                  })}
+                </Tab.List>
+                <div className='mt-4'>
+                  <p className='text-white text-sm'>
+                    Última actualización: 02 de Junio, 2023
+                  </p>
+                </div>
+                <Tab.Panels className="mt-4">
+                  {dataRankingsFormat.reverse().map((item, i) => {
+                    return (
+                      <Tab.Panel key={`panel-${i + 1}`}>
+                        <DataTable data={item.data.reverse().slice(0, 10)} />
+                      </Tab.Panel>
+                    )
+                  })}
+                </Tab.Panels>
+              </Tab.Group>
+              <div className='lg:hidden absolute left-0 top-1/2 -translate-y-1/2'>
+                    <img src='/images/arrow-left.svg' alt='arrow left icon' />
+                  </div>
+                  <div className='lg:hidden absolute right-0 top-1/2 -translate-y-1/2'>
+                    <img src='/images/arrow-right.svg' alt='arrow right icon' />
+                  </div>
+            </div>
             <div className='text-center mt-12'>
               <Link href="/banderas-rojas#app">
                 <a className='inline-block py-2 px-6 outline-none overflow-hidden rounded-2xl bg-red text-white'>
