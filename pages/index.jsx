@@ -334,21 +334,25 @@ export default function Home ({ dataRankings = [] }) {
   )
 }
 
+async function getData (endpoint) {
+  const res = await fetch(endpoint)
+  return res.json()
+}
+
 export const getServerSideProps = async () => {
-  const res = await fetch('https://s3.amazonaws.com/uploads.dskt.ch/fcd/path_files/path_files.base.json')
+  const base = 'https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas'
+  const res = await fetch(`${base}/banderas-rojas.base.json`)
   const data = await res.json()
 
   // DINAMYC RANKINGS
   const rankings = data.hdtables_slugs.reduce((prev, curr) => {
-    if (curr.length === 4) return [...prev]
+    if (curr.length === 4) return prev
     return [...prev, curr]
   }, [])
 
   // GET ALL RANKINGS DATA
-  const dataRankingsPromise = await (Promise.all(rankings.reduce((prev, curr) => {
-    const data = getData(`https://s3.amazonaws.com/uploads.dskt.ch/fcd/path_files/${curr}.json`)
-    return [...prev, data]
-  }, [])))
+  const promises = rankings.map((ranking) => getData(`${base}/${ranking}.json`))
+  const dataRankingsPromise = await Promise.all(promises)
 
   const dataRankings = dataRankingsPromise.map((item, i) => {
     return {
@@ -356,11 +360,6 @@ export const getServerSideProps = async () => {
       data: item
     }
   })
-
-  async function getData (endpoint) {
-    const res = await fetch(endpoint)
-    return res.json()
-  }
 
   return { props: { dataRankings } }
 }

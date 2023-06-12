@@ -88,7 +88,7 @@ export default function RedFlags ({ years }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch('https://s3.amazonaws.com/uploads.dskt.ch/fcd/path_files/path_files.base.json')
+  const res = await fetch('https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas/banderas-rojas.base.json')
   const data = await res.json()
 
   // DINAMYC YEARS
