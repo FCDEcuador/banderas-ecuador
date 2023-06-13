@@ -14,9 +14,8 @@ export default function Home ({ dataRankings = [] }) {
   // TODO: update endpoint
   const endpoint = 'https://ds-ec.mooo.com/partySummaries.json'
   const [stats, setStats] = useState({})
+  const [hasLimit, setHasLimit] = useState(false)
   const { width } = useWindowSize()
-
-  // 1023
 
   let dataRankingsFormat = []
 
@@ -209,18 +208,18 @@ export default function Home ({ dataRankings = [] }) {
                   {dataRankingsFormat.reverse().map((item, i) => {
                     return (
                       <Tab.Panel key={`panel-${i + 1}`}>
-                        <DataTable data={item.data.reverse().slice(0, 10)} />
+                        <DataTable setHasLimit={setHasLimit} data={item.data.slice(0, 10)} />
                       </Tab.Panel>
                     )
                   })}
                 </Tab.Panels>
               </Tab.Group>
-              <div className='lg:hidden absolute left-0 top-1/2 -translate-y-1/2'>
-                    <img src='/images/arrow-left.svg' alt='arrow left icon' />
-                  </div>
-                  <div className='lg:hidden absolute right-0 top-1/2 -translate-y-1/2'>
-                    <img src='/images/arrow-right.svg' alt='arrow right icon' />
-                  </div>
+              <div className={classNames('lg:hidden absolute top-1/2 -translate-y-1/2 duration-300', { 'left-0': hasLimit, '-left-full': !hasLimit })}>
+                <img src='/images/arrow-left.svg' alt='arrow left icon' />
+              </div>
+              <div className={classNames('lg:hidden absolute top-1/2 -translate-y-1/2 duration-300', { 'right-0': !hasLimit, '-right-full': hasLimit })}>
+                <img src='/images/arrow-right.svg' alt='arrow right icon' />
+              </div>
             </div>
             <div className='text-center mt-12'>
               <Link href="/banderas-rojas#app">
