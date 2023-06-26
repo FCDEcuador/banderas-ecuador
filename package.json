@@ -19,7 +19,7 @@
     "@uidotdev/usehooks": "^2.0.1",
     "classnames": "^2.3.1",
     "d3-format": "^3.1.0",
-    "date-fns": "^2.29.2",
+    "date-fns": "^2.30.0",
     "leaflet": "^1.8.0",
     "lodash": "^4.17.21",
     "lodash.orderby": "^4.6.0",

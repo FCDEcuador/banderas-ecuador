@@ -9,8 +9,9 @@ import { Tab } from '@headlessui/react'
 import classNames from 'classnames'
 import DataTable from '../components/DataTable'
 import { useWindowSize } from '@uidotdev/usehooks'
+import { addDays } from 'date-fns'
 
-export default function Home ({ dataRankings = [] }) {
+export default function Home ({ dataRankings = [], last_updated }) {
   // TODO: update endpoint
   const endpoint = 'https://ds-ec.mooo.com/partySummaries.json'
   const [stats, setStats] = useState({})
@@ -183,9 +184,9 @@ export default function Home ({ dataRankings = [] }) {
           </div>
           <div className='mt-10 relative z-10'>
             <div className='relative'>
-              <Tab.Group>
+              <Tab.Group defaultIndex={1}>
                 <Tab.List className="border-2 border-white-dark rounded-2xl inline-block text-white-dark text-lg xl:text-xl overflow-hidden">
-                  {dataRankingsFormat.reverse().map(({ name }, i) => {
+                  {dataRankingsFormat.map(({ name }, i) => {
                     return (
                       <Tab key={`tab-${i}`} as={Fragment}>
                         {({ selected }) => (
@@ -201,11 +202,11 @@ export default function Home ({ dataRankings = [] }) {
                 </Tab.List>
                 <div className='mt-4'>
                   <p className='text-white text-sm'>
-                    Última actualización: 02 de Junio, 2023
+                    Última actualización: {new Intl.DateTimeFormat('es-CO', { dateStyle: 'long' }).format(addDays(new Date(last_updated), 1))}
                   </p>
                 </div>
                 <Tab.Panels className="mt-4">
-                  {dataRankingsFormat.reverse().map((item, i) => {
+                  {dataRankingsFormat.map((item, i) => {
                     return (
                       <Tab.Panel key={`panel-${i + 1}`}>
                         <DataTable setHasLimit={setHasLimit} data={item.data.slice(0, 10)} />
@@ -390,6 +391,7 @@ export default function Home ({ dataRankings = [] }) {
 export const getServerSideProps = async () => {
   const res = await fetch('https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas/banderas-rojas.base.json')
   const data = await res.json()
+  const { last_updated } = data
 
   // DINAMYC RANKINGS
   const rankings = data.hdtables_slugs.reduce((prev, curr) => {
@@ -415,5 +417,5 @@ export const getServerSideProps = async () => {
     return res.json()
   }
 
-  return { props: { dataRankings } }
+  return { props: { dataRankings, last_updated } }
 }
