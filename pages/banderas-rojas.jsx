@@ -53,7 +53,7 @@ export default function RedFlags ({ years }) {
             <div className='flex gap-2 justify-center'>
               <select className='p-3 text-grey rounded-[15px] w-[168px]' name="years" onChange={(e) => setYear(e.target.value)}>
                 <option value="">Elige un año</option>
-                {years.reverse().map((item, index) => {
+                {years.map((item, index) => {
                   return (
                     <option
                       key={index} value={item}
@@ -92,7 +92,7 @@ export const getServerSideProps = async () => {
   const years = data.hdtables_slugs.reduce((prev, curr) => {
     if (curr.length === 4) return [...prev, curr]
     return [...prev]
-  }, [])
+  }, []).reverse()
 
   return { props: { years } }
 }
