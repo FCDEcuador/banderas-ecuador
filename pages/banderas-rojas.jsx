@@ -62,7 +62,7 @@ export default function RedFlags ({ years }) {
                     </option>
                   )
                 })}
-                <option value="Todos">Todos</option>
+                <option value="Todos">Todos (json)</option>
               </select>
               {!year &&
                 <button className=" text-white opacity-50 gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl cursor-not-allowed flex">
