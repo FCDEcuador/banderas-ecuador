@@ -200,11 +200,6 @@ export default function Home ({ dataRankings = [], last_updated }) {
                     )
                   })}
                 </Tab.List>
-                <div className='mt-4'>
-                  <p className='text-white text-sm'>
-                    Última actualización: {new Intl.DateTimeFormat('es-CO', { dateStyle: 'long' }).format(addDays(new Date(last_updated), 1))}
-                  </p>
-                </div>
                 <Tab.Panels className="mt-4">
                   {dataRankingsFormat.map((item, i) => {
                     return (
@@ -221,6 +216,11 @@ export default function Home ({ dataRankings = [], last_updated }) {
               <div className={classNames('lg:hidden absolute top-1/2 -translate-y-1/2 duration-300', { 'right-0': !hasLimit, '-right-full': hasLimit })}>
                 <img src='/images/arrow-right.svg' alt='arrow right icon' />
               </div>
+            </div>
+            <div className='mt-4'>
+              <p className='text-white text-sm'>
+                Última actualización: {new Intl.DateTimeFormat('es-CO', { dateStyle: 'long' }).format(addDays(new Date(last_updated), 1))}
+              </p>
             </div>
             <div className='text-center mt-12'>
               <Link href="/banderas-rojas#app">
