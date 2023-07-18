@@ -76,10 +76,10 @@ export default function RedFlags ({ years }) {
                   <p>Descargar</p>
                 </a>
               }
-              <a className="gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl flex" download target="_blank" rel="noreferrer" href="https://corporatetrails.com/ec/contractFlags.tar.gz">
+              {/* <a className="gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl flex" download target="_blank" rel="noreferrer" href="https://corporatetrails.com/ec/contractFlags.tar.gz">
                 <ArrowDownTrayIcon className='h-5 w-5' />
                 <p>Descargar</p>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
