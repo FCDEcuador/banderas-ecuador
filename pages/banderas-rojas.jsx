@@ -62,6 +62,7 @@ export default function RedFlags ({ years }) {
                     </option>
                   )
                 })}
+                <option value="Todos">Todos (json)</option>
               </select>
               {!year &&
                 <button className=" text-white opacity-50 gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl cursor-not-allowed flex">
@@ -70,7 +71,7 @@ export default function RedFlags ({ years }) {
                 </button>
               }
               {year &&
-                <a className="gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl flex" download target="_blank" rel="noreferrer" href={`https://s3.amazonaws.com/uploads.dskt.ch/fcd/path_files/${year}.csv`}>
+                <a className="gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl flex" download target="_blank" rel="noreferrer" href={year === 'Todos' ? 'https://corporatetrails.com/ec/contractFlags.tar.gz' : `https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas/${year}.csv`}>
                   <ArrowDownTrayIcon className='h-5 w-5' />
                   <p>Descargar</p>
                 </a>
@@ -95,9 +96,7 @@ export const getServerSideProps = async () => {
   const years = data.hdtables_slugs.reduce((prev, curr) => {
     if (curr.length === 4) return [...prev, curr]
     return [...prev]
-  }, [])
+  }, []).reverse()
 
   return { props: { years } }
-
-  // 'https://corporatetrails.com/ec/contractFlags.tar.gz'
 }

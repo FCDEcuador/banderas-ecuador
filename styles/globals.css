@@ -35,5 +35,20 @@
     .no-scroll {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    }    
+
+        /* width */
+    .scroll::-webkit-scrollbar {
+        @apply h-2 bg-white;
+    }
+
+    /* Track */
+    .scroll::-webkit-scrollbar-track {
+        @apply bg-grey;
+    }
+
+    /* Handle */
+    .scroll::-webkit-scrollbar-thumb {
+        @apply bg-red;
     }
 }
