@@ -25,14 +25,16 @@ export default function Home ({ dataRankings = [], last_updated }) {
       return [...prev, {
         name: curr.name,
         data: curr.data.reduce((prev, curr) => {
+          console.log(curr)
+          console.log('******')
           return [...prev, {
             position: {
               label: 'Posición',
-              value: curr.ranking
+              value: curr.n
             },
             contacting_entity: {
               label: 'Entidad contratante',
-              value: curr.description_buyer_names
+              value: curr.name
             },
             transparency: {
               label: 'Transparencia',
