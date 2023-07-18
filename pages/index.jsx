@@ -13,7 +13,7 @@ import { addDays } from 'date-fns'
 
 export default function Home ({ dataRankings = [], last_updated }) {
   // TODO: update endpoint
-  const endpoint = 'https://ds-ec.mooo.com/partySummaries.json'
+  const endpoint = 'https://corporatetrails.com/ec/partySummaries.json'
   const [stats, setStats] = useState({})
   const [hasLimit, setHasLimit] = useState(false)
   const { width } = useWindowSize()
