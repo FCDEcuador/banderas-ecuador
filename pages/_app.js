@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import '../styles/globals.css'
+import Script from 'next/script'
 
 function MyApp ({ Component, pageProps }) {
   // const { origin } = window.location
@@ -33,6 +34,14 @@ function MyApp ({ Component, pageProps }) {
         <meta name="twitter:image" content={`${origin}/twitter.png`} />
       </Head>
       <Component {...pageProps} />
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
+      <noscript>
+        <img
+          src="https://queue.simpleanalyticscdn.com/noscript.gif"
+          alt=""
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </noscript>
     </Layout>
   )
 }
