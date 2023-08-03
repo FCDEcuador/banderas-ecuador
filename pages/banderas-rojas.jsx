@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { useState } from 'react'
+// import { useState } from 'react'
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 
 export default function RedFlags ({ years }) {
-  const [year, setYear] = useState('')
+  // const [year, setYear] = useState('')
 
   return (
     <>
@@ -51,7 +51,7 @@ export default function RedFlags ({ years }) {
               <p>Cada procedimiento marcado con una bandera roja muestra un posible comportamiento sospechoso que requiere verificación adicional. <a className='text-orange italic underline' href='https://docs.google.com/spreadsheets/d/17R_5TrYdQRKtcFyiMlH7sch4nBU9RS1isJWNx2ae7yg/edit?usp=sharing' target='_blank' rel="noreferrer">Diccionario de datos.</a></p>
             </div>
             <div className='flex gap-2 justify-center'>
-              <select className='p-3 text-grey rounded-[15px] w-[168px]' name="years" onChange={(e) => setYear(e.target.value)}>
+              {/* <select className='p-3 text-grey rounded-[15px] w-[168px]' name="years" onChange={(e) => setYear(e.target.value)}>
                 <option value="">Elige un año</option>
                 {years.map((item, index) => {
                   return (
@@ -62,7 +62,7 @@ export default function RedFlags ({ years }) {
                     </option>
                   )
                 })}
-                <option value="Todos">Todos</option>
+                <option value="Todos">Todos (json)</option>
               </select>
               {!year &&
                 <button className=" text-white opacity-50 gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl cursor-not-allowed flex">
@@ -75,7 +75,11 @@ export default function RedFlags ({ years }) {
                   <ArrowDownTrayIcon className='h-5 w-5' />
                   <p>Descargar</p>
                 </a>
-              }
+              } */}
+              <a className="gap-x-4 items-center bg-red py-2 px-6 rounded-[15px] text-lg 3xl:text-xl flex" download target="_blank" rel="noreferrer" href="https://corporatetrails.com/ec/contractFlags.tar.gz">
+                <ArrowDownTrayIcon className='h-5 w-5' />
+                <p>Descargar</p>
+              </a>
             </div>
           </div>
         </div>
