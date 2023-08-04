@@ -174,5 +174,16 @@
             "informe",
             "veeduria"
         ]
+    },
+    {
+        "id": 15,
+        "srcImage": "/images/informe-15.jpg",
+        "title": "Monitoreo cívico en la contratación pública. Estrategias para garantizar la transparencia, participación y colaboración ciudadana en Ecuador",
+        "date": "2023-07-20",
+        "link": "https://www.ciudadaniaydesarrollo.org/publicaciones/monitoreocivicocontratacionpublica/",
+        "type": [
+            "informe",
+            "veeduria"
+        ]
     }
 ]
