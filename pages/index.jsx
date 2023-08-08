@@ -7,7 +7,6 @@ import { Fragment, useEffect, useState } from 'react'
 import { Tab } from '@headlessui/react'
 import classNames from 'classnames'
 import DataTable from '../components/DataTable'
-import { useWindowSize } from '@uidotdev/usehooks'
 import { addDays } from 'date-fns'
 
 export default function Home ({ dataRankings = [], lastUpdated }) {
@@ -15,89 +14,46 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
   const endpoint = 'https://corporatetrails.com/ec/partySummaries.json'
   const [stats, setStats] = useState({})
   const [hasLimit, setHasLimit] = useState(false)
-  const { width } = useWindowSize()
 
-  let dataRankingsFormat = []
+  console.log(dataRankings)
 
-  if (width > 1023) {
-    dataRankingsFormat = dataRankings.reduce((prev, curr) => {
-      return [...prev, {
-        name: curr.name,
-        data: curr.data.reduce((prev, curr) => {
-          console.log(curr)
-          console.log('******')
-          return [...prev, {
-            position: {
-              label: 'Posición',
-              value: curr.n
-            },
-            contacting_entity: {
-              label: 'Entidad contratante',
-              value: curr.name
-            },
-            transparency: {
-              label: 'Transparencia',
-              value: curr.summary_trans * 100
-            },
-            temporality: {
-              label: 'Temporalidad',
-              value: curr.summary_temp * 100
-            },
-            traceability: {
-              label: 'Trazabilidad',
-              value: curr.summary_traz * 100
-            },
-            competitiveness: {
-              label: 'Competitividad',
-              value: curr.summary_comp * 100
-            },
-            score: {
-              label: 'Puntaje',
-              value: curr.summary_total_score * 100
-            }
-          }]
-        }, [])
-      }]
-    }, [])
-  } else {
-    dataRankingsFormat = dataRankings.reduce((prev, curr) => {
-      return [...prev, {
-        name: curr.name,
-        data: curr.data.reduce((prev, curr) => {
-          return [...prev, {
-            position: {
-              label: 'Posición',
-              value: curr.ranking
-            },
-            contacting_entity: {
-              label: 'Entidad contratante',
-              value: curr.description_buyer_names
-            },
-            score: {
-              label: 'Puntaje',
-              value: curr.summary_total_score * 100
-            },
-            transparency: {
-              label: 'Transparencia',
-              value: curr.summary_trans * 100
-            },
-            temporality: {
-              label: 'Temporalidad',
-              value: curr.summary_temp * 100
-            },
-            traceability: {
-              label: 'Trazabilidad',
-              value: curr.summary_traz * 100
-            },
-            competitiveness: {
-              label: 'Competitividad',
-              value: curr.summary_comp * 100
-            }
-          }]
-        }, [])
-      }]
-    }, [])
-  }
+  const dataRankingsFormat = dataRankings.reduce((prev, curr) => {
+    return [...prev, {
+      name: curr.name,
+      data: curr.data.reduce((prev, curr) => {
+        return [...prev, {
+          position: {
+            label: 'Posición',
+            value: curr.n
+          },
+          contacting_entity: {
+            label: 'Entidad contratante',
+            value: curr.name
+          },
+          score: {
+            label: 'Puntaje',
+            value: curr.summary_total_score * 100
+          },
+          transparency: {
+            label: 'Transparencia',
+            value: curr.summary_trans * 100
+          },
+          temporality: {
+            label: 'Temporalidad',
+            value: curr.summary_temp * 100
+          },
+          traceability: {
+            label: 'Trazabilidad',
+            value: curr.summary_traz * 100
+          },
+          competitiveness: {
+            label: 'Competitividad',
+            value: curr.summary_comp * 100
+          }
+        }]
+      }, [])
+    }]
+  }, [])
 
   useEffect(() => {
     let ignore = false
