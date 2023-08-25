@@ -15,8 +15,6 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
   const [stats, setStats] = useState({})
   const [hasLimit, setHasLimit] = useState(false)
 
-  console.log(dataRankings)
-
   const dataRankingsFormat = dataRankings.reduce((prev, curr) => {
     return [...prev, {
       name: curr.name,
@@ -150,7 +148,7 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
                           <button
                             className={classNames('py-3 px-6 outline-none overflow-hidden rounded-2xl', { 'bg-red': selected })}
                           >
-                            {name}
+                            {name.slice(-4)}
                           </button>
                         )}
                       </Tab>
