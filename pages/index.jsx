@@ -15,22 +15,22 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
   const [stats, setStats] = useState({})
   const [hasLimit, setHasLimit] = useState(false)
 
-  const dataRankingsFormat = dataRankings.reduce((prev, curr) => {
+  const dataRankingsFormat = dataRankings.reduce((prev, curr, i, arr) => {
     return [...prev, {
       name: curr.name,
-      data: curr.data.reduce((prev, curr) => {
+      data: curr.data.reduce((prev, curr, j) => {
         return [...prev, {
           position: {
             label: 'Posición',
-            value: curr.n
+            value: j + 1
           },
           contacting_entity: {
             label: 'Entidad contratante',
             value: curr.name
           },
-          score: {
+          [`summary_total_score_${arr[i].name}`]: {
             label: 'Puntaje',
-            value: curr.summary_total_score * 100
+            value: curr[`summary_total_score_${arr[i].name}`] * 100
           },
           transparency: {
             label: 'Transparencia',
@@ -47,6 +47,10 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
           competitiveness: {
             label: 'Competitividad',
             value: curr.summary_comp * 100
+          },
+          confiability: {
+            label: 'Confiabilidad',
+            value: curr.summary_network
           }
         }]
       }, [])
@@ -132,7 +136,7 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
               </h2>
             </div>
             <div className='lg:w-6/12 max-w-[655px]'>
-              <p className='text-lg lg:text-xl text-white-dark'>
+              <p className='text-lg lg:text-xl text-white-dark text-justify'>
                 Conoce a las instituciones públicas que mejor contratan según las categorías de transparencia, temporalidad, trazabilidad, competitividad y confiabilidad. La clasificación incluye a las instituciones que efectuaron al menos 100 contratos durante el año en curso o durante el año anterior. La información correspondiente al año en curso se actualiza a mes vencido, así podrás conocer cómo las instituciones públicas están contratando. Mira aquí más sobre nuestra <a className='underline text-red' href='https://docs.google.com/document/d/1Jo0w6H6uR5SyzNB9wH8s6dZReER85OwM/edit' target='_blank' rel="noreferrer">metodología</a>.
               </p>
             </div>
@@ -366,7 +370,7 @@ export const getServerSideProps = async () => {
 
   const dataRankings = dataRankingsPromise.map((item, i) => {
     return {
-      name: rankings[i].replace('ranking', ''),
+      name: rankings[i].slice(-4),
       data: item
     }
   })
