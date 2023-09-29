@@ -16,12 +16,12 @@ export default function DataTable ({ data, setHasLimit }) {
 
   const StyledTableCell = styled(TableCell)(() => ({
     [`&.${tableCellClasses.head}`]: {
-      fontSize: 16,
+      fontSize: 18,
       color: '#FAFAFA',
       borderBottom: '1px solid #EA5E31!important;'
     },
     [`&.${tableCellClasses.body}`]: {
-      fontSize: 16,
+      fontSize: 18,
       color: '#FAFAFA',
       border: 0
     }
@@ -33,7 +33,7 @@ export default function DataTable ({ data, setHasLimit }) {
       border: 0
     },
     [`&.${tableRowClasses.root}`]: {
-      fontSize: 16,
+      fontSize: 18,
       backgroundColor: '#393E43'
     }
   }))
@@ -44,7 +44,7 @@ export default function DataTable ({ data, setHasLimit }) {
       border: 0
     },
     [`&.${tableRowClasses.root}`]: {
-      fontSize: 16,
+      fontSize: 18,
       backgroundColor: 'rgba(32, 32, 32, 0.95)'
     }
   }))

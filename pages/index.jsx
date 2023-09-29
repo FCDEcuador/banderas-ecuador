@@ -3,101 +3,59 @@ import RedFlagCard from '../components/RedFlagCard'
 import redFlagsImages from '../data/red-flags-images.json'
 import Link from 'next/link'
 import reports from '../data/reports.json'
-import { /* Fragment, */ useEffect, useState } from 'react'
-// import { Tab } from '@headlessui/react'
-// import classNames from 'classnames'
-// import DataTable from '../components/DataTable'
-import { useWindowSize } from '@uidotdev/usehooks'
-// import { addDays } from 'date-fns'
+import { Fragment, useEffect, useState } from 'react'
+import { Tab } from '@headlessui/react'
+import classNames from 'classnames'
+import DataTable from '../components/DataTable'
+import { addDays } from 'date-fns'
 
-export default function Home ({ dataRankings = []/* , last_updated */ }) {
+export default function Home ({ dataRankings = [], lastUpdated }) {
   // TODO: update endpoint
   const endpoint = 'https://corporatetrails.com/ec/partySummaries.json'
   const [stats, setStats] = useState({})
-  // const [hasLimit, setHasLimit] = useState(false)
-  const { width } = useWindowSize()
+  const [hasLimit, setHasLimit] = useState(false)
 
-  // let dataRankingsFormat = []
-
-  if (width > 1023) {
-    // dataRankingsFormat = dataRankings.reduce((prev, curr) => {
-    //   return [...prev, {
-    //     name: curr.name,
-    //     data: curr.data.reduce((prev, curr) => {
-    //       console.log(curr)
-    //       console.log('******')
-    //       return [...prev, {
-    //         position: {
-    //           label: 'Posición',
-    //           value: curr.n
-    //         },
-    //         contacting_entity: {
-    //           label: 'Entidad contratante',
-    //           value: curr.name
-    //         },
-    //         transparency: {
-    //           label: 'Transparencia',
-    //           value: curr.summary_trans * 100
-    //         },
-    //         temporality: {
-    //           label: 'Temporalidad',
-    //           value: curr.summary_temp * 100
-    //         },
-    //         traceability: {
-    //           label: 'Trazabilidad',
-    //           value: curr.summary_traz * 100
-    //         },
-    //         competitiveness: {
-    //           label: 'Competitividad',
-    //           value: curr.summary_comp * 100
-    //         },
-    //         score: {
-    //           label: 'Puntaje',
-    //           value: curr.summary_total_score * 100
-    //         }
-    //       }]
-    //     }, [])
-    //   }]
-    // }, [])
-  } else {
-    // dataRankingsFormat = dataRankings.reduce((prev, curr) => {
-    //   return [...prev, {
-    //     name: curr.name,
-    //     data: curr.data.reduce((prev, curr) => {
-    //       return [...prev, {
-    //         position: {
-    //           label: 'Posición',
-    //           value: curr.ranking
-    //         },
-    //         contacting_entity: {
-    //           label: 'Entidad contratante',
-    //           value: curr.description_buyer_names
-    //         },
-    //         score: {
-    //           label: 'Puntaje',
-    //           value: curr.summary_total_score * 100
-    //         },
-    //         transparency: {
-    //           label: 'Transparencia',
-    //           value: curr.summary_trans * 100
-    //         },
-    //         temporality: {
-    //           label: 'Temporalidad',
-    //           value: curr.summary_temp * 100
-    //         },
-    //         traceability: {
-    //           label: 'Trazabilidad',
-    //           value: curr.summary_traz * 100
-    //         },
-    //         competitiveness: {
-    //           label: 'Competitividad',
-    //           value: curr.summary_comp * 100
-    //         }
-    //       }]
-    //     }, [])
-    //   }]
-    // }, [])
-  }
+  const dataRankingsFormat = dataRankings.reduce((prev, curr, i, arr) => {
+    return [...prev, {
+      name: curr.name,
+      data: curr.data.reduce((prev, curr, j) => {
+        return [...prev, {
+          position: {
+            label: 'Posición',
+            value: j + 1
+          },
+          contacting_entity: {
+            label: 'Entidad contratante',
+            value: curr.name
+          },
+          [`summary_total_score_${arr[i].name}`]: {
+            label: 'Puntaje',
+            value: curr[`summary_total_score_${arr[i].name}`] * 100
+          },
+          transparency: {
+            label: 'Transparencia',
+            value: curr.summary_trans * 100
+          },
+          temporality: {
+            label: 'Temporalidad',
+            value: curr.summary_temp * 100
+          },
+          traceability: {
+            label: 'Trazabilidad',
+            value: curr.summary_traz * 100
+          },
+          competitiveness: {
+            label: 'Competitividad',
+            value: curr.summary_comp * 100
+          },
+          confiability: {
+            label: 'Confiabilidad',
+            value: curr.summary_network * 100
+          }
+        }]
+      }, [])
+    }]
+  }, [])
 
   useEffect(() => {
     let ignore = false
@@ -169,17 +127,17 @@ export default function Home ({ dataRankings = []/* , last_updated */ }) {
         </div>
       </div>
 
-      {/* <div className='bg-grey py-12 lg:py-16 xl:py-20 relative overflow-hidden'>
+      <div className='bg-grey py-12 lg:py-16 xl:py-20 relative overflow-hidden'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-2xl'>
           <div className='flex flex-col lg:flex-row lg:justify-between gap-y-8'>
             <div className='lg:w-5/12 max-w-[507px] relative z-10'>
               <h2 className='font-black text-3xl 3xl:text-[45px] text-white-dark'>
-                Evaluación de instituciones públicas
+                Ranking ¿Estamos contratando bien?
               </h2>
             </div>
             <div className='lg:w-6/12 max-w-[655px]'>
-              <p className='text-lg lg:text-xl text-white-dark'>
-                Te presentamos las instituciones públicas mejor evaluadas por nuestro sistema de banderas rojas para que puedas conocer su desempeño en la contratación pública. La clasificación muestra las instituciones públicas que han realizado al menos 10 contratos al mes y 100 contratos al año. Si deseas obtener más detalles acerca de cómo funcionan las banderas rojas, te invitamos a consultar nuestra sección de metodología.
+              <p className='text-lg lg:text-xl text-white-dark text-justify'>
+                Conoce a las instituciones públicas que mejor contratan según las categorías de transparencia, temporalidad, trazabilidad, competitividad y confiabilidad. La clasificación incluye a las instituciones que efectuaron al menos 100 contratos durante el año en curso o durante el año anterior. La información correspondiente al año en curso se actualiza a mes vencido, así podrás conocer cómo las instituciones públicas están contratando. Mira aquí más sobre nuestra <a className='underline text-red' href='https://docs.google.com/document/d/1Jo0w6H6uR5SyzNB9wH8s6dZReER85OwM/edit' target='_blank' rel="noreferrer">metodología</a>.
               </p>
             </div>
           </div>
@@ -194,7 +152,7 @@ export default function Home ({ dataRankings = []/* , last_updated */ }) {
                           <button
                             className={classNames('py-3 px-6 outline-none overflow-hidden rounded-2xl', { 'bg-red': selected })}
                           >
-                            {name}
+                            {name.slice(-4)}
                           </button>
                         )}
                       </Tab>
@@ -220,7 +178,7 @@ export default function Home ({ dataRankings = []/* , last_updated */ }) {
             </div>
             <div className='mt-4'>
               <p className='text-white text-sm'>
-                Última actualización: {new Intl.DateTimeFormat('es-CO', { dateStyle: 'long' }).format(addDays(new Date(last_updated), 1))}
+                Última actualización: {new Intl.DateTimeFormat('es-CO', { dateStyle: 'long' }).format(addDays(new Date(lastUpdated), 1))}
               </p>
             </div>
             <div className='text-center mt-12'>
@@ -235,7 +193,7 @@ export default function Home ({ dataRankings = []/* , last_updated */ }) {
         <div className='absolute top-10 left-10'>
           <img className='w-2/3' src='/images/stars.svg' alt='stars icon' />
         </div>
-      </div> */}
+      </div>
 
       <div className='py-12 lg:py-16 xl:py-20'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
@@ -381,7 +339,7 @@ export default function Home ({ dataRankings = []/* , last_updated */ }) {
             </Link>
           </div>
           <div className='mt-16'>
-            <iframe className="aspect-video" src="https://datasketch.shinyapps.io/RedFlagsEcApp/" width="100%"></iframe>
+            <iframe className="aspect-video" src="https://services.datasketch.co/banderas-app/" width="100%"></iframe>
           </div>
         </div>
       </div>
@@ -398,7 +356,7 @@ export const getServerSideProps = async () => {
   const base = 'https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas'
   const res = await fetch(`${base}/banderas-rojas.base.json`)
   const data = await res.json()
-  // const { last_updated } = data
+  const { last_updated: lastUpdated } = data
 
   // DINAMYC RANKINGS
   const rankings = data.hdtables_slugs.reduce((prev, curr) => {
@@ -412,10 +370,10 @@ export const getServerSideProps = async () => {
 
   const dataRankings = dataRankingsPromise.map((item, i) => {
     return {
-      name: rankings[i].replace('ranking', ''),
+      name: rankings[i].slice(-4),
       data: item
     }
   })
 
-  return { props: { dataRankings/* , last_updated */ } }
+  return { props: { dataRankings, lastUpdated } }
 }

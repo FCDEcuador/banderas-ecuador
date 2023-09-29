@@ -113,7 +113,7 @@
             {
                 "title": "🚩 Procedimiento con un solo oferente",
                 "level": "Contrato",
-                "description": "El procedimiento cuenta con un solo oferente. Esta bandera no aplica para los procesos de contratación directa."
+                "description": "El procedimiento cuenta con un solo oferente."
             },
             {
                 "title": "🚩 Último oferente es el ganador",
