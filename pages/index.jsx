@@ -30,27 +30,27 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
           },
           [`summary_total_score_${arr[i].name}`]: {
             label: 'Puntaje',
-            value: curr[`summary_total_score_${arr[i].name}`]
+            value: curr[`summary_total_score_${arr[i].name}`] * 100
           },
           transparency: {
             label: 'Transparencia',
-            value: curr.summary_trans
+            value: curr.summary_trans * 100
           },
           temporality: {
             label: 'Temporalidad',
-            value: curr.summary_temp
+            value: curr.summary_temp * 100
           },
           traceability: {
             label: 'Trazabilidad',
-            value: curr.summary_traz
+            value: curr.summary_traz * 100
           },
           competitiveness: {
             label: 'Competitividad',
-            value: curr.summary_comp
+            value: curr.summary_comp * 100
           },
           confiability: {
             label: 'Confiabilidad',
-            value: curr.summary_network
+            value: curr.summary_network * 100
           }
         }]
       }, [])
