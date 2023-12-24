@@ -185,5 +185,16 @@
             "informe",
             "veeduria"
         ]
+    },
+    {
+        "id": 16,
+        "srcImage": "/images/informe-16.jpg",
+        "title": "La importancia de la transparencia del beneficiario final en la contratación pública: ¿Con quién está realmente haciendo negocios el Estado?",
+        "date": "2023-12-11",
+        "link": "https://www.ciudadaniaydesarrollo.org/publicaciones/la-importancia-de-la-transparencia-del-beneficiario-final-en-la-contratacion-publica-con-quien-esta-realmente-haciendo-negocios-el-estado/",
+        "type": [
+            "informe",
+            "veeduria"
+        ]
     }
 ]
