@@ -196,5 +196,38 @@
             "informe",
             "veeduria"
         ]
+    },
+    {
+        "id": 17,
+        "srcImage": "/images/informe-17.jpg",
+        "title": "Mapa de riesgos en los procesos de contratación pública por emergencia en Ecuador",
+        "date": "2022-07-26",
+        "link": "https://www.ciudadaniaydesarrollo.org/publicaciones/mapa-de-riesgos-en-los-procesos-de-contratacion-publica-por-emergencia-en-ecuador/",
+        "type": [
+            "informe",
+            "veeduria"
+        ]
+    },
+    {
+        "id": 18,
+        "srcImage": "/images/informe-18.jpg",
+        "title": "¿Qué adquirió el Consejo de la Judicatura durante la presidencia de Wilman Terán?",
+        "date": "2024-01-12",
+        "link": "https://www.ciudadaniaydesarrollo.org/publicaciones/que-adquirio-el-consejo-de-la-judicaturadurante-la-presidencia-de-wilman-teran/",
+        "type": [
+            "informe",
+            "veeduria"
+        ]
+    },
+    {
+        "id": 19,
+        "srcImage": "/images/informe-19.jpg",
+        "title": "El SNAI solo ejecutó el 40% de su Plan Anual de Contratación",
+        "date": "2024-01-16",
+        "link": "https://www.ciudadaniaydesarrollo.org/publicaciones/el-snai-solo-ejecuto-el-40-de-suplan-anual-de-contratacion/",
+        "type": [
+            "informe",
+            "veeduria"
+        ]
     }
 ]
