@@ -8,6 +8,7 @@ import { Tab } from '@headlessui/react'
 import classNames from 'classnames'
 import DataTable from '../components/DataTable'
 import { addDays } from 'date-fns'
+import { getData } from '../lib/data'
 
 export default function Home ({ dataRankings = [], lastUpdated }) {
   // TODO: update endpoint
@@ -489,15 +490,9 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
   )
 }
 
-async function getData (endpoint) {
-  const res = await fetch(endpoint)
-  return res.json()
-}
-
 export const getServerSideProps = async () => {
-  const base = 'https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas'
-  const res = await fetch(`${base}/banderas-rojas.base.json`)
-  const data = await res.json()
+  // const base = 'https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas'
+  const data = await getData('fcd/banderas-rojas/banderas-rojas.base.json')
   const { last_updated: lastUpdated } = data
 
   // DINAMYC RANKINGS
@@ -508,7 +503,7 @@ export const getServerSideProps = async () => {
 
   // GET ALL RANKINGS DATA
   const promises = rankings.map((ranking) =>
-    getData(`${base}/${ranking}.json`)
+    getData(`fcd/banderas-rojas/${ranking}.json`)
   )
   const dataRankingsPromise = await Promise.all(promises)
 

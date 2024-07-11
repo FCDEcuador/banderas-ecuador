@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
+import { getData } from '../lib/data'
 
 export default function RedFlags ({ years }) {
   const [year, setYear] = useState('')
@@ -89,8 +90,7 @@ export default function RedFlags ({ years }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch('https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas/banderas-rojas.base.json')
-  const data = await res.json()
+  const data = await getData('fcd/banderas-rojas/banderas-rojas.base.json')
 
   // DINAMYC YEARS
   const years = data.hdtables_slugs.reduce((prev, curr) => {
