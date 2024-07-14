@@ -230,4 +230,15 @@
             "veeduria"
         ]
     }
+    {
+        "id": 20,
+        "srcImage": "/images/informe-20.jpg",
+        "title": "Las contrataciones públicas del Municipio de Quito. Primer año de gestión de Pabel Muñoz.",
+        "date": "2024-06-26",
+        "link": "https://www.ciudadaniaydesarrollo.org/publicaciones/contratacionesquito/",
+        "type": [
+            "informe",
+            "veeduria"
+        ]
+    }
 ]
