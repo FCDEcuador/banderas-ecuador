@@ -240,5 +240,16 @@
             "informe",
             "veeduria"
         ]
+    },
+    {
+        "id": 21,
+        "srcImage": "/images/informe-21.jpg",
+        "title": "¿Cómo participar en los procesos de contratación en Ecuador? Una guía para las empresas privadas.",
+        "date": "2024-07-31",
+        "link": "https://www.ciudadaniaydesarrollo.org/publicaciones/como-participar-en-los-procesos-de-contratacion-en-ecuador-una-guia-para-las-empresas-privadas/ ",
+        "type": [
+            "informe",
+            "veeduria"
+        ]
     }
 ]
