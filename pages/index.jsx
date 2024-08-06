@@ -193,7 +193,7 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
           </div>
           <div className="mt-10 relative z-10">
             <div className="relative">
-              <Tab.Group defaultIndex={1}>
+              <Tab.Group defaultIndex={2}>
                 <Tab.List className="border-2 border-white-dark rounded-2xl inline-block text-white-dark text-lg xl:text-xl overflow-hidden">
                   {dataRankingsFormat.map(({ name }, i) => {
                     return (
@@ -211,18 +211,6 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
                       </Tab>
                     )
                   })}
-                  <Tab key={'tab-2024'} as={Fragment}>
-                    {({ selected }) => (
-                      <button
-                        className={classNames(
-                          'py-3 px-6 outline-none overflow-hidden rounded-2xl',
-                          { 'bg-red': selected }
-                        )}
-                      >
-                        2024
-                      </button>
-                    )}
-                  </Tab>
                 </Tab.List>
                 <Tab.Panels className="mt-4">
                   {dataRankingsFormat.map((item, i) => {
@@ -235,14 +223,6 @@ export default function Home ({ dataRankings = [], lastUpdated }) {
                       </Tab.Panel>
                     )
                   })}
-                  <Tab.Panel key={'panel-3'}>
-                    <div className="">
-                      <p className="text-white">
-                        La información disponible no es suficiente para generar
-                        el ranking
-                      </p>
-                    </div>
-                  </Tab.Panel>
                 </Tab.Panels>
               </Tab.Group>
               <div
