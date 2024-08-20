@@ -11,7 +11,7 @@ export default function RedFlags ({ years }) {
       case 'Todos':
         return 'https://corporatetrails.com/ec/contractFlags.tar.gz'
       case '2024':
-        return 'http://corporatetrails.com/ec/2024.csv'
+        return 'https://corporatetrails.com/ec/2024.csv'
       default:
         return `https://s3.amazonaws.com/uploads.dskt.ch/fcd/banderas-rojas/${year}.csv`
     }
